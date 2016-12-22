@@ -26,7 +26,9 @@ public class ConnectionFactory {
 
     public static void closeConnection() {
         try {
-            conexion.close();
+            if (conexion != null) {
+                conexion.close();
+            }
         } catch (SQLException e) {
             System.out.println("Error al cerrar la conexión a la BD");
             e.printStackTrace();

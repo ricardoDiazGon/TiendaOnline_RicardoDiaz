@@ -3,7 +3,9 @@ package es.albarregas.dao;
 import es.albarregas.beans.Usuario;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -13,10 +15,10 @@ public class UsuariosDAO implements IUsuariosDAO {
 
     @Override
     public int addUsuarios(Usuario usuario) {
-        
+
         int errorSQL = 0;
         String sql = null;
-        
+
         sql = "INSERT INTO usuarios VALUES(0,?,?,?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
@@ -26,27 +28,70 @@ public class UsuariosDAO implements IUsuariosDAO {
             preparada.setString(4, Character.toString(usuario.getTipo()));
             preparada.setString(5, Character.toString(usuario.getBloqueado()));
             preparada.executeUpdate();
-            
+
             //Cerramos las conexiones
             preparada.close();
-            this.closeConnection();
+
         } catch (SQLException ex) {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
             errorSQL = ex.getErrorCode();
         }
-     
-        System.out.println("Error sql " +errorSQL);
+
+        this.closeConnection();
+        System.out.println("Error sql " + errorSQL);
         return errorSQL;
     }
 
     @Override
     public ArrayList<Usuario> getUsuarios(String clausulaWhere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String sql = "SELECT * FROM Usuarios " + clausulaWhere;
+        Statement sentencia;
+        ArrayList<Usuario> listaUsuarios = null;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            ResultSet resultado = sentencia.executeQuery(sql);
+            
+            listaUsuarios = new ArrayList();
+            Usuario usuario = null;
+            while(resultado.next()){
+                usuario = new Usuario();
+                usuario.setIdUsuario(resultado.getInt("IdUsuario"));
+                usuario.setUserName(resultado.getString("UserName"));
+                usuario.setClave(resultado.getString("Clave"));
+                usuario.setUltimoAcceso(resultado.getTimestamp("UltimoAcceso"));
+                usuario.setTipo(resultado.getString("Tipo").charAt(0));
+                usuario.setBloqueado(resultado.getString("Bloqueado").charAt(0));
+                listaUsuarios.add(usuario);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return listaUsuarios;
+        
     }
 
     @Override
     public int updUsuarios(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int errorSQL = 0;
+
+        String sql = "UPDATE usuarios SET UserName = " + usuario.getUserName() + ", Clave = " + usuario.getClave()
+                + ", UltimoAcceso = " + usuario.getUltimoAcceso() + ",Tipo = " + usuario.getUltimoAcceso()
+                + ", Bloqueado = " + usuario.getBloqueado() + " WHERE IdUsuario = " + usuario.getIdUsuario();
+        Statement sentencia = null;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            errorSQL = ex.getErrorCode();
+        }
+
+        this.closeConnection();
+        return errorSQL;
     }
 
     @Override

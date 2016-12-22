@@ -29,7 +29,7 @@
                     <div class="modal-footer">
                         <div class="input-group text-center">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <input type="submit" class="btn btn-success" name="login" value="Login"/>
+                            <input type="submit" class="btn btn-success" name="login" value="Iniciar Sesión"/>
                         </div>
                     </div>
 
