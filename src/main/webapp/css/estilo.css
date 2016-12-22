@@ -1,0 +1,49 @@
+@font-face {
+    font-family: LobsterTwo-Bold;
+    src: url(../fonts/LobsterTwo-Bold.ttf);
+}
+
+body{
+    background: rgba(254,254,254);
+}
+
+h1,h2,figure{
+    text-align: center;
+}
+
+
+footer{
+    height: 100px;
+    background: rgba(100,100,100,0.7);
+    color: white;
+    text-align: center;
+}
+
+#logo img{
+    margin: 3px;
+    height: 100px;
+    width: 100px;
+}
+
+/* estilos para el slider. */
+
+
+#myCarousel .nav a small
+{
+    display: block;
+}
+#myCarousel .nav
+{
+    background: #eee;
+}
+.nav-justified > li > a
+{
+    border-radius: 0px;
+}
+.nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; }
+.nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
+.nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
+.nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+
+/* fin estilo slider */
+
