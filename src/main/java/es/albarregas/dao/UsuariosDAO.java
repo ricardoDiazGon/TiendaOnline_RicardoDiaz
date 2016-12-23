@@ -25,8 +25,8 @@ public class UsuariosDAO implements IUsuariosDAO {
             preparada.setString(1, usuario.getUserName());
             preparada.setString(2, usuario.getClave());
             preparada.setTimestamp(3, new java.sql.Timestamp(usuario.getUltimoAcceso().getTime()));
-            preparada.setString(4, Character.toString(usuario.getTipo()));
-            preparada.setString(5, Character.toString(usuario.getBloqueado()));
+            preparada.setString(4, usuario.getTipo());
+            preparada.setString(5, usuario.getBloqueado());
             preparada.executeUpdate();
 
             //Cerramos las conexiones
@@ -60,8 +60,8 @@ public class UsuariosDAO implements IUsuariosDAO {
                 usuario.setUserName(resultado.getString("UserName"));
                 usuario.setClave(resultado.getString("Clave"));
                 usuario.setUltimoAcceso(resultado.getTimestamp("UltimoAcceso"));
-                usuario.setTipo(resultado.getString("Tipo").charAt(0));
-                usuario.setBloqueado(resultado.getString("Bloqueado").charAt(0));
+                usuario.setTipo(resultado.getString("Tipo"));
+                usuario.setBloqueado(resultado.getString("Bloqueado"));
                 listaUsuarios.add(usuario);
             }
             
@@ -77,9 +77,9 @@ public class UsuariosDAO implements IUsuariosDAO {
     public int updUsuarios(Usuario usuario) {
         int errorSQL = 0;
 
-        String sql = "UPDATE usuarios SET UserName = " + usuario.getUserName() + ", Clave = " + usuario.getClave()
-                + ", UltimoAcceso = " + usuario.getUltimoAcceso() + ",Tipo = " + usuario.getUltimoAcceso()
-                + ", Bloqueado = " + usuario.getBloqueado() + " WHERE IdUsuario = " + usuario.getIdUsuario();
+        String sql = "UPDATE Usuarios SET UserName = '" + usuario.getUserName() + "', Clave = '" + usuario.getClave()
+                + "', UltimoAcceso = '" + new java.sql.Timestamp(usuario.getUltimoAcceso().getTime()) + "',Tipo = '" + usuario.getTipo() 
+                + "', Bloqueado = '" + usuario.getBloqueado() + "' WHERE IdUsuario = '" + usuario.getIdUsuario() +"'";
         Statement sentencia = null;
         try {
             sentencia = ConnectionFactory.getConnection().createStatement();

@@ -12,24 +12,34 @@
         <link rel="stylesheet" type="text/css" href="css/estilo.css"/>      
     </head>
     <body class="container-fluid" onload="carousel()">
-        <header class="row page-header" id="cabecera">
-            <figure class="col-md-2" id="logo">
+        <!-- Cabecera -->
+        <header class="row container" id="cabecera">
+            <figure class="col-sm-3" id="logo">
                 <img src="imagenes/logo.png" alt="logoRicardo"/>
+                <figcaption>Tienda Online Ricardo Díaz</h1>
             </figure>
-            <div class="col-md-10">
-                <h1>Tienda Online Ricardo Díaz</h1> 
+            <div class="col-sm-offset-1 col-sm-8 row text-right" style="padding-top: 60px;" id="toolbar">
+                <form class="col-sm-8 col-xs-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <a class="col-sm-offset-2 col-sm-2 col-xs-2" href="#"><span><img class="" src="${pageContext.servletContext.contextPath}/imagenes/carritoV.svg" style="height: 40px; width: 40px;"</span></a>
             </div>
         </header>
         <!-- Navegación -->
 
-        <nav id="navegadorPrincipal" class="row navbar navbar-default">
-            <div class="container-fluid">
-
+        <nav id="navegadorPrincipal" class="container-fluid row navbar navbar-default">
+            <div class="col-md-12">
                 <!-- Para version movil -->
-
                 <div class="navbar-header">
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-navegacion-1" aria-expanded="false">
-                        <span class="sr-only">Menú de navegación</span>
+                        <span class="sr-only">Menú</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -69,19 +79,25 @@
                         </li>
                         <li><a href="#">Otros periféricos</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#cuadro-registro" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                        <li><a href="#cuadro-login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+                        <c:choose>
+                            <c:when test="${sessionScope.usuario == null}">
+                                <li><a href="#cuadro-registro" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
+                                <li><a href="#cuadro-login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <c:if test="${sessionScope.usuario.tipo == 'u'}">
+                                    <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.userName}"/></a></li>
+                                    <li><a href="#" data-toggle="modal"><span class="glyphicon glyphicon-home"></span> Panel Usuario</a></li>
+                                </c:if>
+                                <c:if test="${sessionScope.usuario.tipo == 'a'}">
+                                    <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.userName}"/></a></li>
+                                    <li><a href="#" data-toggle="modal"><span class="glyphicon glyphicon-home"></span> Panel Administración</a></li>              
+                                </c:if>
+                                <li><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok" data-toggle="modal"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
+                            </c:otherwise>
+                        </c:choose>
                     </ul>
                 </div>
         </nav>
@@ -99,7 +115,7 @@
         <c:import url="/jsp/componentes/cuadroLogin.jsp"/>
         <c:import url="/jsp/componentes/cuadroRegistro.jsp"/>
         <footer class="row modal-footer" id="pie">
-            <div class="col-md-12"><p>Creado por Ricardo Díaz</p></div>
+            <p>Creado por Ricardo Díaz</p>
         </footer>
     </body>
 </html>

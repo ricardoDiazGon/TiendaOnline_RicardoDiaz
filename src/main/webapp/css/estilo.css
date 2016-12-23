@@ -4,7 +4,7 @@
 }
 
 body{
-    background: rgba(254,254,254);
+    background: #fafafa;
 }
 
 h1,h2,figure{
@@ -14,15 +14,18 @@ h1,h2,figure{
 
 footer{
     height: 100px;
-    background: rgba(100,100,100,0.7);
+    background: #14171a;
     color: white;
+}
+
+footer p{
     text-align: center;
 }
 
 #logo img{
     margin: 3px;
     height: 100px;
-    width: 100px;
+    width: 200px;
 }
 
 /* estilos para el slider. */
@@ -47,3 +50,6 @@ footer{
 
 /* fin estilo slider */
 
+a#bienvenido:hover{
+    background: none;
+}

@@ -1,2 +1,2 @@
 # TiendaOnline_RicardoDiaz
-Login empezado sin probar aun, 22/12/2016 20:40
+Registro y Login casi hecho, por pulir. 23/12/2016 11:33

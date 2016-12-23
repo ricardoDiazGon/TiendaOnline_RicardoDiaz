@@ -9,10 +9,8 @@ import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +32,7 @@ public class Login extends HttpServlet {
         String url = "";
         String error = "";
 
+        //Si viene de hacer login
         if (request.getParameter("login") != null) {
 
             String userName = request.getParameter("userName");
@@ -41,39 +40,54 @@ public class Login extends HttpServlet {
             HttpSession sesion = request.getSession(true);
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
-            
-            if (sesion.getAttribute("usuario") != null && sesion.getAttribute("usuario").equals(userName)) {
-                Usuario usuario = (Usuario) sesion.getAttribute(userName);
-                usuario.setUltimoAcceso(new Date());
-                int errorSQL = iud.updUsuarios(usuario);
-                System.out.println("Codigo sql update: " +errorSQL);
-                if(errorSQL != 0){
-                    
-                }else{
-                    sesion.setAttribute("usuario", usuario);
-                    //Esta parte puede ir más abajo
-                    if(usuario.getBloqueado() == 'n'){
-                        if(usuario.getTipo() == 'u'){
-                            
-                        }else if(usuario.getTipo() == 'a'){
-                            
-                        }
-                    }else{
-                        request.setAttribute("login", "El usuario ha sido bloqueado");
-                    }
-                }              
-            } else {
-                
-                ArrayList<Usuario> listaUsuarios = iud.getUsuarios("WHERE UserName = " +userName +" AND Clave = " +clave);
-                if(listaUsuarios.isEmpty()){
-                    
-                }else{
-                    Usuario usuario = listaUsuarios.get(0);
-                    sesion.setAttribute("usuario", usuario);
-                    
-                }
+            Usuario usuario = null;
+
+            if (userName.equals("")) {
+                error += " El nombre de usuario no puede estar vacío";
+            } else if (clave.equals("")) {
+                error += " La contraseña no puede estar vacía";
             }
 
+            //Si no hay errores seguimos...
+            if (error.equals("")) {
+                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE UserName = '" + userName + "' AND Clave = '" + clave +"'"); 
+                if (listaUsuarios.isEmpty()) {
+                    error = "El nombre de usuario o la clave no son correctos";
+                    usuario = null;
+                } else {
+                    usuario = listaUsuarios.get(0);
+                }
+
+            }
+
+            //Si el usuario ha sido encontrado
+            if (usuario != null) {
+                //Esta parte puede ir más abajo
+                if (usuario.getBloqueado().equals("n")) {
+                    sesion.setAttribute("usuario", usuario);
+                    if (usuario.getTipo().equals("u")) {
+
+                    } else if (usuario.getTipo().equals("a")) {
+
+                    }
+                    //Solo enviamos el usuario a la sesión si sabemos seguro que existe y se ha registrado bien
+                    usuario.setUltimoAcceso(new Date());
+                    int errorSQL = iud.updUsuarios(usuario);
+                    System.out.println("Codigo sql update: " + errorSQL);
+                    sesion.setAttribute("usuario", usuario);
+                } else {
+                    request.setAttribute("login", "El usuario \"" + usuario.getUserName() + "\" ha sido bloqueado");
+                }
+            }else {
+                request.setAttribute("userName", userName);
+                request.setAttribute("clave", clave);
+                request.setAttribute("login", error);
+            }
+        }else if(request.getParameter("cerrar") != null && request.getParameter("cerrar").equals("ok")){
+            //Si damos a invalidar sesión...
+            if(request.getSession() != null){
+                request.getSession().invalidate();
+            }
         }
 
         request.getRequestDispatcher(url).forward(request, response);

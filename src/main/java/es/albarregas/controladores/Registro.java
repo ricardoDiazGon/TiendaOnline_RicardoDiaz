@@ -40,15 +40,15 @@ public class Registro extends HttpServlet {
             } else if (claveRep.equals("")) {
                 error += " Repetir clave no puede estar vacío.";
             } else if (!clave.equals(claveRep)) {
-                error += " Los campos clave y repetir clave deben ser iguales.";
+                error += " Tu contraseña no coincide con el campo de confirmación.";
             }
 
             if (error.equals("")) {
                 usuario = new Usuario();
                 usuario.setUserName(userName);
                 usuario.setClave(clave);
-                usuario.setTipo('u');
-                usuario.setBloqueado('n');
+                usuario.setTipo("u");
+                usuario.setBloqueado("n");
                 usuario.setUltimoAcceso(new Date());
                 System.out.println(usuario.getUltimoAcceso());
                 sqlError = iud.addUsuarios(usuario);
@@ -68,12 +68,13 @@ public class Registro extends HttpServlet {
             if (!error.equals("")) {
                 request.setAttribute("registro", "ok");
                 request.setAttribute("error", error);
-                request.setAttribute("userName", userName);
             } else {
                 request.setAttribute("login", "ok");
-                sesion.setAttribute("usuario", usuario);
             }
             
+            request.setAttribute("userName", userName);
+            request.setAttribute("clave", clave);
+            request.setAttribute("claveRep", claveRep);
         }
         request.getRequestDispatcher(url).forward(request, response);
     }

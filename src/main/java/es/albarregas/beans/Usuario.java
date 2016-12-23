@@ -9,8 +9,8 @@ public class Usuario implements Serializable {
     private String UserName;
     private String Clave;
     private Date UltimoAcceso;
-    private char Tipo;
-    private char Bloqueado;
+    private String Tipo;
+    private String Bloqueado;
 
     public int getIdUsuario() {
         return IdUsuario;
@@ -44,19 +44,19 @@ public class Usuario implements Serializable {
         this.UltimoAcceso = UltimoAcceso;
     }
 
-    public char getTipo() {
+    public String getTipo() {
         return Tipo;
     }
 
-    public void setTipo(char Tipo) {
+    public void setTipo(String Tipo) {
         this.Tipo = Tipo;
     }
 
-    public char getBloqueado() {
+    public String getBloqueado() {
         return Bloqueado;
     }
 
-    public void setBloqueado(char Bloqueado) {
+    public void setBloqueado(String Bloqueado) {
         this.Bloqueado = Bloqueado;
     }
 
