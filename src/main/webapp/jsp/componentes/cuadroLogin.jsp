@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="cuadro-login" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md row" role="document">
@@ -34,7 +34,7 @@
 
                     <div class="modal-footer">
                         <div class="input-group col-md-12 text-center">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger " data-dismiss="modal">Cerrar</button>
                             <input type="submit" class="btn btn-success" name="login" value="Iniciar Sesión"/>
                         </div>
                     </div>

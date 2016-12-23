@@ -23,9 +23,7 @@ footer p{
 }
 
 #logo img{
-    margin: 3px;
-    height: 100px;
-    width: 200px;
+    width: 90%;  
 }
 
 /* estilos para el slider. */
@@ -52,4 +50,19 @@ footer p{
 
 a#bienvenido:hover{
     background: none;
+}
+
+/* Migas de pan */
+
+.btn-breadcrumb .btn.btn-info:not(:last-child):after {
+  border-left: 10px solid #5bc0de;
+}
+.btn-breadcrumb .btn.btn-info:not(:last-child):before {
+  border-left: 10px solid #46b8da;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):after {
+  border-left: 10px solid #39b3d7;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):before {
+  border-left: 10px solid #269abc;
 }

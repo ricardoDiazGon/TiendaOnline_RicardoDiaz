@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String url = "";
-        String error = "";
+        StringBuffer error = new StringBuffer();
 
         //Si viene de hacer login
         if (request.getParameter("login") != null) {
@@ -43,16 +43,16 @@ public class Login extends HttpServlet {
             Usuario usuario = null;
 
             if (userName.equals("")) {
-                error += " El nombre de usuario no puede estar vacío";
-            } else if (clave.equals("")) {
-                error += " La contraseña no puede estar vacía";
+                error.append(" El nombre de usuario no puede estar vacío. ");
+            } if (clave.equals("")) {
+                error.append(" La contraseña no puede estar vacía. ");
             }
 
             //Si no hay errores seguimos...
-            if (error.equals("")) {
+            if (error.length() == 0) {
                 ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE UserName = '" + userName + "' AND Clave = '" + clave +"'"); 
                 if (listaUsuarios.isEmpty()) {
-                    error = "El nombre de usuario o la clave no son correctos";
+                    error.append("El nombre de usuario o la clave no son correctos.");
                     usuario = null;
                 } else {
                     usuario = listaUsuarios.get(0);
@@ -81,7 +81,7 @@ public class Login extends HttpServlet {
             }else {
                 request.setAttribute("userName", userName);
                 request.setAttribute("clave", clave);
-                request.setAttribute("login", error);
+                request.setAttribute("login", error.toString());
             }
         }else if(request.getParameter("cerrar") != null && request.getParameter("cerrar").equals("ok")){
             //Si damos a invalidar sesión...

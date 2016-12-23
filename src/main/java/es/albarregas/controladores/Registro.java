@@ -21,6 +21,7 @@ public class Registro extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String url = "";
 
+        //Solo hacemos cosas si se ha pulsado el botón registrar
         if (request.getParameter("registrar") != null) {
             HttpSession sesion = request.getSession(true);
             String userName = request.getParameter("userName");
@@ -31,8 +32,8 @@ public class Registro extends HttpServlet {
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
             Usuario usuario = null;
+            
             //Validamos 
-
             if (userName.equals("")) {
                 error = "Campo Nombre de Usuario no puede estar vacío. ";
             } else if (clave.equals("")) {
@@ -42,7 +43,8 @@ public class Registro extends HttpServlet {
             } else if (!clave.equals(claveRep)) {
                 error += " Tu contraseña no coincide con el campo de confirmación.";
             }
-
+            
+            //Si no hay errores
             if (error.equals("")) {
                 usuario = new Usuario();
                 usuario.setUserName(userName);
@@ -52,15 +54,11 @@ public class Registro extends HttpServlet {
                 usuario.setUltimoAcceso(new Date());
                 System.out.println(usuario.getUltimoAcceso());
                 sqlError = iud.addUsuarios(usuario);
-                if (sqlError == 0) {
-                    url = "/index.jsp";
-                } else if (sqlError == 1062) { 
+                if (sqlError == 1062) { 
                     // 1022 es para las pk duplicadas
                     error = "El nombre de usuario ya existe";
-                    url = "/index.jsp";
-                } else {
+                } else if(sqlError != 0) {
                     error = "Ha ocurrido un error inesperado, vuelva a intentarlo más tarde";
-                    url = "/index.jsp";
                 }
             }
 

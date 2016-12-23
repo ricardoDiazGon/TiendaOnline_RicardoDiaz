@@ -1,8 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="container visible-lg visible-md visible-sm row center-block">
-    <div id="myCarousel" class="carousel slide col-sm-12" data-ride="carousel">
+<!--<div class="container visible-lg visible-md visible-sm center-block">-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -47,4 +47,4 @@
         </ul>
     </div>
     <!-- End Carousel -->
-</div>
+<!--</div>-->
