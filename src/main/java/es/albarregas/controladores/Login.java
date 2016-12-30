@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package es.albarregas.controladores;
 
+import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Usuario;
+import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -18,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Ricardo
- */
 @WebServlet(name = "Login", urlPatterns = {"/login"})
 public class Login extends HttpServlet {
 
@@ -40,6 +34,7 @@ public class Login extends HttpServlet {
             HttpSession sesion = request.getSession(true);
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
+            IClientesDAO icd = df.getClientesDAO();
             Usuario usuario = null;
 
             if (userName.equals("")) {
@@ -65,16 +60,19 @@ public class Login extends HttpServlet {
                 //Esta parte puede ir más abajo
                 if (usuario.getBloqueado().equals("n")) {
                     sesion.setAttribute("usuario", usuario);
-                    if (usuario.getTipo().equals("u")) {
 
-                    } else if (usuario.getTipo().equals("a")) {
-
-                    }
                     //Solo enviamos el usuario a la sesión si sabemos seguro que existe y se ha registrado bien
                     usuario.setUltimoAcceso(new Date());
                     int errorSQL = iud.updUsuarios(usuario);
                     System.out.println("Codigo sql update: " + errorSQL);
                     sesion.setAttribute("usuario", usuario);
+                    //Rescatamos el cliente que corresponde al usuario
+                    ArrayList<Cliente> listaClientes = icd.getClientes("WHERE IdCliente = '" +usuario.getIdUsuario() +"'");
+                    
+                    if(listaClientes.size() == 1){
+                        sesion.setAttribute("cliente", listaClientes.get(0));
+                    }
+                    
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getUserName() + "\" ha sido bloqueado");
                 }

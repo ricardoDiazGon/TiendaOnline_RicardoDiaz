@@ -4,12 +4,12 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tienda Ricardo</title>
+        <title>INFO Albarregas</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>      
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>   
     </head>
     <body class="container-fluid" onload="carousel()">
         <!-- Cabecera -->
@@ -20,9 +20,9 @@
 
         <!-- Miga de pan -->
         <div class="row">
-            <div class="btn-group btn-breadcrumb">
-                <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Bienvenido a INFO Albarregas, tu Tienda Online de Informática</a>
-            </div>
+            <ol class="breadcrumb">
+                <li class="active">Inicio</li>
+            </ol>
         </div>
 
         <!-- Secciones -->

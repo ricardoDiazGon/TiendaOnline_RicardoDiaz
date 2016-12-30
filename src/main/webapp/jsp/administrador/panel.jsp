@@ -4,33 +4,33 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tienda Ricardo</title>
+        <title>Panel Administrador | INFO Albarregas</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>      
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>     
     </head>
     <body class="container-fluid" onload="carousel()">
 
-        <jsp:include page="/componentes/cabecera.jsp"/>
-        <jsp:include page="/componentes/navegadorPrincipal.jsp"/>
+        <jsp:include page="/jsp/componentes/cabecera.jsp"/>
+        <jsp:include page="/jsp/componentes/navegadorPrincipal.jsp"/>
         <!-- Miga de pan -->
         <div class="row">
-            <div class="btn-group btn-breadcrumb">
-                <a href="${pageContext.servletContext.contextPath}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
-                <a href="#" class="btn btn-info">Panel de Administración</a>
-            </div>
+            <ol class="breadcrumb">
+                <li><a href="${pageContext.servletContext.contextPath}">Inicio</a></li>
+                <li class="active">Panel de Administrador</li>
+            </ol>
         </div>
 
         <!-- Menú de navegación -->
         <nav>
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Datos de Administrador</a></li>
+                <li class="warning"><a href="#">Datos de Administrador</a></li>
                 <li><a href="#">Datos de Cliente</a></li>
                 <li><a href="#">Ver pedidos</a></li>
                 <li><a href="#">Ver productos</a></li>
                 <li><a href="#">Cerrar Sesión</a></li>
             </ul>
         </nav>
-        <jsp:include page="/componentes/pie.jsp"/>
+        <jsp:include page="/jsp/componentes/pie.jsp"/>

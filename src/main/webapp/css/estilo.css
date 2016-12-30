@@ -52,17 +52,40 @@ a#bienvenido:hover{
     background: none;
 }
 
-/* Migas de pan */
+div ol.breadcrumb{
+    background: none;
+}
 
-.btn-breadcrumb .btn.btn-info:not(:last-child):after {
-  border-left: 10px solid #5bc0de;
+div ol.breadcrumb li.active{
+    font-weight: bold;
+    color: darkslateblue;
 }
-.btn-breadcrumb .btn.btn-info:not(:last-child):before {
-  border-left: 10px solid #46b8da;
+
+/* Panel de control */
+
+nav#panel-control{
+    background: white;
+    border-radius: 5px;
+    border: solid 1px black;
 }
-.btn-breadcrumb .btn.btn-info:hover:not(:last-child):after {
-  border-left: 10px solid #39b3d7;
+
+nav#panel-control ul li{
+    border-bottom: solid 1px gray;
 }
-.btn-breadcrumb .btn.btn-info:hover:not(:last-child):before {
-  border-left: 10px solid #269abc;
+
+nav#panel-control ul li.ultimo{
+    border-bottom: none;
+}
+
+nav#panel-control h3{
+    padding: 10px 0px;
+    background: #aaaaaa;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+form#datos-user div.panel-footer{
+    background: none;
+    text-align: center;
 }

@@ -1,2 +1,2 @@
 # TiendaOnline_RicardoDiaz
-Registro y Login casi hecho, por pulir. 23/12/2016 11:33
+Los usuarios puedes darse de alta como clientes 30/12/2016 22:20

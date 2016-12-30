@@ -1,34 +1,115 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tienda Ricardo</title>
-        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>      
-    </head>
-    <body class="container-fluid" onload="carousel()">
-        <!-- Miga de pan -->
-        <div class="row">
-            <div class="btn-group btn-breadcrumb">
-                <a href="${pageContext.servletContext.contextPath}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
-                <a href="#" class="btn btn-info">Panel de Usuario</a>
+
+<c:choose>
+    <c:when test="${sessionScope.usuario != null}">
+    <!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Panel Cliente | INFO Albarregas</title>
+            <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
+            <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
+            <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>    
+        </head>
+        <body class="container-fluid" onload="carousel()">
+
+            <jsp:include page="/jsp/componentes/cabecera.jsp"/>
+            <jsp:include page="/jsp/componentes/navegadorPrincipal.jsp"/>
+            <!-- Miga de pan -->
+            <div class="row">
+                <ol class="breadcrumb col-md-4">
+                    <li><a href="${pageContext.servletContext.contextPath}">Inicio</a></li>
+                    <li class="active">Panel de Usuario</li>
+                </ol>
+                <c:if test="${sessionScope.cliente == null}">
+                    <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"><strong>Regístrese como cliente para realizar compras</strong></a>
+                    </div>
+                </c:if>
             </div>
-        </div>
 
-        <!-- Menú de navegación -->
-        <nav>
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Datos de Usuario</a></li>
-                <li><a href="#">Datos de Cliente</a></li>
-                <li><a href="#">Pedidos</a></li>
-                <li><a href="#">Facturas</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
+            <!-- Menú de navegación -->
+            <div id="secciones" class="container row">
+                <nav id="panel-control" class="col-md-3">
+                    <h3>Panel de Control</h3>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Datos de Usuario</a></li>
+                        <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de Cliente</a></li>
+                        <li><a href="#">Pedidos</a></li>
+                        <li><a href="#">Facturas</a></li>
+                        <li class="ultimo"><a href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </nav>
+                <div class="col-md-offset-1 col-md-8 row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h4>Datos de usuario</h4></div>
 
-        <jsp:include page="/componentes/pie.jsp"/>
+                        <form id="datos-user" class="form-inline" role="form">
+                            <div class="panel-body">
+                                <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <label for="userName" class="control-label">Nombre de usuario</label>
+                                    <input id="userName" type="text" class="form-control" name="userName" value="${sessionScope.usuario.userName}" placeholder="Nombre de usuario" readonly="">                                        
+                                </div>
+                            </div>
+                        </form>     
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Cambiar la contraseña</h4>
+                        </div>
+
+                        <form id="user-clave" class="form-inline" role="form"  method="post" action="${pageContext.servletContext.contextPath}/actualizarUsuCli">
+                            <div class="panel-body">
+
+                                <!-- Controlamos si nos llega algún error -->
+                                <c:if test="${requestScope.errorClave != null and requestScope.errorClave != 'ok'}">
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong><c:out value="${requestScope.errorClave}" /></strong>
+                                    </div>
+                                </c:if>
+                                <c:if test="${requestScope.errorClave != null and requestScope.errorClave == 'ok'}">
+                                    <div class="alert alert-success" role="alert">
+                                        <strong><c:out value="La contraseña se ha cambiado correctamente"/></strong>
+                                    </div>
+                                </c:if>                      
+
+                                <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <label for="claveAnt" class="control-label">Contraseña antigua</label>
+                                    <input id="claveAnt" type="password" class="form-control" name="claveAnt" placeholder="Contraseña antigua">                                        
+                                </div>
+
+                                <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <label for="claveNue" class="control-label">Contraseña nueva</label>
+                                    <input id="claveNue" type="password" class="form-control" name="claveNue" placeholder="Contraseña nueva">                                        
+                                </div>
+
+                                <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <label for="claveNueRep" class="control-label">Repetir contraseña</label>
+                                    <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" placeholder="Repetir contraseña" >                                        
+                                </div> 
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group col-md-12 text-center">
+                                    <input type="submit" class="btn btn-success" name="updClave" value="Actualizar"/>
+                                </div>
+                            </div>
+
+                        </form>     
+
+                    </div>
+                </div>
+            </div>
+            <jsp:include page="/jsp/componentes/pie.jsp"/>
+
+    </c:when>
+        
+    <c:otherwise>
+        <c:redirect url="/index.jsp"/>
+    </c:otherwise>
+</c:choose>
+            
