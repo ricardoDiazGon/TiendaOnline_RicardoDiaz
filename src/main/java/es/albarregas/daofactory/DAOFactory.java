@@ -1,6 +1,9 @@
 package es.albarregas.daofactory;
 
 import es.albarregas.dao.IClientesDAO;
+import es.albarregas.dao.IDireccionesDAO;
+import es.albarregas.dao.IProvinciasDAO;
+import es.albarregas.dao.IPueblosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 
 public abstract class DAOFactory {
@@ -11,6 +14,9 @@ public abstract class DAOFactory {
 
     public abstract IClientesDAO getClientesDAO();
     public abstract IUsuariosDAO getUsuariosDAO();
+    public abstract IDireccionesDAO getDireccionesDAO();
+    public abstract IPueblosDAO getPueblosDAO();
+    public abstract IProvinciasDAO getProvinciasDAO();
 
     public static DAOFactory getDAOFactory(int tipo) {
         DAOFactory daof = null;

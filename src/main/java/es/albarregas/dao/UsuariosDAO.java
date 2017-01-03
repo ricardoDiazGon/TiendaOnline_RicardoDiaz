@@ -44,11 +44,12 @@ public class UsuariosDAO implements IUsuariosDAO {
     public ArrayList<Usuario> getUsuarios(String clausulaWhere) {
 
         String sql = "SELECT * FROM Usuarios " + clausulaWhere;
-        Statement sentencia;
+        Statement sentencia = null;
+        ResultSet resultado = null;
         ArrayList<Usuario> listaUsuarios = null;
         try {
             sentencia = ConnectionFactory.getConnection().createStatement();
-            ResultSet resultado = sentencia.executeQuery(sql);
+            resultado = sentencia.executeQuery(sql);
 
             listaUsuarios = new ArrayList();
             Usuario usuario = null;
@@ -67,6 +68,7 @@ public class UsuariosDAO implements IUsuariosDAO {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        this.closeConnection();
         return listaUsuarios;
 
     }
@@ -124,8 +126,8 @@ public class UsuariosDAO implements IUsuariosDAO {
             }
         }
 
-        if (set) {        
-            sql.append(" WHERE IdUsuario = '" +usuario.getIdUsuario() +"'");
+        if (set) {
+            sql.append(" WHERE IdUsuario = '" + usuario.getIdUsuario() + "'");
             Statement sentencia = null;
             try {
                 sentencia = ConnectionFactory.getConnection().createStatement();

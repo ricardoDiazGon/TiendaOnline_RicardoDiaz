@@ -1,2 +1,3 @@
 # TiendaOnline_RicardoDiaz
-Los usuarios puedes darse de alta como clientes 30/12/2016 22:20
+Creación de algunos beans de direcciones y queda por hacer la parte de direcciones del cliente y gestiones del admin con los clientes
+03/01/2017

@@ -1,5 +1,6 @@
 package es.albarregas.beans;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Cliente {
@@ -11,7 +12,8 @@ public class Cliente {
     private String NIF;
     private Date FechaNacimiento;
     private Date FechaAlta;
-
+    private ArrayList<Direccion> listaDirecciones;
+    
     public int getIdCliente() {
         return IdCliente;
     }
@@ -68,4 +70,12 @@ public class Cliente {
         this.FechaAlta = FechaAlta;
     }
 
+    public ArrayList<Direccion> getListaDirecciones() {
+        return listaDirecciones;
+    }
+
+    public void setListaDirecciones(ArrayList<Direccion> listaDirecciones) {
+        this.listaDirecciones = listaDirecciones;
+    }
+            
 }

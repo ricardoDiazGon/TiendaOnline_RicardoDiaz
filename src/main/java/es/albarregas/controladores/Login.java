@@ -23,15 +23,14 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String url = "";
+        String url = "/index.jsp";
         StringBuffer error = new StringBuffer();
-
+        HttpSession sesion = request.getSession(true);
         //Si viene de hacer login
         if (request.getParameter("login") != null) {
 
             String userName = request.getParameter("userName");
             String clave = request.getParameter("clave");
-            HttpSession sesion = request.getSession(true);
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
             IClientesDAO icd = df.getClientesDAO();
@@ -59,20 +58,17 @@ public class Login extends HttpServlet {
             if (usuario != null) {
                 //Esta parte puede ir más abajo
                 if (usuario.getBloqueado().equals("n")) {
-                    sesion.setAttribute("usuario", usuario);
-
                     //Solo enviamos el usuario a la sesión si sabemos seguro que existe y se ha registrado bien
                     usuario.setUltimoAcceso(new Date());
                     int errorSQL = iud.updUsuarios(usuario);
                     System.out.println("Codigo sql update: " + errorSQL);
-                    sesion.setAttribute("usuario", usuario);
                     //Rescatamos el cliente que corresponde al usuario
                     ArrayList<Cliente> listaClientes = icd.getClientes("WHERE IdCliente = '" +usuario.getIdUsuario() +"'");
                     
-                    if(listaClientes.size() == 1){
-                        sesion.setAttribute("cliente", listaClientes.get(0));
+                    if(listaClientes.size() == 1){                 
+                        usuario.setCliente(listaClientes.get(0));
                     }
-                    
+                    sesion.setAttribute("usuario", usuario);                    
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getUserName() + "\" ha sido bloqueado");
                 }
@@ -83,8 +79,8 @@ public class Login extends HttpServlet {
             }
         }else if(request.getParameter("cerrar") != null && request.getParameter("cerrar").equals("ok")){
             //Si damos a invalidar sesión...
-            if(request.getSession() != null){
-                request.getSession().invalidate();
+            if(sesion != null){
+                sesion.invalidate();
             }
         }
 

@@ -70,6 +70,7 @@ public class ClientesDAO implements IClientesDAO {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        this.closeConnection();
         return listaClientes;
     }
 

@@ -11,6 +11,8 @@ public class Usuario implements Serializable {
     private Date UltimoAcceso;
     private String Tipo;
     private String Bloqueado;
+    private Cliente cliente;
+
 
     public int getIdUsuario() {
         return IdUsuario;
@@ -60,4 +62,13 @@ public class Usuario implements Serializable {
         this.Bloqueado = Bloqueado;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+        
+    
 }

@@ -24,7 +24,7 @@
                     <li><a href="${pageContext.servletContext.contextPath}">Inicio</a></li>
                     <li class="active">Panel de Usuario</li>
                 </ol>
-                <c:if test="${sessionScope.cliente == null}">
+                <c:if test="${sessionScope.usuario.cliente == null}">
                     <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"><strong>Regístrese como cliente para realizar compras</strong></a>
@@ -37,7 +37,7 @@
                 <nav id="panel-control" class="col-md-3">
                     <h3>Panel de Control</h3>
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Datos de Usuario</a></li>
+                        <li class="warning active"><a href="#">Datos de Usuario</a></li>
                         <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de Cliente</a></li>
                         <li><a href="#">Pedidos</a></li>
                         <li><a href="#">Facturas</a></li>
