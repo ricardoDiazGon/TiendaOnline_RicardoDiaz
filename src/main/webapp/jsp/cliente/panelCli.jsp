@@ -19,7 +19,6 @@
     <c:set var="fechaNacimiento" value="${sessionScope.usuario.cliente.fechaNacimiento}"/>
 </c:if>
 
-
 <c:choose>
     <c:when test="${sessionScope.usuario != null}">
         <!DOCTYPE html>
@@ -31,9 +30,9 @@
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>    
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/direccion.js"></script>
             </head>
-            <body class="container-fluid" onload="carousel()">
+            <body class="container-fluid">
 
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
                 <jsp:include page="/jsp/componentes/navegadorPrincipal.jsp"/>
@@ -55,7 +54,14 @@
                     <c:if test="${requestScope.errorCliente == 'ok'}">
                         <div class="alert alert-success text-center center-block alert-dismissable col-md-offset-1 col-md-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Los datos han sido guardados correctamente</strong>
+                            <strong>Los datos de cliente han sido guardados correctamente</strong>
+                        </div>
+                    </c:if>
+                    <!-- Si venimos de introducir una dirección y nos ha devuelto ok -->
+                    <c:if test="${requestScope.errorDirec == 'ok'}">
+                        <div class="alert alert-success text-center center-block alert-dismissable col-md-offset-1 col-md-6">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Los datos de cliente han sido guardados correctamente</strong>
                         </div>
                     </c:if>
                 </div>
@@ -123,50 +129,106 @@
                             </form>     
                         </div>
 
-                        <!-- Direcciones -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4>Datos de cliente</h4>
-                            </div>
-
-                            <form id="datos-user" class="form-inline" role="form"  method="post" action="${pageContext.servletContext.contextPath}/registro">
-                                <div class="panel-body">
-              
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="nombre" class="control-label">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" value="${nombre}" ${readonly}>                                        
+                        <!-- Solo mostramos las direcciones y la posibilidad de añadir si está registrado como cliente -->
+                        <c:if test="${sessionScope.usuario.cliente != null}">
+                            <!-- Lista Direcciones -->
+                            <c:forEach items="${sessionScope.usuario.cliente.listaDirecciones}" var="dir">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4>Direccion ${dir.nombreDireccion}</h4>
                                     </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="apellidos" class="control-label">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" ${readonly}>                                        
-                                    </div>
+                                    <form id="datos-user" class="form-inline">
+                                        <div class="panel-body">
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="NIF" class="control-label">NIF</label>
-                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} value="${nif}">                                        
-                                    </div>
+                                            <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                                <label for="direccion2" class="control-label">Dirección</label>
+                                                <input id="direccion2" type="text" class="form-control" name="direccion2" placeholder="Direccion" value="${dir.direccion}" ${readonly}>                                        
+                                            </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="claveNueRep" class="control-label">Email</label>
-                                        <input id="claveNueRep" type="text" class="form-control" name="email" placeholder="Email" ${readonly} value="${email}" />                                        
-                                    </div>
+                                            <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                                <label for="CodigoPostal2" class="control-label">Código Postal</label>
+                                                <input id="CodigoPostal2" type="text" class="form-control" name="CodigoPostal2" placeholder="Código Postal" value="${dir.codigoPostal}" ${readonly}>                                        
+                                            </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
-                                        <input id="fechaNacimiento" type="date" class="form-control" name="fechaNacimiento" ${readonly} value="${fechaNacimiento}"/>
-                                    </div> 
+                                            <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                                <label for="Provincia2" class="control-label">Provincia</label>
+                                                <input id="Provincia2" type="text" class="form-control" name="Provincia2" placeholder="Provincia" ${readonly} value="${dir.nombreProvincia}">                                        
+                                            </div>
+
+                                            <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                                <label for="Poblacion2" class="control-label">Población</label>
+                                                <input id="Poblacion2" type="text" class="form-control" name="Poblacion2" placeholder="Poblacion" ${readonly} value="${dir.nombrePueblo}" />                                        
+                                            </div>
+
+                                            <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                                <label for="Telefono2" class="control-label">Teléfono</label>
+                                                <input id="Telefono2" type="text" class="form-control" name="Telefono2" placeholder="Teléfono "${readonly} value="${dir.telefono}"/>
+                                            </div>
+                                        </div>
+
+                                    </form>     
+                                </div>
+                            </c:forEach>
+                            <!-- Fin lista direcciones -->
+                            <!-- Añadir Direccon -->
+                            <a name="dir" id="a"></a>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>Añadir Dirección</h4>
                                 </div>
 
-                                <c:if test="${readonly == null}">     
+                                <form id="datos-user" class="form-inline" role="form"  method="post" action="${pageContext.servletContext.contextPath}/direcciones">
+                                    <div class="panel-body">
+                                        <c:if test="${requestScope.errorDirec != null and requestScope.errorDirec != 'ok'}">
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong><c:out value="${requestScope.errorDirec}" /></strong>
+                                            </div>
+                                        </c:if>
+                                        
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="NombreDireccion" class="control-label">Nombre de la dirección</label>
+                                            <input id="NombreDireccion" type="text" class="form-control" name="NombreDireccion" placeholder="Ej: Casa del pueblo" value="${requestScope.direc.nombreDireccion}">                                        
+                                        </div>     
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="direccion" class="control-label">Dirección</label>
+                                            <input id="direccion" type="text" class="form-control" name="Direccion" placeholder="Direccion" value="${requestScope.direc.direccion}">                                        
+                                        </div>                                      
+
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="CodigoPostal" class="control-label">Código Postal</label>
+                                            <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
+                                        </div>
+
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="Provincia" class="control-label">Provincia</label>
+                                            <input id="Provincia" type="text" class="form-control" name="Provincia" placeholder="Provincia" readonly value="${requestScope.direc.nombreProvincia}">                                        
+                                        </div>  
+
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="Poblacion" class="control-label">Población</label>
+                                            <input id="Poblacion" type="text" class="form-control" name="Poblacion" placeholder="Poblacion" readonly value="${requestScope.direc.nombrePueblo}"/>                                     
+                                        </div>
+
+                                        <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                            <label for="Telefono" class="control-label">Teléfono</label>
+                                            <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono " value="${requestScope.direc.telefono}"/>
+                                        </div>
+
+                                        <input type="hidden" id="IdProvincia" name="IdProvincia" value="${requestScope.direc.idProvincia}"/>
+                                        <input type="hidden" id="IdPueblo" name="IdPueblo" value="${requestScope.direc.idPueblo}"/>
+                                    </div>
+
                                     <div class="panel-footer">
                                         <div class="input-group col-md-12 text-center">
-                                            <input type="submit" class="btn btn-success" name="${nameSubmit}" value="${valueSubmit}"/>
+                                            <input type="submit" class="btn btn-success" name="guardarDir" value="Guardar"/>
                                         </div>
                                     </div>
-                                </c:if>
-                            </form>     
-                        </div>
+                                </form>     
+                            </div>
+                            <!-- Añadir Direccion -->
+                        </c:if>
                     </div>
                 </div>
                 <jsp:include page="/jsp/componentes/pie.jsp"/>

@@ -21,7 +21,7 @@ public class ActualizarUsuCli extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        
+        String url = "";
         
         //Cambiamos la contraseña del Usuario
         if(request.getParameter("updClave") != null){
@@ -69,9 +69,16 @@ public class ActualizarUsuCli extends HttpServlet {
                 request.setAttribute("errorClave", "ok");
             }
             
-            request.getRequestDispatcher("/jsp/cliente/panel.jsp").forward(request, response);
+            //Como la contraseña la puede cambiar también el administrador redirigimos según quien la haya hecho
+            if(usuario.getTipo().equals("u")){
+                url = "/jsp/cliente/panel.jsp";
+            }else{
+                url = "/jsp/administrador/panel.jsp";
+            }
+            
             
         }
+        request.getRequestDispatcher(url).forward(request, response);
     }
 
     @Override

@@ -89,3 +89,7 @@ form#datos-user div.panel-footer{
     background: none;
     text-align: center;
 }
+
+div.alert{
+    text-align: center;
+}

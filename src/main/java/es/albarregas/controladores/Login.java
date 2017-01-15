@@ -1,9 +1,11 @@
-
 package es.albarregas.controladores;
 
 import es.albarregas.beans.Cliente;
+import es.albarregas.beans.Direccion;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IClientesDAO;
+import es.albarregas.dao.IDireccionesDAO;
+import es.albarregas.dao.IPueblosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -33,25 +35,37 @@ public class Login extends HttpServlet {
             String clave = request.getParameter("clave");
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
-            IClientesDAO icd = df.getClientesDAO();
             Usuario usuario = null;
 
             if (userName.equals("")) {
                 error.append(" El nombre de usuario no puede estar vacío. ");
-            } if (clave.equals("")) {
+            }
+            if (clave.equals("")) {
                 error.append(" La contraseña no puede estar vacía. ");
             }
 
             //Si no hay errores seguimos...
             if (error.length() == 0) {
-                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE UserName = '" + userName + "' AND Clave = '" + clave +"'"); 
+                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE UserName = '" + userName + "' AND Clave = '" + clave + "'");
                 if (listaUsuarios.isEmpty()) {
                     error.append("El nombre de usuario o la clave no son correctos.");
-                    usuario = null;
                 } else {
                     usuario = listaUsuarios.get(0);
-                }
+                    //Recuperamos el cliente que le corresponde al usuario
+                    IClientesDAO icd = df.getClientesDAO();
+                    ArrayList<Cliente> listaClientes = icd.getClientes("WHERE IdCliente = " + usuario.getIdUsuario());
+                    for (Cliente cliente : listaClientes) {
+                        usuario.setCliente(cliente);
+                    }
 
+                    //Recuperamos las direcciones
+                    if (usuario.getCliente() != null) {
+                        IDireccionesDAO idd = df.getDireccionesDAO();
+                        ArrayList<Direccion> listaDirecciones = idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario());   
+                        usuario.getCliente().setListaDirecciones(listaDirecciones);
+                    }
+
+                }
             }
 
             //Si el usuario ha sido encontrado
@@ -62,29 +76,25 @@ public class Login extends HttpServlet {
                     usuario.setUltimoAcceso(new Date());
                     int errorSQL = iud.updUsuarios(usuario);
                     System.out.println("Codigo sql update: " + errorSQL);
-                    //Rescatamos el cliente que corresponde al usuario
-                    ArrayList<Cliente> listaClientes = icd.getClientes("WHERE IdCliente = '" +usuario.getIdUsuario() +"'");
-                    
-                    if(listaClientes.size() == 1){                 
-                        usuario.setCliente(listaClientes.get(0));
-                    }
-                    sesion.setAttribute("usuario", usuario);                    
+
+                    sesion.setAttribute("usuario", usuario);
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getUserName() + "\" ha sido bloqueado");
                 }
-            }else {
+            } else {
                 request.setAttribute("userName", userName);
                 request.setAttribute("clave", clave);
                 request.setAttribute("login", error.toString());
             }
-        }else if(request.getParameter("cerrar") != null && request.getParameter("cerrar").equals("ok")){
+        } else if (request.getParameter("cerrar") != null && request.getParameter("cerrar").equals("ok")) {
             //Si damos a invalidar sesión...
-            if(sesion != null){
+            if (sesion != null) {
                 sesion.invalidate();
             }
         }
 
-        request.getRequestDispatcher(url).forward(request, response);
+        request.getRequestDispatcher(url)
+                .forward(request, response);
     }
 
     @Override

@@ -5,8 +5,8 @@
  */
 package es.albarregas.dao;
 
+import es.albarregas.beans.Provincia;
 import es.albarregas.beans.Pueblo;
-import es.albarregas.daofactory.DAOFactory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,23 +23,24 @@ public class PueblosDAO implements IPueblosDAO {
         ResultSet resultado = null;
         ArrayList<Pueblo> listaPueblos = null;
         try {
-            DAOFactory df = DAOFactory.getDAOFactory(1);
-            IProvinciasDAO iprd = df.getProvinciasDAO();
-
             sentencia = ConnectionFactory.getConnection().createStatement();
             resultado = sentencia.executeQuery(sql);
 
             listaPueblos = new ArrayList();
             Pueblo pueblo = null;
+            Provincia provincia = null;
             while (resultado.next()) {
                 pueblo = new Pueblo();
                 pueblo.setIdPueblo(resultado.getInt("IdPueblo"));
                 pueblo.setCodigoPostal(resultado.getString("CodigoPostal"));
                 pueblo.setNombre(resultado.getString("Nombre"));
-                pueblo.setProvincia(iprd.getProvincias("").get(0));
+                provincia = new Provincia();
+                provincia.setIdProvincia(resultado.getInt("IdProvincia"));
+                pueblo.setProvincia(provincia);
                 listaPueblos.add(pueblo);
             }
-
+            sentencia.close();
+            resultado.close();
         } catch (SQLException ex) {
             Logger.getLogger(PueblosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

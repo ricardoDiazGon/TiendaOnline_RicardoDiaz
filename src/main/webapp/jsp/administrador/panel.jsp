@@ -10,11 +10,9 @@
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>     
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>    
             </head>
-            <body class="container-fluid" onload="carousel()">
-
+            <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
                 <jsp:include page="/jsp/componentes/navegadorPrincipal.jsp"/>
                 <!-- Miga de pan -->
@@ -24,19 +22,20 @@
                         <li class="active">Panel de Administrador</li>
                     </ol>
                 </div>
-                <div id="secciones">
+                <div id="secciones" class="container row">
                     <!-- Menú de navegación -->
                     <nav id="panel-control" class="col-md-3">
+                        <h3>Panel de Control</h3>
                         <ul class="nav nav-pills nav-stacked">
                             <li class="warning active"><a href="#">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li><a href="#">Ver pedidos</a></li>
                             <li><a href="#">Ver productos</a></li>
-                            <li><a href="#">Cerrar Sesión</a></li>
+                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
 
-                    <div class="col-md-offset-1 col-md-8 row">
+                    <div class="col-md-offset-1 col-md-8">
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4>Datos de administrador</h4></div>
                             <form id="datos-user" class="form-inline" role="form">
@@ -59,12 +58,13 @@
 
                                     <!-- Controlamos si nos llega algún error -->
                                     <c:if test="${requestScope.errorClave != null and requestScope.errorClave != 'ok'}">
-                                        <div class="alert alert-danger" role="alert">
+                                        <div class="alert alert-danger text-center" role="alert">
                                             <strong><c:out value="${requestScope.errorClave}" /></strong>
                                         </div>
                                     </c:if>
                                     <c:if test="${requestScope.errorClave != null and requestScope.errorClave == 'ok'}">
-                                        <div class="alert alert-success" role="alert">
+                                        <div class="alert alert-success text-center" role="alert">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                             <strong><c:out value="La contraseña se ha cambiado correctamente"/></strong>
                                         </div>
                                     </c:if>                      

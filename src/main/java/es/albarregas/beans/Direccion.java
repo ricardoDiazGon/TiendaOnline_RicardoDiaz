@@ -10,9 +10,44 @@ public class Direccion implements Serializable{
     private String NombreDireccion;
     private String Direccion;
     private String CodigoPostal;
-    private Pueblo pueblo;
+    private int IdPueblo;
+    private String NombrePueblo;
+    private int IdProvincia;
+    private String NombreProvincia;
     private String Telefono;
 
+    public int getIdPueblo() {
+        return IdPueblo;
+    }
+
+    public void setIdPueblo(int IdPueblo) {
+        this.IdPueblo = IdPueblo;
+    }
+
+    public String getNombrePueblo() {
+        return NombrePueblo;
+    }
+
+    public void setNombrePueblo(String NombrePueblo) {
+        this.NombrePueblo = NombrePueblo;
+    }
+
+    public int getIdProvincia() {
+        return IdProvincia;
+    }
+
+    public void setIdProvincia(int IdProvincia) {
+        this.IdProvincia = IdProvincia;
+    }
+
+    public String getNombreProvincia() {
+        return NombreProvincia;
+    }
+
+    public void setNombreProvincia(String NombreProvincia) {
+        this.NombreProvincia = NombreProvincia;
+    }   
+    
     public int getIdDireccion() {
         return IdDireccion;
     }
@@ -51,14 +86,6 @@ public class Direccion implements Serializable{
 
     public void setCodigoPostal(String CodigoPostal) {
         this.CodigoPostal = CodigoPostal;
-    }
-
-    public Pueblo getPueblo() {
-        return pueblo;
-    }
-
-    public void setPueblo(Pueblo pueblo) {
-        this.pueblo = pueblo;
     }
 
     public String getTelefono() {

@@ -2,6 +2,7 @@ package es.albarregas.dao;
 
 import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Usuario;
+import es.albarregas.daofactory.DAOFactory;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,6 +67,8 @@ public class ClientesDAO implements IClientesDAO {
                 listaClientes.add(cliente);
             }
 
+            resultado.close();
+            sentencia.close();
         } catch (SQLException ex) {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

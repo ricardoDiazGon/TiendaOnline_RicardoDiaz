@@ -1,3 +1,4 @@
 # TiendaOnline_RicardoDiaz
-Creación de algunos beans de direcciones y queda por hacer la parte de direcciones del cliente y gestiones del admin con los clientes
-03/01/2017
+Ya puedo cambiar contraseña, ver e insertar direcciones en CLIENTE REGIS y bloquear usuarios en CLIENTE ADMIN.
+Estoy empezando a hacer beans y daos de Productos...
+15/01/2017 a las 23:58

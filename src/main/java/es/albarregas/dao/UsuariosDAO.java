@@ -1,6 +1,8 @@
 package es.albarregas.dao;
 
+import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Usuario;
+import es.albarregas.daofactory.DAOFactory;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,9 +29,7 @@ public class UsuariosDAO implements IUsuariosDAO {
             preparada.setString(5, usuario.getBloqueado());
             preparada.executeUpdate();
 
-            //Cerramos las conexiones
             preparada.close();
-
         } catch (SQLException ex) {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
             errorSQL = ex.getErrorCode();
@@ -63,7 +63,8 @@ public class UsuariosDAO implements IUsuariosDAO {
                 usuario.setBloqueado(resultado.getString("Bloqueado"));
                 listaUsuarios.add(usuario);
             }
-
+                sentencia.close();
+                resultado.close();
         } catch (SQLException ex) {
             Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

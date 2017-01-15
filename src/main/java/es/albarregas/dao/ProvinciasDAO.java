@@ -1,7 +1,6 @@
 package es.albarregas.dao;
 
 import es.albarregas.beans.Provincia;
-import es.albarregas.beans.Pueblo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +29,8 @@ public class ProvinciasDAO implements IProvinciasDAO {
                 listaProvincias.add(provincia);
             }
 
+            sentencia.close();
+            resultado.close();
         } catch (SQLException ex) {
             Logger.getLogger(PueblosDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -80,8 +80,10 @@ public class Registro extends HttpServlet {
             request.setAttribute("userName", userName);
             request.setAttribute("clave", clave);
             request.setAttribute("claveRep", claveRep);
+            
+        //Si hemos pulsado añadir los datos del cliente del panel de control del usuario    
         } else if (request.getParameter("addCliente") != null) {
-            //Si hemos pulsado añadir los datos del cliente del panel de control del usuario
+            
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
             String nif = request.getParameter("NIF");
