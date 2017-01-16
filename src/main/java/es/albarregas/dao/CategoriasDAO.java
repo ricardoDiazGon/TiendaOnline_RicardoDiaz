@@ -5,7 +5,7 @@
  */
 package es.albarregas.dao;
 
-import es.albarregas.beans.Imagen;
+import es.albarregas.beans.Categoria;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,50 +17,49 @@ import java.util.logging.Logger;
  *
  * @author Ricardo
  */
-public class ImagenesDAO implements IIMagenesDAO{
+public class CategoriasDAO implements ICategoriasDAO{
 
     @Override
-    public int addImagenes(Imagen imagen) {
+    public int addCategorias(Categoria categoria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ArrayList<Imagen> getImagenes(String clausulaWhere) {
-        String sql = "SELECT * FROM Imagenes " + clausulaWhere;
+    public ArrayList<Categoria> getCategorias(String clausulaWhere) {
+        String sql = "SELECT * FROM Categorias " + clausulaWhere;
         Statement sentencia = null;
         ResultSet resultado = null;
-        ArrayList<Imagen> listaImagenes = null;
+        ArrayList<Categoria> listaCategorias = null;
         try {
 
             sentencia = ConnectionFactory.getConnection().createStatement();
             resultado = sentencia.executeQuery(sql);
 
-            listaImagenes = new ArrayList();
-            Imagen imagen = null;
+            listaCategorias = new ArrayList();
+            Categoria categoria = null;
             while (resultado.next()) {
-                imagen = new Imagen();
-                imagen.setIdImagen(resultado.getInt("IdImagen"));
-                imagen.setIdProducto(resultado.getInt("IdProducto"));
-                imagen.setImagen(resultado.getString("Imagen"));
-                listaImagenes.add(imagen);
+                categoria = new Categoria();
+                categoria.setIdCategoria(resultado.getInt("IdCategoria"));
+                categoria.setNombre(resultado.getString("Nombre"));
+                listaCategorias.add(categoria);
             }
             sentencia.close();
             resultado.close();
         } catch (SQLException ex) {
-            Logger.getLogger(ImagenesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoriasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         this.closeConnection();
-        return listaImagenes;
+        return listaCategorias;
     }
 
     @Override
-    public int updImagenes(Imagen imagen) {
+    public int updCategorias(Categoria categoria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int delImagenes(String clausulaWhere) {
+    public int delCategorias(String clausulaWhere) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

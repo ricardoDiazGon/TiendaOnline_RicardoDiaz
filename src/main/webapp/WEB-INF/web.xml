@@ -26,4 +26,8 @@
         <error-code>404</error-code>
         <location>/JSP/ERRORES/error404.jsp</location>
     </error-page>
+    
+    <listener>
+        <listener-class>es.albarregas.eventos.Inicializar</listener-class>
+    </listener> 
 </web-app>

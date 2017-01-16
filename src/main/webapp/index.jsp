@@ -34,14 +34,15 @@
             <section id="productos" class="col-md-12">
                 <h2>Productos</h2>
                 <div class="row">
-                    <c:forEach begin="0" end="8">
+                    <c:forEach begin="0" end="8" items="${productos}" var="pro">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <img src="..." alt="...">
+                                <c:forEach begin="0" end="0" items="${pro.imagenes}" var="imag">
+                                    <img class="img-responsive" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${imag.imagen}" alt="${pro.denominacion}">
+                                </c:forEach>
                                 <div class="caption">
-                                    <h3>Thumbnail label</h3>
-                                    <p>...</p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                    <h3>${pro.denominacion}</h3>
+                                    <p class="text-center"><a href="#" class="btn btn-success" role="button">Añadir al carrito</a> <a href="#" class="btn btn-primary" role="button">Ver</a></p>
                                 </div>
                             </div>
                         </div>

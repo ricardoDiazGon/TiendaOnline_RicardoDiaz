@@ -24,7 +24,7 @@ public class Producto implements Serializable {
     private String Oferta;
     private String FueraCatalogo;
     private int Rating;
-    private ArrayList<Imagen> listaImagenes;
+    private ArrayList<Imagen> Imagenes;
 
     public int getIdProducto() {
         return IdProducto;
@@ -146,12 +146,12 @@ public class Producto implements Serializable {
         this.Rating = Rating;
     }
 
-    public ArrayList<Imagen> getListaImagenes() {
-        return listaImagenes;
+    public ArrayList<Imagen> getImagenes() {
+        return Imagenes;
     }
 
-    public void setListaImagenes(ArrayList<Imagen> listaImagenes) {
-        this.listaImagenes = listaImagenes;
+    public void setImagenes(ArrayList<Imagen> Imagenes) {
+        this.Imagenes = Imagenes;
     }
 
 }
