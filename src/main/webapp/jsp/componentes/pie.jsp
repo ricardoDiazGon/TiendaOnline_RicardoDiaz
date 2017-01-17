@@ -4,3 +4,4 @@
 <footer class="row modal-footer" id="pie">
     <p>Creado por Ricardo Díaz</p>
 </footer>
+</html>

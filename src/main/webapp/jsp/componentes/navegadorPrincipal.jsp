@@ -11,12 +11,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a  class="navbar-brand hidden-lg hidden-md" href="#">Menú</a>
+            <a  class="navbar-brand visible-xs" href="#">Menú</a>
         </div>
         <!-- Resto del navbar -->
         <div class="collapse navbar-collapse" id="menu-navegacion-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Portátiles</a></li>
+                <!--<li><a href="#">Portátiles</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Componentes<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Procesadores</a></li>
@@ -35,16 +35,21 @@
                         <li><a href="#">Teclados</a></li>
                         <li><a href="#">Ratones</a></li>
                     </ul> 
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Almacenamiento<span class="caret"></span></a>
+                </li> -->
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">PRODUCTOS<span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <c:forEach items="${categorias}" var="cat">
+                            <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${cat.idCategoria}">${cat.nombre}</a></li>
+                        </c:forEach>                      
+                    </ul>
+                    <!--<ul class="dropdown-menu">
                         <li><a href="#">Discos Duros HDD</a></li>
                         <li><a href="#">Discos Duros SDD</a></li>
                         <li><a href="#">Discos Duros Externos</a></li>
                         <li><a href="#">Unidades Flash</a></li>
-                    </ul> 
+                    </ul> -->
                 </li>
-                <li><a href="#">Otros periféricos</a></li>
+                <li><a href="#">OFERTAS</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

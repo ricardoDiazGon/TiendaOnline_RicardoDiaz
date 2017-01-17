@@ -1,2 +1,3 @@
 # TiendaOnline_RicardoDiaz
-Metidos productos en index y en el slider, por pulir mucho. 16/01/2017 18:30
+Menú nuevo sacando categorías y pagina de categorias y producto ok, pero queda
+gestionar mejor el mostrar productos (pte antes de seguir), 17/01/2017 15:30 

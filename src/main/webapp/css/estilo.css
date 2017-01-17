@@ -94,7 +94,63 @@ div.alert{
     text-align: center;
 }
 
-div.thumbnail > img{
+
+/*Productos */
+
+div.producto{
+    height: 375px;
+}
+
+
+div.thumbnail img{
     height: 150px;
     width: 150px;
 }
+
+div.thumbnail h3.precio{
+    color: rgb(255,100,100);
+}
+
+p.btn-carrito{
+    visibility: hidden;
+}
+
+article.producto h2{
+    text-align: left;
+    border-bottom: solid 2px rgb(200,200,200);
+}
+
+div.thumbnail a{
+    text-decoration: none;
+}
+
+/* SLIDER */
+.menu-slider li a{
+    height: 75px;
+}
+
+.estrella{
+    color: gold;
+}
+
+article.producto{
+    background: rgb(255,255,255);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+h3.precioProducto{
+    font-size: 3em;
+    color: rgb(255,100,100);
+}
+
+
+ul.dropdown-menu{
+   width: 800px; 
+}
+
+ul.dropdown-menu li{
+    width: 180px;
+    display: inline-block;
+}
+

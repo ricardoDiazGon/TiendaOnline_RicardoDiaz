@@ -1,11 +1,9 @@
 function bloquearUsuario(contexto, idUsuario) {
     accBloqueoDesbloqueo(contexto, "usuario", idUsuario, "bloquear", contexto);
-    alert("primera funcion de bloqueo");
 }
 
 function desbloquearUsuario(contexto, idUsuario) {
     accBloqueoDesbloqueo(contexto, "usuario", idUsuario, "desbloquear", contexto);
-    alert("primera funcion de desbloqueo");
 }
 
 //Entidad puede ser usuario o producto, y acción bloqueo o desbloqueo
@@ -17,7 +15,6 @@ function accBloqueoDesbloqueo(contexto, entidad, id, accion, contexto) {
         if (this.readyState == 4 && this.status == 200) {
             if (entidad == "usuario") {
                 cambiarFilaUsuario(id, accion, contexto);
-                alert("primera funcion de bloqueo");
             } else {
                 //Para los productos
             }
