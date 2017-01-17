@@ -5,8 +5,10 @@
  */
 package es.albarregas.eventos;
 
+import es.albarregas.beans.Caracteristica;
 import es.albarregas.beans.Categoria;
 import es.albarregas.beans.Producto;
+import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
 import es.albarregas.dao.IIMagenesDAO;
 import es.albarregas.dao.IProductosDAO;
@@ -28,16 +30,19 @@ public class Inicializar implements ServletContextListener{
         IProductosDAO ipd = df.getProductosDAO();
         ICategoriasDAO icd = df.getCategoriasDAO();
         IIMagenesDAO iid = df.getImagenesDAO();
+        ICaracteristicasDAO icard = df.getCaracteristicasDAO();
         
-        ArrayList<Producto> listaProductos = ipd.getProductos("");
+        ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
         ArrayList<Categoria> listaCategorias = icd.getCategorias("");
         
-        for(Producto producto : listaProductos){           
-            producto.setImagenes(iid.getImagenes("WHERE IdProducto = " +producto.getIdProducto()));         
+        //Introducimos las imagenes y las caracteristicas en los productos
+        for(Producto producto : listaProductos){
+            producto.setImagenes(iid.getImagenes("WHERE IdProducto = " +producto.getIdProducto()));
+            producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " +producto.getIdProducto()));
         }
         
         ServletContext contexto = sce.getServletContext();
-        System.out.println("Tamaño listaProductos : " +listaProductos.size());
+        
         synchronized (contexto){
             contexto.setAttribute("productos", listaProductos);
             contexto.setAttribute("categorias", listaCategorias);

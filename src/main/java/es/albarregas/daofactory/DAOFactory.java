@@ -1,5 +1,7 @@
 package es.albarregas.daofactory;
 
+import es.albarregas.dao.ICaractYProdsDAO;
+import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
 import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IDireccionesDAO;
@@ -25,7 +27,10 @@ public abstract class DAOFactory {
     public abstract IProductosDAO getProductosDAO();
     public abstract ICategoriasDAO getCategoriasDAO();
     public abstract IGeneralDAO getGeneralDAO();
-
+    public abstract ICaracteristicasDAO getCaracteristicasDAO();
+    public abstract ICaractYProdsDAO getCaractYProdsDAO();
+    
+    
     public static DAOFactory getDAOFactory(int tipo) {
         DAOFactory daof = null;
 

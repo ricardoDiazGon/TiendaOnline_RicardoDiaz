@@ -25,7 +25,8 @@ public class Producto implements Serializable {
     private String FueraCatalogo;
     private int Rating;
     private ArrayList<Imagen> Imagenes;
-
+    private ArrayList<Caracteristica> Caracteristicas;
+    
     public int getIdProducto() {
         return IdProducto;
     }
@@ -154,4 +155,14 @@ public class Producto implements Serializable {
         this.Imagenes = Imagenes;
     }
 
+    public ArrayList<Caracteristica> getCaracteristicas() {
+        return Caracteristicas;
+    }
+
+    public void setCaracteristicas(ArrayList<Caracteristica> Caracteristicas) {
+        this.Caracteristicas = Caracteristicas;
+    }
+
+    
+    
 }
