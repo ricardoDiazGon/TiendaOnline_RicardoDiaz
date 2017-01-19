@@ -10,6 +10,7 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>   
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
         <!-- Cabecera -->
@@ -22,7 +23,7 @@
                 <!-- Miga de pan -->
                 <div class="row">
                     <ol class="breadcrumb">
-                        <li><a href="${pageContext.servletContext.contextPath}">Inicio</a></li>
+                        <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
                         <li> <a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${pro.idCategoria}">${pro.nombreCategoria}</a></li>
                         <li class="active">${pro.denominacion}</li>
                     </ol>

@@ -19,11 +19,12 @@
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">PRODUCTOS<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <c:forEach items="${categorias}" var="cat">
-                            <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${cat.idCategoria}">${cat.nombre}</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${cat.idCategoria}&pag=1">${cat.nombre}</a></li>
                         </c:forEach>                      
                     </ul>
                 </li>
-                <li><a href="#">OFERTAS</a></li>
+                <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=ofe&pag=1">OFERTAS</a></li>
+                <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=tod&pag=1">TODOS</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

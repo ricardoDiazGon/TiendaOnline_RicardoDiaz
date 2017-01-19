@@ -22,7 +22,7 @@ import javax.servlet.ServletContextListener;
  *
  * @author Ricardo
  */
-public class Inicializar implements ServletContextListener{
+public class Inicializar implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -31,27 +31,44 @@ public class Inicializar implements ServletContextListener{
         ICategoriasDAO icd = df.getCategoriasDAO();
         IIMagenesDAO iid = df.getImagenesDAO();
         ICaracteristicasDAO icard = df.getCaracteristicasDAO();
-        
+
         ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
         ArrayList<Categoria> listaCategorias = icd.getCategorias("");
-        
+
         //Introducimos las imagenes y las caracteristicas en los productos
-        for(Producto producto : listaProductos){
-            producto.setImagenes(iid.getImagenes("WHERE IdProducto = " +producto.getIdProducto()));
-            producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " +producto.getIdProducto()));
+        for (Producto producto : listaProductos) {
+            producto.setImagenes(iid.getImagenes("WHERE IdProducto = " + producto.getIdProducto()));
+            producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " + producto.getIdProducto()));
         }
-        
+
+        //Cargamos los productos del slider
+        ArrayList<Producto> listaProductosSlider = new ArrayList();
+        int cont = 0;
+        for (int i = 0; i < listaProductos.size() && cont < 4; i++) {
+            if (listaProductos.get(i).getOferta().equals("s")) {
+                listaProductosSlider.add(listaProductos.get(i));
+                cont++;
+            }
+        }
+
         ServletContext contexto = sce.getServletContext();
-        
-        synchronized (contexto){
+        synchronized (contexto) {
             contexto.setAttribute("productos", listaProductos);
             contexto.setAttribute("categorias", listaCategorias);
-        }        
+            contexto.setAttribute("proSlider", listaProductosSlider);
+        }
+
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
- 
+        ServletContext contexto = sce.getServletContext();
+
+        synchronized (contexto) {
+            contexto.removeAttribute("productos");
+            contexto.removeAttribute("categorias");
+            contexto.removeAttribute("proSlider");
+        }
     }
-    
+
 }

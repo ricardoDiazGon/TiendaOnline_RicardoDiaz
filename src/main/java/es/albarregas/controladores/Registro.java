@@ -124,6 +124,9 @@ public class Registro extends HttpServlet {
                     int errorSQL = icd.addClientes(cliente);
                     if (errorSQL != 0) {
                         error = "No ha sido posible dar de alta los datos";
+                    }else{
+                        usuario.setCliente(cliente);
+                        sesion.setAttribute("usuario", usuario);
                     }
                 } catch (ParseException ex) {
                     Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
@@ -133,7 +136,8 @@ public class Registro extends HttpServlet {
 
             //Cargamos datos y controlamos el flujo
             if (error.equals("")) {
-                sesion.setAttribute("cliente", cliente);
+                usuario.setCliente(cliente);
+                sesion.setAttribute("usuario", usuario);
                 error = "ok";
             } else {
                 request.setAttribute("nombre", nombre);

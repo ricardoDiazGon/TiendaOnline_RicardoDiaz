@@ -98,17 +98,24 @@ div.alert{
 /*Productos */
 
 div.producto{
-    height: 375px;
+    height: 350px;
 }
 
 
 div.thumbnail img{
     height: 150px;
     width: 150px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 div.thumbnail h3.precio{
     color: rgb(255,100,100);
+    margin: 5px auto;
+}
+
+div.btn-carrito{
+    margin: 0px auto;
 }
 
 p.btn-carrito{
@@ -122,6 +129,10 @@ article.producto h2{
 
 div.thumbnail a{
     text-decoration: none;
+}
+
+h4.deno{
+    font-size: 11pt;
 }
 
 /* SLIDER */
@@ -146,7 +157,7 @@ h3.precioProducto{
 
 
 ul.dropdown-menu{
-   width: 800px; 
+    width: 800px; 
 }
 
 ul.dropdown-menu li{
@@ -154,3 +165,67 @@ ul.dropdown-menu li{
     display: inline-block;
 }
 
+/* FILTROS */
+
+#filtros{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Panel de busqueda */
+#busqueda div.panel{
+    position: absolute;
+    z-index: 9;
+    text-align: left;
+}
+
+#panelBuscar{
+    visibility: hidden;
+    opacity: 0.95;
+}
+
+#listaBuscar{
+    padding: 0px 10px;
+}
+
+#listaBuscar tr{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: dotted 1px black;
+    list-style: none;
+}
+
+#listaBuscar td{
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+#listaBuscar tr:hover{
+    background: rgb(255,100,100);
+    color: white;
+}
+
+#listaBuscar a{
+    display: inline-block;
+    height: 100%;
+    padding-top: 15px;
+}
+
+#listaBuscar a:hover{
+    color: white;
+    text-decoration: none !important;
+}
+
+
+#listaBuscar tr img{
+    height: 75px;
+    width: 75px;
+}
+
+table#opcionSlider{
+    background: white !important;
+}
+
+table#listaBuscar td.nombre{
+    padding-left: 5px;
+}

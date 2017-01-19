@@ -34,7 +34,7 @@
         <c:if test="${centinela > 1}">
             <!-- End Carousel Inner -->
             <c:set var="centinela" value="0"/> 
-            <ul class="nav nav-pills nav-justified menu-slider visible-lg visible-md">
+            <ul id="opcionSlider" class="nav nav-pills nav-justified menu-slider visible-lg visible-md">
                 <c:forEach items="${productos}" var="pro">
                     <c:if test="${pro.idProducto == requestScope.idProducto}">
                         <c:forEach items="${pro.imagenes}" var="imag">

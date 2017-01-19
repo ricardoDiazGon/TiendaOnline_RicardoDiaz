@@ -3,7 +3,9 @@
  */
 package es.albarregas.controladores;
 
+import es.albarregas.beans.Producto;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,23 +25,104 @@ public class NavProductos extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String url = "";
+        String opcion = "ind";
+        String orden = "1";
+        String param = "1";
+        int pagina = 1;
+
         try {
 
-            String opcion = request.getParameter("opt");
-            String param = request.getParameter("param");
-            
-            switch(opcion){
-                //en amp Param sería el id de producto. Se redirige a la ventana del producto
-                case "amp": url="/jsp/comun/paginaProducto.jsp"; 
-                request.setAttribute("idProducto", Integer.parseInt(param));
-                break;
-                
-                //Si hemos seleccionado una categoría en el menú de navegación
-                case "cat": url="/jsp/comun/paginaCategoria.jsp"; 
-                request.setAttribute("idCategoria", Integer.parseInt(param));
-                break;
+            //Hacemos las comprobaciones sobre los datos que nos deben o nos pueden llegar
+            if (request.getParameter("opt") != null) {
+                opcion = request.getParameter("opt"); //Opción si ampliamos o mostramos categoria
             }
-            
+
+            if (request.getParameter("param") != null) {
+                param = request.getParameter("param"); //Valos que pasamos, con el idProducto o idCategoria
+            }
+
+            if (request.getParameter("pag") != null) {
+                pagina = Integer.parseInt(request.getParameter("pag")); //Número de página
+            }
+            if (request.getParameter("ord") != null) {
+                orden = request.getParameter("ord");
+            }
+
+            switch (opcion) {
+                //en amp Param sería el id de producto. Se redirige a la ventana del producto
+                case "amp":
+                    url = "/jsp/comun/paginaProducto.jsp";
+                    request.setAttribute("idProducto", Integer.parseInt(param));
+                    break;
+
+                //Si hemos seleccionado una categoría en el menú de navegación
+                case "tod":
+                case "ofe":
+                case "ind":
+                case "cat":
+                    if (opcion.equals("cat")) {
+                        url = "/jsp/comun/paginaCategoria.jsp";
+                        request.setAttribute("idCategoria", Integer.parseInt(param));
+                    } else if (opcion.equals("tod")) {
+                        url = "/jsp/comun/paginaTodos.jsp";
+                    } else if (opcion.equals("ofe")) {
+                        url = "/jsp/comun/paginaOfertas.jsp";
+                    }
+                    request.setAttribute("actual", pagina);
+                    //Rescatamos el array de productos del contexto de la aplicación, para poder manejarlo
+                    ArrayList<Producto> productos = (ArrayList<Producto>) request.getServletContext().getAttribute("productos");
+                    ArrayList<Producto> productosCat = new ArrayList();
+
+                    switch (orden) {
+                        case "2":
+                            productos = this.ordenarPrecioAsc(productos);
+                            break;
+                        case "3":
+                            productos = this.ordenarPrecioDesc(productos);
+                            break;
+                        case "4":
+                            productos = this.ordenarPopularidad(productos);
+                            break;
+                        default:
+                            productos = this.ordenarNombre(productos);
+                    }
+
+                    //Cosas propias de la paginación
+                    int max = 8 * pagina;
+                    int min = 8 * (pagina - 1);
+                    double total = 0; //total de productos de la categoria que vamos a recorrer
+                    if (!opcion.equals("tod")) {
+                        for (int i = 0; i < productos.size(); i++) {
+                            if (productos.get(i).getIdCategoria() == Integer.parseInt(param) && total >= min && total < max) {
+                                productosCat.add(productos.get(i));
+                            }
+                            //Aprovechamos el bucle para obtener el número maximo de productos de la categoria
+                            //Así lo podremos emplear para hacer la paginacion
+                            if (productos.get(i).getIdCategoria() == Integer.parseInt(param)) {
+                                total++;
+                            }
+                        }
+                    }else{
+                        total = productos.size();
+                        for (int i = 0; i < productos.size(); i++) {
+                            if (i >= min && i < max) {
+                                productosCat.add(productos.get(i));
+                            }
+                        }                     
+                    }
+                    //El número de páginas será el resultado del maximo entre el número de articulos, que serán 12              
+                    int pag = (int) Math.ceil(total / 8); //Math.ceil redondea al alza
+                    System.out.println(pag);
+                    request.setAttribute("pag", pag);
+
+                    request.setAttribute("orden", orden);
+                    request.setAttribute("productosCat", productosCat);
+                    break;
+
+                default:
+                    url = "";
+            }
+
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
@@ -59,4 +142,71 @@ public class NavProductos extends HttpServlet {
         processRequest(request, response);
     }
 
+    public ArrayList<Producto> ordenarPrecioAsc(ArrayList<Producto> productos) {
+
+        //Ordenamos el array por precio ascendente con metodo de la burbuja
+        Producto proAuxiliar = null;
+        for (int i = 0; i < productos.size(); i++) {
+            for (int j = i + 1; j < productos.size(); j++) {
+                if (productos.get(i).getPrecioUnitario() > productos.get(j).getPrecioUnitario()) {
+                    proAuxiliar = productos.get(i);
+                    productos.set(i, productos.get(j));
+                    productos.set(j, proAuxiliar);
+                }
+            }
+        }
+
+        return productos;
+    }
+
+    public ArrayList<Producto> ordenarPrecioDesc(ArrayList<Producto> productos) {
+
+        //Ordenamos el array por precio descendente con metodo de la burbuja
+        Producto proAuxiliar = null;
+        for (int i = 0; i < productos.size(); i++) {
+            for (int j = i + 1; j < productos.size(); j++) {
+                if (productos.get(i).getPrecioUnitario() < productos.get(j).getPrecioUnitario()) {
+                    proAuxiliar = productos.get(i);
+                    productos.set(i, productos.get(j));
+                    productos.set(j, proAuxiliar);
+                }
+            }
+        }
+
+        return productos;
+    }
+
+    public ArrayList<Producto> ordenarPopularidad(ArrayList<Producto> productos) {
+
+        //Ordenamos el array por popularidad con metodo de la burbuja
+        Producto proAuxiliar = null;
+        for (int i = 0; i < productos.size(); i++) {
+            for (int j = i + 1; j < productos.size(); j++) {
+                if (productos.get(i).getRating() < productos.get(j).getRating()) {
+                    proAuxiliar = productos.get(i);
+                    productos.set(i, productos.get(j));
+                    productos.set(j, proAuxiliar);
+                }
+            }
+        }
+
+        return productos;
+    }
+
+    public ArrayList<Producto> ordenarNombre(ArrayList<Producto> productos) {
+
+        //Ordenamos el array por nombre con metodo de la burbuja con compareTo 
+        Producto proAuxiliar = null;
+        for (int i = 0; i < productos.size(); i++) {
+            for (int j = i + 1; j < productos.size(); j++) {
+                if (productos.get(i).getDenominacion().compareTo(productos.get(j).getDenominacion()) > 0) {
+                    proAuxiliar = productos.get(i);
+                    productos.set(i, productos.get(j));
+                    productos.set(j, proAuxiliar);
+                }
+            }
+        }
+
+        return productos;
+    }
 }

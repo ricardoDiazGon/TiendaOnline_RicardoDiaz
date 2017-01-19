@@ -19,7 +19,7 @@
                 <!-- Miga de pan -->
                 <div class="row">
                     <ol class="breadcrumb">
-                        <li><a href="${pageContext.servletContext.contextPath}">Inicio</a></li>
+                        <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
                         <li class="active">Panel de Administrador</li>
                     </ol>
                 </div>

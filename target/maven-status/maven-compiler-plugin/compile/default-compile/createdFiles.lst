@@ -18,6 +18,7 @@ es\albarregas\dao\IPueblosDAO.class
 es\albarregas\beans\CaractYProd.class
 es\albarregas\controladores\ActualizarUsuAdm.class
 es\albarregas\eventos\Inicializar.class
+es\albarregas\servletsAjax\BusquedaProdAjax.class
 es\albarregas\dao\IUsuariosDAO.class
 es\albarregas\controladores\Direcciones.class
 es\albarregas\dao\ConnectionFactory.class

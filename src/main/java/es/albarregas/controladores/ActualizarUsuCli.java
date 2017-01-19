@@ -22,61 +22,60 @@ public class ActualizarUsuCli extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String url = "";
-        
+
         //Cambiamos la contraseña del Usuario
-        if(request.getParameter("updClave") != null){
-            
+        if (request.getParameter("updClave") != null) {
+
             String claveAnt = request.getParameter("claveAnt");
             String claveNue = request.getParameter("claveNue");
             String claveNueRep = request.getParameter("claveNueRep");
             String error = "";
-            
-            if(claveAnt.equals("")){
+
+            if (claveAnt.equals("")) {
                 error = "Contraseña Antigua es un campo obligatorio";
-            }else if(claveNue.equals("")){
+            } else if (claveNue.equals("")) {
                 error = "Contraseña Nueva es un campo obligatorio";
-            }else if(claveNueRep.equals("")){
+            } else if (claveNueRep.equals("")) {
                 error = "Repetir Contraseña es un campo obligatorio";
-            }else if(!claveNue.equals(claveNueRep)){
+            } else if (!claveNue.equals(claveNueRep)) {
                 error = "Los campos Contraseña Nueva y Repetir Contraseña deben de ser iguales";
-            }else if(claveNue.equals(claveAnt)){
+            } else if (claveNue.equals(claveAnt)) {
                 error = "La Contraseña Nueva no puede ser igual que la Contraseña Antigua";
             }
-            
+
             HttpSession sesion = null;
             Usuario usuario = null;
-            if(error.equals("")){
+            if (error.equals("")) {
                 sesion = request.getSession(true);
-                try{
-                usuario = (Usuario) sesion.getAttribute("usuario");
-                DAOFactory df = DAOFactory.getDAOFactory(1);
-                IUsuariosDAO iud = df.getUsuariosDAO();
-                usuario.setClave(claveNue);
-                
-                int errorSQL = iud.updUsuarios(usuario);
-                if(errorSQL != 0){
-                    error = "No ha podido actualizarse la contraseña";
-                }
-                }catch(NullPointerException ex){
+                try {
+                    usuario = (Usuario) sesion.getAttribute("usuario");
+                    DAOFactory df = DAOFactory.getDAOFactory(1);
+                    IUsuariosDAO iud = df.getUsuariosDAO();
+                    usuario.setClave(claveNue);
+
+                    int errorSQL = iud.updUsuarios(usuario);
+                    if (errorSQL != 0) {
+                        error = "No ha podido actualizarse la contraseña";
+                    }
+                } catch (NullPointerException ex) {
                     error = "No ha podido actualizarse la contraseña, ha expirado la sesión";
                 }
             }
-            
-            if(!error.equals("")){
+
+            if (!error.equals("")) {
                 request.setAttribute("errorClave", error);
-            }else{
+            } else {
                 sesion.setAttribute("usuario", usuario);
                 request.setAttribute("errorClave", "ok");
             }
-            
+
             //Como la contraseña la puede cambiar también el administrador redirigimos según quien la haya hecho
-            if(usuario.getTipo().equals("u")){
+            if (usuario.getTipo().equals("u")) {
                 url = "/jsp/cliente/panel.jsp";
-            }else{
+            } else {
                 url = "/jsp/administrador/panel.jsp";
             }
-            
-            
+
         }
         request.getRequestDispatcher(url).forward(request, response);
     }
