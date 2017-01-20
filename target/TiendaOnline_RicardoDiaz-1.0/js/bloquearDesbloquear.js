@@ -31,9 +31,9 @@ function cambiarFilaUsuario(id, accion, contexto) {
     var cadena;
 
     if (accion == "bloquear") {
-        cadena = "\<button class=\"btn btn-success btn-sm\"  title=\"Desbloquear\" onclick=\"desbloquearUsuario('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ok-sign\">\</span>\</button>";
+        cadena = "\<button class=\"btn btn-danger btn-sm\"  title=\"Desbloquear\" onclick=\"desbloquearUsuario('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ban-circle\">\</span>\</button>";
     } else {
-        cadena = "\<button class=\"btn btn-danger btn-sm\" title=\"Bloquear\" onclick=\"bloquearUsuario('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ban-circle\">\</span>\</button>";
+        cadena = "\<button class=\"btn btn-success btn-sm\" title=\"Bloquear\" onclick=\"bloquearUsuario('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ok-sign\">\</span>\</button>";
     }
     document.getElementById("usuario" + id).innerHTML = cadena;
 }

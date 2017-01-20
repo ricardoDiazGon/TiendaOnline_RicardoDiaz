@@ -42,13 +42,11 @@ public class ActualizarUsuCli extends HttpServlet {
             } else if (claveNue.equals(claveAnt)) {
                 error = "La Contraseña Nueva no puede ser igual que la Contraseña Antigua";
             }
-
-            HttpSession sesion = null;
-            Usuario usuario = null;
-            if (error.equals("")) {
-                sesion = request.getSession(true);
-                try {
-                    usuario = (Usuario) sesion.getAttribute("usuario");
+            try {
+                HttpSession sesion = request.getSession(true);
+                Usuario usuario = (Usuario) sesion.getAttribute("usuario");
+                if (error.equals("")) {
+              
                     DAOFactory df = DAOFactory.getDAOFactory(1);
                     IUsuariosDAO iud = df.getUsuariosDAO();
                     usuario.setClave(claveNue);
@@ -57,25 +55,25 @@ public class ActualizarUsuCli extends HttpServlet {
                     if (errorSQL != 0) {
                         error = "No ha podido actualizarse la contraseña";
                     }
-                } catch (NullPointerException ex) {
-                    error = "No ha podido actualizarse la contraseña, ha expirado la sesión";
+
                 }
-            }
 
-            if (!error.equals("")) {
-                request.setAttribute("errorClave", error);
-            } else {
-                sesion.setAttribute("usuario", usuario);
-                request.setAttribute("errorClave", "ok");
-            }
+                if (!error.equals("")) {
+                    request.setAttribute("errorClave", error);
+                } else {
+                    sesion.setAttribute("usuario", usuario);
+                    request.setAttribute("errorClave", "ok");
+                }
 
-            //Como la contraseña la puede cambiar también el administrador redirigimos según quien la haya hecho
-            if (usuario.getTipo().equals("u")) {
-                url = "/jsp/cliente/panel.jsp";
-            } else {
-                url = "/jsp/administrador/panel.jsp";
+                //Como la contraseña la puede cambiar también el administrador redirigimos según quien la haya hecho
+                if (usuario.getTipo().equals("u")) {
+                    url = "/jsp/cliente/panel.jsp";
+                } else {
+                    url = "/jsp/administrador/panel.jsp";
+                }
+            } catch (NullPointerException ex) {
+                ex.printStackTrace();
             }
-
         }
         request.getRequestDispatcher(url).forward(request, response);
     }

@@ -42,11 +42,12 @@ public class Direcciones extends HttpServlet {
                 Usuario usuario = (Usuario) sesion.getAttribute("usuario");
                 int idCliente = usuario.getCliente().getIdCliente();
                 //Obtenemos el número de direcciones para saber cual es el IdDireccion
-                int idDireccion = 1;
+                /*int idDireccion = 1;
                 if (usuario.getCliente().getListaDirecciones() != null) {
                     idDireccion = usuario.getCliente().getListaDirecciones().size() + 1;
-                }
+                }*/
 
+                System.out.println("ID CLIENTE: " +idCliente);                
                 //Validamos lo básico
                 if (nombreDir.equals("")) {
                     mensajeError = "Rellene el campo NOMBRE DE DIRECCION";
@@ -69,7 +70,6 @@ public class Direcciones extends HttpServlet {
                 dir.setTelefono(telefono);
                 dir.setDireccion(direccion);
                 dir.setIdCliente(idCliente);
-                dir.setIdDireccion(idDireccion);
                 
                 //Para meter los enteros tenemos que comprobar que no vienen vacíos
                 if (!pueblo.equals("")) {

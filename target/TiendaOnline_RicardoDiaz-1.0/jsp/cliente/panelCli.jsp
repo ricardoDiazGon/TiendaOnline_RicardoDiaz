@@ -7,15 +7,13 @@
 <c:set var="nombre" value="${requestScope.nombre}"/>
 <c:set var="apellidos" value="${requestScope.apellidos}"/>
 <c:set var="nif" value="${requestScope.nif}"/>
-<c:set var="email" value="${requestScope.email}"/>
 <c:set var="fechaNacimiento" value="${requestScope.fechaNacimiento}"/>
 
-<c:if test="${sessionScope.usuario.cliente != null}">
+<c:if test="${sessionScope.usuario.cliente.nombre != 'null'}">
     <c:set var="readonly" value="readonly" />
     <c:set var="nombre" value="${sessionScope.usuario.cliente.nombre}"/>
     <c:set var="apellidos" value="${sessionScope.usuario.cliente.apellidos}"/>
     <c:set var="nif" value="${sessionScope.usuario.cliente.NIF}"/>
-    <c:set var="email" value="${sessionScope.usuario.cliente.email}"/>
     <c:set var="fechaNacimiento" value="${sessionScope.usuario.cliente.fechaNacimiento}"/>
 </c:if>
 
@@ -44,21 +42,15 @@
                     </ol>
 
                     <!-- Si los usuarios no han dado de alta el cliente aun -->
-                    <c:if test="${sessionScope.usuario.cliente == null}">
+                    <c:if test="${sessionScope.usuario.cliente.nombre == 'null'}">
                         <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Regístrese como cliente para realizar compras</strong>
                         </div>
                     </c:if>
-                    <!-- Si cuando venimos de registrar el cliente nos ha devuelto ok -->
-                    <c:if test="${requestScope.errorCliente == 'ok'}">
-                        <div class="alert alert-success text-center center-block alert-dismissable col-md-offset-1 col-md-6">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Los datos de cliente han sido guardados correctamente</strong>
-                        </div>
-                    </c:if>
-                    <!-- Si venimos de introducir una dirección y nos ha devuelto ok -->
-                    <c:if test="${requestScope.errorDirec == 'ok'}">
+                    <!-- Si cuando venimos de registrar el cliente nos ha devuelto ok 
+                         ó Si venimos de introducir una dirección y nos ha devuelto ok -->
+                    <c:if test="${requestScope.errorDirec == 'ok' or  requestScope.errorCliente == 'ok'}">
                         <div class="alert alert-success text-center center-block alert-dismissable col-md-offset-1 col-md-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Los datos de cliente han sido guardados correctamente</strong>
@@ -109,11 +101,6 @@
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="claveNueRep" class="control-label">Email</label>
-                                        <input id="claveNueRep" type="text" class="form-control" name="email" placeholder="Email" ${readonly} value="${email}" />                                        
-                                    </div>
-
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
                                         <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
                                         <input id="fechaNacimiento" type="date" class="form-control" name="fechaNacimiento" ${readonly} value="${fechaNacimiento}"/>
                                     </div> 
@@ -130,7 +117,7 @@
                         </div>
 
                         <!-- Solo mostramos las direcciones y la posibilidad de añadir si está registrado como cliente -->
-                        <c:if test="${sessionScope.usuario.cliente != null}">
+                        <c:if test="${sessionScope.usuario.cliente.nombre != 'null'}">
                             <!-- Lista Direcciones -->
                             <c:forEach items="${sessionScope.usuario.cliente.listaDirecciones}" var="dir">
                                 <div class="panel panel-default">

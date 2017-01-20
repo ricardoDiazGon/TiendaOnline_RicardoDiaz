@@ -41,8 +41,8 @@
                             <form id="datos-user" class="form-inline" role="form">
                                 <div class="panel-body">
                                     <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="userName" class="control-label">Nombre de usuario</label>
-                                        <input id="userName" type="text" class="form-control" name="userName" value="${sessionScope.usuario.userName}" placeholder="Nombre de usuario" readonly="">                                        
+                                        <label for="email" class="control-label">Email (UserName)</label>
+                                        <input id="email" type="text" class="form-control" name="email" value="${sessionScope.usuario.email}" placeholder="Email (UserName)" readonly="">                                        
                                     </div>
                                 </div>
                             </form>     

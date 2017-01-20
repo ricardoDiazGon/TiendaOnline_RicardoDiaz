@@ -17,17 +17,16 @@ public class DireccionesDAO implements IDireccionesDAO {
         int errorSQL = 0;
         String sql = null;
 
-        sql = "INSERT INTO Direcciones VALUES(?,?,?,?,?,?,?)";
+        sql = "INSERT INTO Direcciones VALUES(0,?,?,?,?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
                      
-            preparada.setInt(1, direccion.getIdDireccion());
-            preparada.setInt(2, direccion.getIdCliente());
-            preparada.setString(3, direccion.getNombreDireccion());
-            preparada.setString(4, direccion.getDireccion());
-            preparada.setString(5, direccion.getCodigoPostal());
-            preparada.setInt(6, direccion.getIdPueblo());
-            preparada.setString(7, direccion.getTelefono());
+            preparada.setInt(1, direccion.getIdCliente());
+            preparada.setString(2, direccion.getNombreDireccion());
+            preparada.setString(3, direccion.getDireccion());
+            preparada.setString(4, direccion.getCodigoPostal());
+            preparada.setInt(5, direccion.getIdPueblo());
+            preparada.setString(6, direccion.getTelefono());
             preparada.executeUpdate();
             preparada.close();
         } catch (SQLException ex) {
@@ -44,6 +43,7 @@ public class DireccionesDAO implements IDireccionesDAO {
 
         String sql = "SELECT * FROM Direcciones D INNER JOIN Pueblos P ON  D.IdPueblo =  P.IdPueblo "
                 + "INNER JOIN Provincias Pr ON P.IdProvincia = Pr.IdProvincia " + clausulaWhere;
+        
         Statement sentencia = null;
         ResultSet resultado = null;
         ArrayList<Direccion> listaDirecciones = null;

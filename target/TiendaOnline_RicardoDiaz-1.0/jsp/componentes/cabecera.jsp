@@ -3,7 +3,7 @@
 
 <header class="row container" id="cabecera">
     <figure class="col-sm-3" id="logo">
-        <a href="${pageContext.servletContext.contextPath}/navProductos"><img src="${pageContext.servletContext.contextPath}/imagenes/logoINFOAlbarregas1.png" alt="logoRicardo"/></a>
+        <a href="${pageContext.servletContext.contextPath}/navProductos"><img src="${pageContext.servletContext.contextPath}/imagenes/logoINFOAlbarregas1.png" alt="logoINFOAlbarregas1.png"/></a>
     </figure>
     <div class="col-sm-offset-1 col-sm-8 row text-right" style="padding-top: 60px;" id="toolbar">
 

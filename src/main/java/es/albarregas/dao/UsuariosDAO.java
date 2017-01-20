@@ -1,8 +1,6 @@
 package es.albarregas.dao;
 
-import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Usuario;
-import es.albarregas.daofactory.DAOFactory;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +20,7 @@ public class UsuariosDAO implements IUsuariosDAO {
         sql = "INSERT INTO usuarios VALUES(0,?,?,?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
-            preparada.setString(1, usuario.getUserName());
+            preparada.setString(1, usuario.getEmail());
             preparada.setString(2, usuario.getClave());
             preparada.setTimestamp(3, new java.sql.Timestamp(usuario.getUltimoAcceso().getTime()));
             preparada.setString(4, usuario.getTipo());
@@ -56,7 +54,7 @@ public class UsuariosDAO implements IUsuariosDAO {
             while (resultado.next()) {
                 usuario = new Usuario();
                 usuario.setIdUsuario(resultado.getInt("IdUsuario"));
-                usuario.setUserName(resultado.getString("UserName"));
+                usuario.setEmail(resultado.getString("Email"));
                 usuario.setClave(resultado.getString("Clave"));
                 usuario.setUltimoAcceso(resultado.getTimestamp("UltimoAcceso"));
                 usuario.setTipo(resultado.getString("Tipo"));
@@ -86,8 +84,8 @@ public class UsuariosDAO implements IUsuariosDAO {
             Actualizamos solamente los datos que nos vengan diferentes, para ello comparamos con los datos obtenidos
             de la base de datos. Los que sean iguales se dejan.
          */
-        if (!usuario.getUserName().equals(usuario2.getUserName())) {
-            sql.append("SET UserName = '" + usuario.getUserName() + "'");
+        if (!usuario.getEmail().equals(usuario2.getEmail())) {
+            sql.append("SET Email = '" + usuario.getEmail() + "'");
             set = true;
         }
 

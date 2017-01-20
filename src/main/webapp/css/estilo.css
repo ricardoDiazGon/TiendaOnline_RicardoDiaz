@@ -188,7 +188,6 @@ ul.dropdown-menu li{
 }
 
 #listaBuscar tr{
-    padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: dotted 1px black;
     list-style: none;
@@ -205,10 +204,11 @@ ul.dropdown-menu li{
     color: white;
 }
 
+
 #listaBuscar a{
-    display: inline-block;
+    display: block;
     height: 100%;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 #listaBuscar a:hover{

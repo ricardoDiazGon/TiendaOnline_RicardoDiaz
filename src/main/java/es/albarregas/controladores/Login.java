@@ -5,7 +5,6 @@ import es.albarregas.beans.Direccion;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IDireccionesDAO;
-import es.albarregas.dao.IPueblosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -31,14 +30,14 @@ public class Login extends HttpServlet {
         //Si viene de hacer login
         if (request.getParameter("login") != null) {
 
-            String userName = request.getParameter("userName");
+            String email = request.getParameter("email");
             String clave = request.getParameter("clave");
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
             Usuario usuario = null;
 
-            if (userName.equals("")) {
-                error.append(" El nombre de usuario no puede estar vacío. ");
+            if (email.equals("")) {
+                error.append(" El email (UserName) no puede estar vacío. ");
             }
             if (clave.equals("")) {
                 error.append(" La contraseña no puede estar vacía. ");
@@ -46,9 +45,9 @@ public class Login extends HttpServlet {
 
             //Si no hay errores seguimos...
             if (error.length() == 0) {
-                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE UserName = '" + userName + "' AND Clave = '" + clave + "'");
+                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE Email = '" + email + "' AND Clave = '" + clave + "'");
                 if (listaUsuarios.isEmpty()) {
-                    error.append("El nombre de usuario o la clave no son correctos.");
+                    error.append("El email (UserName) o la clave no son correctos.");
                 } else {
                     usuario = listaUsuarios.get(0);
                     //Recuperamos el cliente que le corresponde al usuario
@@ -79,10 +78,10 @@ public class Login extends HttpServlet {
 
                     sesion.setAttribute("usuario", usuario);
                 } else {
-                    request.setAttribute("login", "El usuario \"" + usuario.getUserName() + "\" ha sido bloqueado");
+                    request.setAttribute("login", "El usuario \"" + usuario.getEmail() + "\" ha sido bloqueado");
                 }
             } else {
-                request.setAttribute("userName", userName);
+                request.setAttribute("email", email);
                 request.setAttribute("clave", clave);
                 request.setAttribute("login", error.toString());
             }

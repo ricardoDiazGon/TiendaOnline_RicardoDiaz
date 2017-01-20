@@ -28,7 +28,7 @@ function aniadirFilasProductos(objetoJSON, contexto) {
             contenido +=  "<tr><td><img src='" +contexto +"/imagenes/imagenesProductos/" +prodEncontrados[i].Imagenes[0].Imagen +"'/></td>" + 
                     "<td class='nombre'>" 
                     +"<a href=" +contexto + "/navProductos?opt=amp&param=" +prodEncontrados[i].IdProducto +">"
-                    +prodEncontrados[i].Denominacion +"</a></td>" + "</tr>";
+                    +prodEncontrados[i].Denominacion +"</a></td></tr>";
         }
 
         document.getElementById("listaBuscar").innerHTML = contenido;

@@ -15,10 +15,10 @@
             </div>
             <div class="modal-body">
                 <form id="loginform" class="form-horizontal" role="form" method="post" action="${pageContext.servletContext.contextPath}/registro">
-                    <label for="userName" class="control-label">Nombre de usuario</label>
+                    <label for="email)" class="control-label">Email (UserName)</label>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="userName" type="text" class="form-control" name="userName" value="${requestScope.userName}" placeholder="Nombre de usuario">                                        
+                        <input id="email" type="text" class="form-control" name="email" value="${requestScope.email}" placeholder="Email (UserName)">                                        
                     </div>
                     
                     <label for="clave" class="control-label">Contraseña</label>

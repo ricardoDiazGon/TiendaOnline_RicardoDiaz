@@ -8,6 +8,7 @@ import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,19 +31,22 @@ public class Registro extends HttpServlet {
         String url = "";
         String error = "";
         HttpSession sesion = request.getSession(true);
-        //Solo hacemos cosas si se ha pulsado el botón registrar
+        /*
+            Solo hacemos cosas si se ha pulsado el botón registrar
+            Este es el registro inicial, de los datos de usuario
+         */
         if (request.getParameter("registrar") != null) {
             sesion = request.getSession(true);
-            String userName = request.getParameter("userName");
+            String email = request.getParameter("email");
             String clave = request.getParameter("clave");
             String claveRep = request.getParameter("claveRep");
             int sqlError = 0;
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
-
+            IClientesDAO icd = df.getClientesDAO();
             //Validamos 
-            if (userName.equals("")) {
-                error = "El campo NOMBRE DE USUARIO no puede estar vacío. ";
+            if (email.equals("")) {
+                error = "El campo Email (UserName) no puede estar vacío. ";
             } else if (clave.equals("")) {
                 error += "El campo CLAVE no puede estar vacía. ";
             } else if (claveRep.equals("")) {
@@ -54,7 +58,7 @@ public class Registro extends HttpServlet {
             //Si no hay errores
             if (error.equals("")) {
                 usuario = new Usuario();
-                usuario.setUserName(userName);
+                usuario.setEmail(email);
                 usuario.setClave(clave);
                 usuario.setTipo("u");
                 usuario.setBloqueado("n");
@@ -63,7 +67,7 @@ public class Registro extends HttpServlet {
                 sqlError = iud.addUsuarios(usuario);
                 if (sqlError == 1062) {
                     // 1022 es para las pk duplicadas
-                    error = "El nombre de usuario ya existe";
+                    error = "El Email (UserName) ya ha sido registrado";
                 } else if (sqlError != 0) {
                     error = "Ha ocurrido un error inesperado, vuelva a intentarlo más tarde";
                 }
@@ -75,19 +79,31 @@ public class Registro extends HttpServlet {
                 request.setAttribute("error", error);
             } else {
                 request.setAttribute("login", "ok");
+                cliente = new Cliente();
+                
+                //Necesitamos recuperar el usuario de la base de datos para coger el IdCliente, ya que es foreign key de usuarios
+                ArrayList<Usuario> listaUsuarios = iud.getUsuarios("WHERE Email = '" + usuario.getEmail() + "'");
+                for (Usuario usuarioObtenido : listaUsuarios) {
+                    cliente.setIdCliente(usuarioObtenido.getIdUsuario());
+                }
+                //Rellenamos los campos que no vamos a registrar al principio con null
+                cliente.setNombre("null");
+                cliente.setApellidos("null");
+                cliente.setNIF("null");
+                cliente.setFechaAlta(new Date());
+                icd.addClientes(cliente);
             }
 
-            request.setAttribute("userName", userName);
+            request.setAttribute("email", email);
             request.setAttribute("clave", clave);
             request.setAttribute("claveRep", claveRep);
-            
-        //Si hemos pulsado añadir los datos del cliente del panel de control del usuario    
+
+            //Si hemos pulsado añadir los datos del cliente del panel de control del usuario    
         } else if (request.getParameter("addCliente") != null) {
-            
+
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
             String nif = request.getParameter("NIF");
-            String email = request.getParameter("email");
             String fechaNacimiento = request.getParameter("fechaNacimiento");
 
             //Validación de los campos
@@ -97,13 +113,11 @@ public class Registro extends HttpServlet {
                 error = "El campo APELLIDOS no puede estar vacío";
             } else if (nif.trim().equals("")) {
                 error = "El campo NIF no puede estar vacío";
-            } else if (email.trim().equals("")) {
-                error = "El campo EMAIL no puede estar vacío";
             } else if (fechaNacimiento.trim().equals("")) {
                 error = "El campo FECHA DE NACIMIENTO no puede estar vacío";
             }
 
-            System.out.println("Fecha Nacimiento" +fechaNacimiento);
+            System.out.println("Fecha Nacimiento" + fechaNacimiento);
             if (error.equals("")) {
                 try {
                     usuario = (Usuario) sesion.getAttribute("usuario");
@@ -112,19 +126,17 @@ public class Registro extends HttpServlet {
                     cliente.setNombre(nombre);
                     cliente.setApellidos(apellidos);
                     cliente.setNIF(nif);
-                    cliente.setEmail(email);
                     SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
                     Date fechaNac = null;
                     fechaNac = formatoFecha.parse(fechaNacimiento);
                     cliente.setFechaNacimiento(fechaNac);
-                    cliente.setFechaAlta(new Date());
 
                     DAOFactory df = DAOFactory.getDAOFactory(1);
                     IClientesDAO icd = df.getClientesDAO();
-                    int errorSQL = icd.addClientes(cliente);
+                    int errorSQL = icd.updClientes(cliente);
                     if (errorSQL != 0) {
                         error = "No ha sido posible dar de alta los datos";
-                    }else{
+                    } else {
                         usuario.setCliente(cliente);
                         sesion.setAttribute("usuario", usuario);
                     }
@@ -143,9 +155,7 @@ public class Registro extends HttpServlet {
                 request.setAttribute("nombre", nombre);
                 request.setAttribute("apellidos", apellidos);
                 request.setAttribute("nif", nif);
-                request.setAttribute("email", email);
                 request.setAttribute("fechaNacimiento", fechaNacimiento);
-
             }
             request.setAttribute("errorCliente", error);
             url = "/jsp/cliente/panelCli.jsp";

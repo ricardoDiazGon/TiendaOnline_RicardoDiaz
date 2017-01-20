@@ -35,11 +35,11 @@
                     </c:when>
                     <c:otherwise>
                         <c:if test="${sessionScope.usuario.tipo == 'u'}">
-                            <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.userName}"/></a></li>
+                            <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.email}"/></a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp" data-toggle="modal"><span class="glyphicon glyphicon-home"></span> Panel Usuario</a></li>
                         </c:if>
                         <c:if test="${sessionScope.usuario.tipo == 'a'}">
-                            <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.userName}"/></a></li>
+                            <li><a id='bienvenido'>Bienvenido, <c:out value="${sessionScope.usuario.email}"/></a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp" data-toggle="modal"><span class="glyphicon glyphicon-home"></span> Panel Administración</a></li>              
                         </c:if>
                         <li><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok" data-toggle="modal"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>

@@ -9,7 +9,6 @@ public class Cliente implements Serializable{
     private int IdCliente;
     private String Nombre;
     private String Apellidos;
-    private String Email;
     private String NIF;
     private Date FechaNacimiento;
     private Date FechaAlta;
@@ -37,14 +36,6 @@ public class Cliente implements Serializable{
 
     public void setApellidos(String Apellidos) {
         this.Apellidos = Apellidos;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
     }
 
     public String getNIF() {

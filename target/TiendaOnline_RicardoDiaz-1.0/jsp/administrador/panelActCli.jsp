@@ -42,7 +42,7 @@
                             <table id="mytable" class="table table-bordred table-striped">
                                 <thead>
                                 <th>Id</th>
-                                <th>User Name</th>
+                                <th>Email (UserName)</th>
                                 <th>Fecha de actividad</th>
                                 <th>Bloquear</th>
                                 </thead>
@@ -51,14 +51,26 @@
                                         <c:if test="${usu.tipo == 'u'}">
                                             <tr>
                                                 <td>${usu.idUsuario}</td>
-                                                <td>${usu.userName}</td>
+                                                <td>${usu.email}</td>
                                                 <td>${usu.ultimoAcceso}</td>
                                                 <c:choose>
                                                     <c:when test="${usu.bloqueado == 'n'}">
-                                                        <td><p id="usuario${usu.idUsuario}" data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-sm" title="Bloquear" onclick="bloquearUsuario('${pageContext.servletContext.contextPath}', '${usu.idUsuario}')"><span class="glyphicon glyphicon-ban-circle"></span></button></p></td>
+                                                        <td>
+                                                            <p id="usuario${usu.idUsuario}" data-placement="top" data-toggle="tooltip">
+                                                                <button class="btn btn-success btn-sm" title="Bloquear" onclick="bloquearUsuario('${pageContext.servletContext.contextPath}', '${usu.idUsuario}')">                   
+                                                                    <span class="glyphicon glyphicon-ok-sign"></span>
+                                                                </button>
+                                                            </p>
+                                                        </td>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <td><p id="usuario${usu.idUsuario}" data-placement="top" data-toggle="tooltip"><button class="btn btn-success btn-sm"  title="Desbloquear" onclick="desbloquearUsuario('${pageContext.servletContext.contextPath}', '${usu.idUsuario}')"><span class="glyphicon glyphicon-ok-sign"></span></button></p></td>
+                                                        <td>
+                                                            <p id="usuario${usu.idUsuario}" data-placement="top" data-toggle="tooltip">
+                                                                <button class="btn btn-danger btn-sm"  title="Desbloquear" onclick="desbloquearUsuario('${pageContext.servletContext.contextPath}', '${usu.idUsuario}')">
+                                                                    <span class="glyphicon glyphicon-ban-circle"></span>
+                                                                </button>
+                                                            </p>
+                                                        </td>
                                                     </c:otherwise>    
                                                 </c:choose>
 
@@ -68,17 +80,6 @@
                                 </tbody>
 
                             </table>
-
-                            <div class="clearfix"></div>
-                            <ul class="pagination pull-right">
-                                <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                            </ul>
 
                         </div>
 

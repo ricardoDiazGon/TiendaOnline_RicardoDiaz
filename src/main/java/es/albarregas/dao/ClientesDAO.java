@@ -1,12 +1,11 @@
 package es.albarregas.dao;
 
 import es.albarregas.beans.Cliente;
-import es.albarregas.beans.Usuario;
-import es.albarregas.daofactory.DAOFactory;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLType;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -19,16 +18,16 @@ public class ClientesDAO implements IClientesDAO {
         int errorSQL = 0;
         String sql = null;
 
-        sql = "INSERT INTO Clientes VALUES(?,?,?,?,?,?,?)";
+        sql = "INSERT INTO Clientes VALUES(?,?,?,?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
             preparada.setInt(1, cliente.getIdCliente());
             preparada.setString(2, cliente.getNombre());
             preparada.setString(3, cliente.getApellidos());
-            preparada.setString(4, cliente.getEmail());
-            preparada.setString(5, cliente.getNIF());
-            preparada.setDate(6, new Date(cliente.getFechaNacimiento().getTime()));
-            preparada.setDate(7, new Date(cliente.getFechaAlta().getTime()));
+            preparada.setString(4, cliente.getNIF());
+            preparada.setNull(5, java.sql.Types.DATE);
+            preparada.setDate(6, new Date(cliente.getFechaAlta().getTime()));
+
             preparada.executeUpdate();
 
             //Cerramos las conexiones
@@ -60,7 +59,6 @@ public class ClientesDAO implements IClientesDAO {
                 cliente.setIdCliente(resultado.getInt("IdCliente"));
                 cliente.setNombre(resultado.getString("Nombre"));
                 cliente.setApellidos(resultado.getString("Apellidos"));
-                cliente.setEmail(resultado.getString("Email"));
                 cliente.setNIF(resultado.getString("NIF"));
                 cliente.setFechaNacimiento(resultado.getDate("FechaNacimiento"));
                 cliente.setFechaAlta(resultado.getDate("FechaAlta"));
@@ -103,15 +101,6 @@ public class ClientesDAO implements IClientesDAO {
             }
         }
 
-        if (!cliente.getEmail().equals(cliente2.getEmail())) {
-            if (set) {
-                sql.append(", Email = '" + cliente.getEmail() + "'");
-            } else {
-                sql.append("SET Email = '" + cliente.getEmail() + "'");
-                set = true;
-            }
-        }
-
         if (!cliente.getNIF().equals(cliente2.getNIF())) {
             if (set) {
                 sql.append(", NIF = '" + cliente.getNIF() + "'");
@@ -123,9 +112,9 @@ public class ClientesDAO implements IClientesDAO {
 
         if (!cliente.getFechaNacimiento().equals(cliente2.getFechaNacimiento())) {
             if (set) {
-                sql.append(", FechaNacimiento = '" + cliente.getFechaNacimiento() + "'");
+                sql.append(", FechaNacimiento = '" + new Date(cliente.getFechaNacimiento().getTime()) + "'");
             } else {
-                sql.append("SET FechaNacimiento = '" + cliente.getFechaNacimiento() + "'");
+                sql.append("SET FechaNacimiento = '" + new Date(cliente.getFechaNacimiento().getTime()) + "'");
                 set = true;
             }
         }

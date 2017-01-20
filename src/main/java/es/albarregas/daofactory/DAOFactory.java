@@ -5,9 +5,14 @@ import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
 import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IDireccionesDAO;
+import es.albarregas.dao.IFacturasDAO;
 import es.albarregas.dao.IGeneralDAO;
 import es.albarregas.dao.IIMagenesDAO;
+import es.albarregas.dao.ILineasPedidosDAO;
+import es.albarregas.dao.IMarcasDAO;
+import es.albarregas.dao.IPedidosDAO;
 import es.albarregas.dao.IProductosDAO;
+import es.albarregas.dao.IProveedoresDAO;
 import es.albarregas.dao.IProvinciasDAO;
 import es.albarregas.dao.IPueblosDAO;
 import es.albarregas.dao.IUsuariosDAO;
@@ -29,7 +34,11 @@ public abstract class DAOFactory {
     public abstract IGeneralDAO getGeneralDAO();
     public abstract ICaracteristicasDAO getCaracteristicasDAO();
     public abstract ICaractYProdsDAO getCaractYProdsDAO();
-    
+    public abstract IPedidosDAO getPedidosDAO();
+    public abstract ILineasPedidosDAO getLineasPedidosDAO();
+    public abstract IMarcasDAO getMarcasDAO();
+    public abstract IProveedoresDAO getProveedoresDAO();
+    public abstract IFacturasDAO getFacturasDAO();
     
     public static DAOFactory getDAOFactory(int tipo) {
         DAOFactory daof = null;
