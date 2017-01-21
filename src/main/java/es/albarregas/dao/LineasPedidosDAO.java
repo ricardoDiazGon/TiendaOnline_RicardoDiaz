@@ -7,7 +7,9 @@ package es.albarregas.dao;
 
 import es.albarregas.beans.LineaPedido;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,7 +46,33 @@ public class LineasPedidosDAO implements ILineasPedidosDAO{
 
     @Override
     public ArrayList<LineaPedido> getLineasPedidos(String clausulaWhere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM LineasPedidos " + clausulaWhere;
+        Statement sentencia;
+        ArrayList<LineaPedido> listaLineasPedidos = null;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            ResultSet resultado = sentencia.executeQuery(sql);
+
+            listaLineasPedidos = new ArrayList();
+            LineaPedido lineaPedido = null;
+            while (resultado.next()) {
+                lineaPedido = new LineaPedido();
+                lineaPedido.setIdPedido(resultado.getInt("IdPedido"));
+                lineaPedido.setNumeroLinea(resultado.getInt("NumeroLinea"));
+                lineaPedido.setIdProducto(resultado.getInt("IdProducto"));
+                lineaPedido.setCantidad(resultado.getInt("Cantidad"));
+                lineaPedido.setPrecioUnitario(resultado.getDouble("PrecioUnitario"));
+                listaLineasPedidos.add(lineaPedido);
+            }
+
+            resultado.close();
+            sentencia.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        this.closeConnection();
+        return listaLineasPedidos;
     }
 
     @Override

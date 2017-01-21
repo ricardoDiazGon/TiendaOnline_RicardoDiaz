@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.16, for Win64 (x86_64)
 --
--- Host: localhost    Database: empresaweb2017
+-- Host: localhost    Database: empresaWeb2017
 -- ------------------------------------------------------
 -- Server version	5.7.16-log
 
@@ -16,11 +16,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `caracteristicas`
+-- Current Database: `empresaWeb2017`
 --
 
-CREATE DATABASE empresaWeb2017 CHARSET UTF8;
-USE empresaWeb2017
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `empresaWeb2017` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+
+USE `empresaWeb2017`;
+
+--
+-- Table structure for table `caracteristicas`
+--
 
 DROP TABLE IF EXISTS `caracteristicas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -125,7 +130,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (14,'José','Bonaparte','12345678A','1985-10-01','2017-01-19 00:00:00'),(15,'Jesús','García','11223344A','1965-11-11','2017-01-20 00:00:00');
+INSERT INTO `clientes` VALUES (14,'José','Bonaparte','12345678A','1985-10-01','2017-01-19 00:00:00'),(15,'Jesús','García','11223344A','1965-11-11','2017-01-20 00:00:00'),(16,'Manuel','Marcos','1234','1980-02-15','2017-01-20 00:00:00');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +154,7 @@ CREATE TABLE `direcciones` (
   KEY `IdCliente_idx` (`IdCliente`),
   CONSTRAINT `DireccionesClientes` FOREIGN KEY (`IdCliente`) REFERENCES `clientes` (`IdCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `DireccionesPueblos` FOREIGN KEY (`IdPueblo`) REFERENCES `pueblos` (`IdPueblo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +163,7 @@ CREATE TABLE `direcciones` (
 
 LOCK TABLES `direcciones` WRITE;
 /*!40000 ALTER TABLE `direcciones` DISABLE KEYS */;
-INSERT INTO `direcciones` VALUES (1,14,'Casa del pueblo','calle Cervantes. 2','06850',3559,'912202122'),(2,14,'De la ciudad','Constitucion s/n','06800',3554,'924313131'),(3,14,'Casa de campo','Direccion del rio','06840',3558,'924111122'),(4,15,'Casa 1','Avda Europa, 1','06700',3534,'923123123'),(5,15,'Casa 2','Avda Conquistadores','06600',3509,'611223344');
+INSERT INTO `direcciones` VALUES (1,14,'Casa del pueblo','calle Cervantes. 2','06850',3559,'912202122'),(2,14,'De la ciudad','Constitucion s/n','06800',3554,'924313131'),(3,14,'Casa de campo','Direccion del rio','06840',3558,'924111122'),(4,15,'Casa 1','Avda Europa, 1','06700',3534,'923123123'),(5,15,'Casa 2','Avda Conquistadores','06600',3509,'611223344'),(6,16,'Casa del pueblo','calle tal','10300',6257,'921666');
 /*!40000 ALTER TABLE `direcciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -471,7 +476,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`IdUsuario`),
   UNIQUE KEY `UserName_UNIQUE` (`Email`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -480,7 +485,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'admin@admin.com','admin','2017-01-20 00:17:43','a','n'),(14,'pepe@pepe.com','12345','2017-01-20 00:07:35','u','s'),(15,'jesus@jesus.com','1234','2017-01-20 00:18:33','u','n');
+INSERT INTO `usuarios` VALUES (1,'admin@admin.com','admin','2017-01-20 17:30:52','a','n'),(14,'pepe@pepe.com','12345','2017-01-20 00:07:35','u','s'),(15,'jesus@jesus.com','1234','2017-01-20 00:18:33','u','n'),(16,'lolomarcos@gmail.com','12345','2017-01-20 17:39:44','u','n');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -493,4 +498,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-20 16:34:55
+-- Dump completed on 2017-01-21 11:25:51

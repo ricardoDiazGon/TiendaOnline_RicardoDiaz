@@ -8,7 +8,9 @@ package es.albarregas.dao;
 import es.albarregas.beans.Pedido;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +51,37 @@ public class PedidosDAO implements IPedidosDAO {
 
     @Override
     public ArrayList<Pedido> getPedidos(String clausulaWhere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM Pedidos " + clausulaWhere;
+        Statement sentencia;
+        ArrayList<Pedido> listaPedidos = null;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            ResultSet resultado = sentencia.executeQuery(sql);
+
+            listaPedidos = new ArrayList();
+            Pedido pedido = null;
+            while (resultado.next()) {
+                pedido = new Pedido();
+                pedido.setIdPedido(resultado.getInt("IdPedido"));
+                pedido.setFecha(resultado.getDate("Fecha"));
+                pedido.setEstado(resultado.getString("Estado"));
+                pedido.setIdCliente(resultado.getInt("IdCliente"));
+                pedido.setBaseImponible(resultado.getDouble("BaseImponible"));
+                pedido.setDescuento(resultado.getDouble("Descuento"));
+                pedido.setGastosEnvio(resultado.getDouble("GastosEnvio"));
+                pedido.setIva(resultado.getDouble("Iva"));
+                pedido.setIdDireccion(resultado.getInt("IdDireccion"));
+                listaPedidos.add(pedido);
+            }
+
+            resultado.close();
+            sentencia.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        this.closeConnection();
+        return listaPedidos;
     }
 
     @Override
