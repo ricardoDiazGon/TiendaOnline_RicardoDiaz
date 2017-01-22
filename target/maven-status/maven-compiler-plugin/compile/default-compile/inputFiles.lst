@@ -6,6 +6,7 @@ C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\Produc
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Categoria.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\ClientesDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IFacturasDAO.java
+C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\servletsAjax\AniadirAlCarrito.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\servletsAjax\BloqDesbloqAjax.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Cliente.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\FacturasDAO.java
@@ -42,6 +43,7 @@ C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Prov
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IIMagenesDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Direccion.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\MarcasDAO.java
+C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\servletsAjax\DescatalogarProd.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\CaracteristicasDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\CategoriasDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IProveedoresDAO.java
@@ -54,7 +56,6 @@ C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Fact
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\controladores\ActualizarUsuAdm.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\controladores\NavProductos.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Pedido.java
-C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\controladores\CargarProductos.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IPedidosDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\ICaractYProdsDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IPueblosDAO.java

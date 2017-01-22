@@ -229,3 +229,25 @@ table#opcionSlider{
 table#listaBuscar td.nombre{
     padding-left: 5px;
 }
+
+/* Carrito y navegador */
+#carrito{
+    font-size: 30pt;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+span#numCarrito{
+    padding-right: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 14pt;
+    background: #d34615;
+    color: white;
+    border-radius: 50px;
+}
+
+#navegadorPrincipal{
+
+}

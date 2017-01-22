@@ -18,10 +18,10 @@ import java.util.logging.Logger;
  *
  * @author Ricardo
  */
-public class LineasPedidosDAO implements ILineasPedidosDAO{
+public class LineasPedidosDAO implements ILineasPedidosDAO {
 
     @Override
-    public int addLineasPedidos(LineaPedido lineaPedido) {        
+    public int addLineasPedidos(LineaPedido lineaPedido) {
         int errorSQL = 0;
         String sql = null;
 
@@ -33,6 +33,7 @@ public class LineasPedidosDAO implements ILineasPedidosDAO{
             preparada.setInt(3, lineaPedido.getIdProducto());
             preparada.setInt(4, lineaPedido.getCantidad());
             preparada.setDouble(5, lineaPedido.getPrecioUnitario());
+            preparada.executeUpdate();
             preparada.close();
         } catch (SQLException ex) {
             Logger.getLogger(LineasPedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -77,17 +78,80 @@ public class LineasPedidosDAO implements ILineasPedidosDAO{
 
     @Override
     public int updLineasPedidos(LineaPedido lineaPedido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
+        boolean set = false;
+        ArrayList<LineaPedido> listaLineasPedidos = this.getLineasPedidos("WHERE IdPedido = " + lineaPedido.getIdPedido()
+                + " AND NumeroLinea = " + lineaPedido.getNumeroLinea());
+        LineaPedido lineaPedido2 = new LineaPedido();
+        for (LineaPedido lineaPedidoAct : listaLineasPedidos) {
+            lineaPedido2 = lineaPedidoAct;
+        }
+
+        StringBuilder sql = new StringBuilder();
+        sql.append("UPDATE LineasLineaPedidos ");
+        /* 
+            Actualizamos solamente los datos que nos vengan diferentes, para ello comparamos con los datos obtenidos
+            de la base de datos. Los que sean iguales se dejan.
+        */
+
+        if (lineaPedido.getCantidad() != lineaPedido2.getCantidad()) {
+            if (set) {
+                sql.append(", Cantidad = " + lineaPedido.getCantidad());
+            } else {
+                sql.append("SET Cantidad = '" + lineaPedido.getCantidad() + "'");
+                set = true;
+            }
+        }
+
+        if (lineaPedido.getPrecioUnitario() != lineaPedido2.getPrecioUnitario()) {
+            if (set) {
+                sql.append(", PrecioUnitario = " + lineaPedido.getPrecioUnitario());
+            } else {
+                sql.append("SET PrecioUnitario = " + lineaPedido.getPrecioUnitario());
+                set = true;
+            }
+        }
+
+        if (set) {
+            sql.append("WHERE IdPedido = " + lineaPedido.getIdPedido()
+                    + " AND NumeroLinea = " + lineaPedido.getNumeroLinea());
+            Statement sentencia = null;
+            try {
+                sentencia = ConnectionFactory.getConnection().createStatement();
+                sentencia.executeUpdate(sql.toString());
+                sentencia.close();
+                errorSQL = 0;
+            } catch (SQLException ex) {
+                Logger.getLogger(LineasPedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                errorSQL = ex.getErrorCode();
+            }
+        }
+        this.closeConnection();
+        return errorSQL;
     }
 
     @Override
     public int delLineasPedidos(String clausulaWhere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
+        
+        String sql = "DELETE FROM LineasPedidos" + clausulaWhere;
+        Statement sentencia;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            sentencia.executeUpdate(sql);           
+            sentencia.close();
+            this.closeConnection();        
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            errorSQL = ex.getErrorCode();
+        }
+        
+        return errorSQL;
     }
 
     @Override
     public void closeConnection() {
         ConnectionFactory.closeConnection();
     }
-    
+
 }

@@ -12,8 +12,10 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/efectosProductos.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
+        <c:set value="${pageContext.servletContext.contextPath}" var="contexto"/>
         <div id="contenedor-arriba">
             <!-- Cabecera -->
             <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -46,10 +48,10 @@
                         <select id="ordenar" class="form-control" onChange="location = document.getElementById('ordenar').value;">
                             <c:forTokens delims="," items="${ordenacion}" varStatus="loop" var="forma">
                                 <c:if test="${requestScope.orden == loop.index +1}">
-                                    <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=ind&ord=${loop.index +1}">Ordenado por ${forma}</option>
+                                    <option selected value="${contexto}/navProductos?opt=ind&ord=${loop.index +1}">Ordenado por ${forma}</option>
                                 </c:if>
                                 <c:if test="${requestScope.orden != loop.index +1}">
-                                    <option value="${pageContext.servletContext.contextPath}/navProductos?opt=ind&ord=${loop.index +1}">${forma}</option>
+                                    <option value="${contexto}/navProductos?opt=ind&ord=${loop.index +1}">${forma}</option>
                                 </c:if>
                             </c:forTokens>
                         </select>
@@ -62,9 +64,9 @@
                         <c:if test="${pro.oferta == 's'}">
                             <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="producto thumbnail text-center">
-                                    <a href="${pageContext.servletContext.contextPath}/navProductos?opt=amp&param=${pro.idProducto}">
+                                    <a href="${contexto}/navProductos?opt=amp&param=${pro.idProducto}">
                                         <c:forEach begin="0" end="0" items="${pro.imagenes}" var="imag">
-                                            <img class="img-responsive" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${imag.imagen}" alt="${pro.denominacion}">
+                                            <img class="img-responsive" src="${contexto}/imagenes/imagenesProductos/${imag.imagen}" alt="${pro.denominacion}">
                                         </c:forEach>
                                         <div class="caption">
                                             <h4 class="deno">${pro.denominacion}</h4>
@@ -73,7 +75,7 @@
                                         </div>
                                     </a>
                                     <div class="caption">
-                                        <p class="text-center btn-carrito"><a href="#" class="btn btn-success btn-md btn-block" role="button">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></p> 
+                                        <p class="text-center btn-carrito"><button class="btn btn-success btn-md btn-block" role="button" onclick="aniadirProducto('${contexto}', '${pro.idProducto}','1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
                                     </div>
                                 </div>
                             </div>

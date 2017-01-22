@@ -15,13 +15,14 @@ es\albarregas\eventos\Inicializar.class
 es\albarregas\dao\IUsuariosDAO.class
 es\albarregas\dao\ConnectionFactory.class
 es\albarregas\servletsAjax\DireccionAjax.class
+es\albarregas\servletsAjax\DescatalogarProd.class
 es\albarregas\dao\ICaracteristicasDAO.class
-es\albarregas\controladores\CargarProductos.class
 es\albarregas\dao\IMarcasDAO.class
 es\albarregas\dao\PueblosDAO.class
 es\albarregas\dao\ClientesDAO.class
 es\albarregas\dao\ImagenesDAO.class
 es\albarregas\dao\ILineasPedidosDAO.class
+es\albarregas\servletsAjax\AniadirAlCarrito.class
 es\albarregas\dao\ProvinciasDAO.class
 es\albarregas\beans\Pueblo.class
 es\albarregas\dao\ICategoriasDAO.class

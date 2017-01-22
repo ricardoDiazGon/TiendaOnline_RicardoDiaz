@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class ProductosDAO implements IProductosDAO{
 
     @Override
-    public int addClientes(Producto producto) {
+    public int addProductos(Producto producto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -26,7 +26,7 @@ public class ClientesDAO implements IClientesDAO {
             preparada.setString(3, cliente.getApellidos());
             preparada.setString(4, cliente.getNIF());
             preparada.setNull(5, java.sql.Types.DATE);
-            preparada.setDate(6, new Date(cliente.getFechaAlta().getTime()));
+            preparada.setTimestamp(6, new java.sql.Timestamp(cliente.getFechaAlta().getTime()));
 
             preparada.executeUpdate();
 
@@ -34,7 +34,7 @@ public class ClientesDAO implements IClientesDAO {
             preparada.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
             errorSQL = ex.getErrorCode();
         }
 
@@ -68,7 +68,7 @@ public class ClientesDAO implements IClientesDAO {
             resultado.close();
             sentencia.close();
         } catch (SQLException ex) {
-            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         this.closeConnection();

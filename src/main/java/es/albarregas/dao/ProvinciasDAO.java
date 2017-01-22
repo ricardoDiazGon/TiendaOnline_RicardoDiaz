@@ -32,7 +32,7 @@ public class ProvinciasDAO implements IProvinciasDAO {
             sentencia.close();
             resultado.close();
         } catch (SQLException ex) {
-            Logger.getLogger(PueblosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProvinciasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         this.closeConnection();

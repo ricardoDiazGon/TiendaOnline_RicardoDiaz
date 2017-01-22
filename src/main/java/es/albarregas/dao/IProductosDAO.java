@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface IProductosDAO {
     
-    public int addClientes(Producto producto);
+    public int addProductos(Producto producto);
 
     public ArrayList<Producto> getProductos(String clausulaWhere);
 

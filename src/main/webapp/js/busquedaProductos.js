@@ -5,7 +5,7 @@ function buscarProd(contexto) {
         peticion = new XMLHttpRequest();
         peticion.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                aniadirFilasProductos(this, contexto);
+                aniadirFilasProductos(this, contexto, texto);
             }
         };
 
@@ -17,9 +17,9 @@ function buscarProd(contexto) {
 }
 
 
-function aniadirFilasProductos(objetoJSON, contexto) {
+function aniadirFilasProductos(objetoJSON, contexto, texto) {
 
-    var prodEncontrados = JSON.parse(objetoJSON.responseText)
+    var prodEncontrados = JSON.parse(objetoJSON.responseText);
     var contenido = "";
     if (prodEncontrados != null && prodEncontrados.length > 0) {
 
@@ -33,7 +33,7 @@ function aniadirFilasProductos(objetoJSON, contexto) {
 
         document.getElementById("listaBuscar").innerHTML = contenido;
     } else {
-        vaciarOcultar();
+        document.getElementById("listaBuscar").innerHTML = "<tr><td><h4>No se ha encontrado ningún producto que contenga los caracteres \"" +texto +"\" </h4></td></tr>";
     }
 
 }

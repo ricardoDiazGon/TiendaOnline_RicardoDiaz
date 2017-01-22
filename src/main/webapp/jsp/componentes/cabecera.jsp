@@ -7,7 +7,7 @@
     </figure>
     <div class="col-sm-offset-1 col-sm-8 row text-right" style="padding-top: 60px;" id="toolbar">
 
-        <form id="busqueda" class="col-sm-8 col-xs-10 row">
+        <form id="busqueda" class="col-sm-8 col-xs-12 row">
             <div class="input-group col-xs-12">
                 <input type="text" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscarProd('${pageContext.servletContext.contextPath}')">
                 <div class="input-group-btn">
@@ -21,6 +21,11 @@
                 </table>
             </div>
         </form>
-        <a class="col-sm-offset-2 col-sm-2 col-xs-2" href="#"><span><img class="" src="${pageContext.servletContext.contextPath}/imagenes/carritoV.svg" style="height: 40px; width: 40px;"/></span></a>
+        <c:if test="${sessionScope.carrito != null}">
+            <div class="col-sm-offset-1 col-sm-3 col-xs-12 row">
+                <a><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>
+                    <span id="numCarrito" class="col-xs-2">${sessionScope.carrito.lineasPedidos.size()}</span></a>
+            </div>
+        </c:if>
     </div>
 </header>

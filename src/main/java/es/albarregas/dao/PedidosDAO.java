@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  */
 public class PedidosDAO implements IPedidosDAO {
 
+    // Estados: - P: Pendiente, X: Remitido, R: Recibido, N: Nuevo
     @Override
     public int addPedidos(Pedido pedido) {
         int errorSQL = 0;
@@ -29,7 +30,7 @@ public class PedidosDAO implements IPedidosDAO {
         sql = "INSERT INTO pedidos VALUES(0,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
-            preparada.setDate(1, (Date) pedido.getFecha());
+            preparada.setTimestamp(1, new java.sql.Timestamp(pedido.getFecha().getTime()));
             preparada.setString(2, pedido.getEstado());
             preparada.setInt(3, pedido.getIdCliente());
             preparada.setDouble(4, pedido.getBaseImponible());
@@ -37,10 +38,10 @@ public class PedidosDAO implements IPedidosDAO {
             preparada.setDouble(6, pedido.getGastosEnvio());
             preparada.setDouble(7, pedido.getIva());
             preparada.setInt(8, pedido.getIdDireccion());
-            preparada.setString(errorSQL, sql);
+            preparada.executeUpdate();
             preparada.close();
         } catch (SQLException ex) {
-            Logger.getLogger(PedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
             errorSQL = ex.getErrorCode();
         }
 
@@ -77,7 +78,8 @@ public class PedidosDAO implements IPedidosDAO {
             resultado.close();
             sentencia.close();
         } catch (SQLException ex) {
-            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
         this.closeConnection();
@@ -86,12 +88,101 @@ public class PedidosDAO implements IPedidosDAO {
 
     @Override
     public int updPedidos(Pedido pedido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
+        boolean set = false;
+        ArrayList<Pedido> listaPedidos = this.getPedidos("WHERE IdPedido = '" + pedido.getIdPedido() + "'");
+        Pedido pedido2 = listaPedidos.get(0);
+        StringBuilder sql = new StringBuilder();
+        sql.append("UPDATE Pedidos ");
+        /* 
+            Actualizamos solamente los datos que nos vengan diferentes, para ello comparamos con los datos obtenidos
+            de la base de datos. Los que sean iguales se dejan.
+         */
+        if (!pedido.getEstado().equals(pedido2.getEstado())) {
+            sql.append("SET Estado = '" + pedido.getEstado() + "'");
+            set = true;
+        }
+
+        if (pedido.getBaseImponible() != pedido2.getBaseImponible()) {
+            if (set) {
+                sql.append(", BaseImponible = " + pedido.getBaseImponible());
+            } else {
+                sql.append("SET BaseImponible = '" + pedido.getBaseImponible() + "'");
+                set = true;
+            }
+        }
+
+        if (pedido.getDescuento() != pedido2.getDescuento()) {
+            if (set) {
+                sql.append(", Descuento = " + pedido.getDescuento());
+            } else {
+                sql.append("SET Descuento = " + pedido.getDescuento());
+                set = true;
+            }
+        }
+
+        if (pedido.getGastosEnvio() != pedido2.getGastosEnvio()) {
+            if (set) {
+                sql.append(", GastosEnvio = " + pedido.getGastosEnvio());
+            } else {
+                sql.append("SET GastosEnvio = " + pedido.getGastosEnvio());
+                set = true;
+            }
+        }
+        
+        if (pedido.getIva() != pedido2.getIva()) {
+            if (set) {
+                sql.append(", Iva = " + pedido.getIva());
+            } else {
+                sql.append("SET Iva = " + pedido.getIva());
+                set = true;
+            }
+        }
+
+        if (pedido.getIdDireccion() != pedido2.getIdDireccion()) {
+            if (set) {
+                sql.append(", IdDireccion = " + pedido.getIdDireccion());
+            } else {
+                sql.append("SET IdDireccion = " + pedido.getIdDireccion());
+                set = true;
+            }
+        }        
+        
+        if (set) {
+            sql.append(" WHERE IdPedido = '" + pedido.getIdPedido() + "'");
+            Statement sentencia = null;
+            try {
+                sentencia = ConnectionFactory.getConnection().createStatement();
+                sentencia.executeUpdate(sql.toString());
+                sentencia.close();
+                errorSQL = 0;
+            } catch (SQLException ex) {
+                Logger.getLogger(PedidosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                errorSQL = ex.getErrorCode();
+            }
+        }
+        this.closeConnection();
+        return errorSQL;
     }
 
     @Override
     public int delPedidos(String clausulaWhere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
+        
+        String sql = "DELETE FROM Pedidos" + clausulaWhere;
+        Statement sentencia;
+        try {
+            sentencia = ConnectionFactory.getConnection().createStatement();
+            sentencia.executeUpdate(sql);           
+            sentencia.close();
+            this.closeConnection();        
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            errorSQL = ex.getErrorCode();
+        }
+        
+        return errorSQL;
+        
     }
 
     @Override

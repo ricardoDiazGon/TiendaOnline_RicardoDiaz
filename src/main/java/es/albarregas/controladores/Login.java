@@ -2,9 +2,13 @@ package es.albarregas.controladores;
 
 import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Direccion;
+import es.albarregas.beans.LineaPedido;
+import es.albarregas.beans.Pedido;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IDireccionesDAO;
+import es.albarregas.dao.ILineasPedidosDAO;
+import es.albarregas.dao.IPedidosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -34,6 +38,9 @@ public class Login extends HttpServlet {
             String clave = request.getParameter("clave");
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IUsuariosDAO iud = df.getUsuariosDAO();
+            IPedidosDAO iped = df.getPedidosDAO();
+            ILineasPedidosDAO ilpd = df.getLineasPedidosDAO();
+            
             Usuario usuario = null;
 
             if (email.equals("")) {
@@ -74,9 +81,18 @@ public class Login extends HttpServlet {
                     //Solo enviamos el usuario a la sesión si sabemos seguro que existe y se ha registrado bien
                     usuario.setUltimoAcceso(new Date());
                     int errorSQL = iud.updUsuarios(usuario);
-                    System.out.println("Codigo sql update: " + errorSQL);
 
                     sesion.setAttribute("usuario", usuario);
+                    ArrayList<Pedido> listaPedidos = iped.getPedidos("WHERE IdCliente = " +usuario.getCliente().getIdCliente()
+                            + " AND Estado = 'n'");
+                    
+                    ArrayList<LineaPedido> listaLineasPedidos = null;
+                    for(Pedido pedido : listaPedidos){
+                        listaLineasPedidos = ilpd.getLineasPedidos("WHERE IdPedido = " +pedido.getIdPedido());
+                        pedido.setLineasPedidos(listaLineasPedidos);
+                        sesion.setAttribute("carrito", pedido);
+                    }
+                    
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getEmail() + "\" ha sido bloqueado");
                 }
