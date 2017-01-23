@@ -11,6 +11,7 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>   
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
         <!-- Cabecera -->
@@ -65,10 +66,10 @@
 
                             <article class="producto container-fluid row">
                                 <div class="col-md-5">
-                                    <h3><input class="form-control" type="number" min="1" max="100" value="1" size="5"/></h3>
+                                    <h3><input id="cantidadProducto" class="form-control" type="number" min="1" max="100" value="1" size="5"/></h3>
                                 </div>
                                 <div class="text-center  col-md-offset-1  col-md-6">
-                                    <h3 class="btn-carrito"><a href="#" class="btn btn-success btn-lg" role="button">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></h3>
+                                    <h3 class="btn-carrito"><button class="btn btn-success btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
                                 </div>                 
                             </article> 
                             <article class="producto container-fluid row">

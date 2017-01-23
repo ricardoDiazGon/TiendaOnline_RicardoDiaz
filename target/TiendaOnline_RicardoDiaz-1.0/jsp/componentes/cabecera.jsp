@@ -23,7 +23,7 @@
         </form>
         <c:if test="${sessionScope.carrito != null}">
             <div class="col-sm-offset-1 col-sm-3 col-xs-12 row">
-                <a><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>
+                <a href="${pageContext.servletContext.contextPath}/carrito"><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>
                     <span id="numCarrito" class="col-xs-2">${sessionScope.carrito.lineasPedidos.size()}</span></a>
             </div>
         </c:if>

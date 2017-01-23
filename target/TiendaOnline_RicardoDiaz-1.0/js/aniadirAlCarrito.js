@@ -1,4 +1,7 @@
 function aniadirProducto(contexto, idProducto, cantidad) {
+    if(cantidad == undefined){
+        cantidad = document.getElementById("cantidadProducto").value;
+    }
     var url = contexto + "/aniadirAlCarrito?pro=" + idProducto + "&can=" + cantidad;
     var peticion = false;
     peticion = new XMLHttpRequest();

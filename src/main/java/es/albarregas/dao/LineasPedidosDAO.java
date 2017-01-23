@@ -88,7 +88,7 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
         }
 
         StringBuilder sql = new StringBuilder();
-        sql.append("UPDATE LineasLineaPedidos ");
+        sql.append("UPDATE LineasPedidos ");
         /* 
             Actualizamos solamente los datos que nos vengan diferentes, para ello comparamos con los datos obtenidos
             de la base de datos. Los que sean iguales se dejan.

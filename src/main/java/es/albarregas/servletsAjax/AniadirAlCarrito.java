@@ -88,21 +88,53 @@ public class AniadirAlCarrito extends HttpServlet {
                 sesion.setAttribute("carrito", pedido);
             } else {
                 //Si ya había cosas en el carrito...
+                boolean lineaEncontrada = false;
                 pedido = (Pedido) sesion.getAttribute("carrito");
                 int numeroLinea = pedido.getLineasPedidos().size() + 1;
+
+                /* Si el producto que metemos en el carrito ya lo tenemos
+                 habrá que actualizarlo con la cantidad total */
+                for (LineaPedido lineaPedAux : pedido.getLineasPedidos()) {
+                    if (lineaPedAux.getIdProducto() == idProducto) {
+                        lineaEncontrada = true;
+                        numeroLinea = lineaPedAux.getNumeroLinea();
+                        cantidad += lineaPedAux.getCantidad();
+                    }
+                }
+
                 lineaPedido.setCantidad(cantidad);
                 lineaPedido.setNumeroLinea(numeroLinea);
                 lineaPedido.setIdPedido(pedido.getIdPedido());
                 lineaPedido.setIdProducto(idProducto);
 
-                errorSql = ilpd.addLineasPedidos(lineaPedido);
+                if (lineaEncontrada) {
 
-                if (errorSql == 0) {
-                    listaLineasPedidos = pedido.getLineasPedidos();
-                    listaLineasPedidos.add(lineaPedido);
-                    pedido.setLineasPedidos(listaLineasPedidos);
+                    errorSql = ilpd.updLineasPedidos(lineaPedido);
 
-                    sesion.setAttribute("carrito", pedido);
+                    if (errorSql == 0) {
+                        listaLineasPedidos = pedido.getLineasPedidos();
+                        //Tenemos que actualizar los datos también en sesión, no podemos añadir
+                        for(LineaPedido lineaPedAux: listaLineasPedidos){
+                            if(lineaPedAux.getNumeroLinea() == numeroLinea){
+                                lineaPedAux.setCantidad(cantidad);
+                            }
+                        }
+                        
+                        pedido.setLineasPedidos(listaLineasPedidos);
+
+                        sesion.setAttribute("carrito", pedido);
+                    }
+
+                } else {
+                    errorSql = ilpd.addLineasPedidos(lineaPedido);
+
+                    if (errorSql == 0) {
+                        listaLineasPedidos = pedido.getLineasPedidos();
+                        listaLineasPedidos.add(lineaPedido);
+                        pedido.setLineasPedidos(listaLineasPedidos);
+
+                        sesion.setAttribute("carrito", pedido);
+                    }
                 }
 
             }

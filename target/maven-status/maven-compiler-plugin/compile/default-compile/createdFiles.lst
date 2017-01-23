@@ -36,6 +36,7 @@ es\albarregas\dao\CaracteristicasDAO.class
 es\albarregas\beans\LineaPedido.class
 es\albarregas\beans\Categoria.class
 es\albarregas\beans\Usuario.class
+es\albarregas\controladores\Carrito.class
 es\albarregas\beans\Factura.class
 es\albarregas\dao\IClientesDAO.class
 es\albarregas\beans\CaractYProd.class

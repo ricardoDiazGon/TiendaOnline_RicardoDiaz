@@ -7,9 +7,11 @@ package es.albarregas.eventos;
 
 import es.albarregas.beans.Caracteristica;
 import es.albarregas.beans.Categoria;
+import es.albarregas.beans.General;
 import es.albarregas.beans.Producto;
 import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
+import es.albarregas.dao.IGeneralDAO;
 import es.albarregas.dao.IIMagenesDAO;
 import es.albarregas.dao.IProductosDAO;
 import es.albarregas.daofactory.DAOFactory;
@@ -31,6 +33,7 @@ public class Inicializar implements ServletContextListener {
         ICategoriasDAO icd = df.getCategoriasDAO();
         IIMagenesDAO iid = df.getImagenesDAO();
         ICaracteristicasDAO icard = df.getCaracteristicasDAO();
+        IGeneralDAO igd = df.getGeneralDAO();
 
         ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
         ArrayList<Categoria> listaCategorias = icd.getCategorias("");
@@ -51,11 +54,14 @@ public class Inicializar implements ServletContextListener {
             }
         }
 
+        General general = igd.getGeneral("");
+        
         ServletContext contexto = sce.getServletContext();
         synchronized (contexto) {
             contexto.setAttribute("productos", listaProductos);
             contexto.setAttribute("categorias", listaCategorias);
             contexto.setAttribute("proSlider", listaProductosSlider);
+            contexto.setAttribute("general", general);
         }
 
     }
@@ -68,6 +74,7 @@ public class Inicializar implements ServletContextListener {
             contexto.removeAttribute("productos");
             contexto.removeAttribute("categorias");
             contexto.removeAttribute("proSlider");
+            contexto.removeAttribute("general");
         }
     }
 

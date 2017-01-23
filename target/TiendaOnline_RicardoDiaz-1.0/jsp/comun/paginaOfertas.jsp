@@ -11,6 +11,7 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/efectosProductos.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
         <div id="contenedor-arriba">
@@ -69,7 +70,7 @@
                                         </div>
                                     </a>
                                     <div class="caption">
-                                        <p class="text-center btn-carrito"><a href="#" class="btn btn-success btn-md btn-block" role="button">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></p> 
+                                        <p class="text-center btn-carrito"><button class="btn btn-success btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}','1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
                                     </div>
                                 </div>
                             </div>

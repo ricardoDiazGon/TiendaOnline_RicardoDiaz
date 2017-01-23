@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class General implements Serializable{
     
     private double GastosEnvio;
-    private double IVA;
+    private double Iva;
 
     public double getGastosEnvio() {
         return GastosEnvio;
@@ -18,12 +18,12 @@ public class General implements Serializable{
         this.GastosEnvio = GastosEnvio;
     }
 
-    public double getIVA() {
-        return IVA;
+    public double getIva() {
+        return Iva;
     }
 
-    public void setIVA(double IVA) {
-        this.IVA = IVA;
+    public void setIva(double Iva) {
+        this.Iva = Iva;
     }
  
 
