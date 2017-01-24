@@ -1,4 +1,5 @@
 # TiendaOnline_RicardoDiaz
+- War actualizado, que se me había pasado... 24/01/2017 17:15
 - Implementada la paginación con opcion de elegir productos por página, mejora del carrito y añadir, empezando el trabaje con nosotros para Manuel.
 - Primera interfaz gráfica de carrito y primera mejora de añadir lineasPedido v1.0...
 - Primera funcionalidad (icono y poco más) de carrito terminada, mejora de búsqueda simple con ajax... falta paginacion con numero de elementos por página
