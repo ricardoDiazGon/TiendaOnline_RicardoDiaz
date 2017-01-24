@@ -19,14 +19,24 @@
                         <c:forEach begin="0" end="0" items="${pro.imagenes}" var="imag">
                             <img class="img-responsive" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${imag.imagen}" style="height: 400px; width:1200px">
                         </c:forEach>
+                    </a>
                         <div class="carousel-caption">
                             <h3>${pro.denominacion}</h3>
                             <h3 class="precioProducto"><b>${pro.precioUnitario} €</b></h3>
+                            <c:set value="btn-success" var="tipoBoton" />
+                            <c:if test="${sessionScope.usuario.cliente == null}">
+                                <c:set var="dis" value="disabled"/>
+                                <c:set value="btn-default" var="tipoBoton" />
+                            </c:if>
+
+
+                            <p class="text-center"><button ${dis} class="btn ${tipoBoton} btn-lg " role="button" onclick="aniadirProducto('${contexto}', '${pro.idProducto}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
+
                         </div>
                 </div>
                 <c:set var="centinela" value="${centinela + 1}"/>
             </c:forEach>
-            </a>
+            
         </div>
         <!-- End Carousel Inner -->
         <c:set var="centinela" value="0"/> 

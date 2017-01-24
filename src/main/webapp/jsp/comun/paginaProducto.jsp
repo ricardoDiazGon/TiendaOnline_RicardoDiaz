@@ -11,9 +11,10 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/slider.js"></script>   
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
+        <c:set var="opt" value="cat" />
         <!-- Cabecera -->
         <jsp:include page="/jsp/componentes/cabecera.jsp"/>
 
@@ -25,7 +26,7 @@
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li> <a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${pro.idCategoria}">${pro.nombreCategoria}</a></li>
+                        <li> <a href="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${pro.idCategoria}">${pro.nombreCategoria}</a></li>
                         <li class="active">${pro.denominacion}</li>
                     </ol>
                 </div>
@@ -68,8 +69,16 @@
                                 <div class="col-md-5">
                                     <h3><input id="cantidadProducto" class="form-control" type="number" min="1" max="100" value="1" size="5"/></h3>
                                 </div>
+
+                                <!-- Si no hay usuario registrado botones comprar disabled -->    
+                                <c:set value="btn-success" var="tipoBoton" />
+                                <c:if test="${sessionScope.usuario.cliente == null}">
+                                    <c:set var="dis" value="disabled"/>
+                                    <c:set value="btn-default" var="tipoBoton" />
+                                </c:if>  
+
                                 <div class="text-center  col-md-offset-1  col-md-6">
-                                    <h3 class="btn-carrito"><button class="btn btn-success btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
+                                    <h3 class="btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
                                 </div>                 
                             </article> 
                             <article class="producto container-fluid row">

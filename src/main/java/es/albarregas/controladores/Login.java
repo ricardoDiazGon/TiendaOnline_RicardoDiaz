@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
             IUsuariosDAO iud = df.getUsuariosDAO();
             IPedidosDAO iped = df.getPedidosDAO();
             ILineasPedidosDAO ilpd = df.getLineasPedidosDAO();
-            
+
             Usuario usuario = null;
 
             if (email.equals("")) {
@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
                     //Recuperamos las direcciones
                     if (usuario.getCliente() != null) {
                         IDireccionesDAO idd = df.getDireccionesDAO();
-                        ArrayList<Direccion> listaDirecciones = idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario());   
+                        ArrayList<Direccion> listaDirecciones = idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario());
                         usuario.getCliente().setListaDirecciones(listaDirecciones);
                     }
 
@@ -83,16 +83,18 @@ public class Login extends HttpServlet {
                     int errorSQL = iud.updUsuarios(usuario);
 
                     sesion.setAttribute("usuario", usuario);
-                    ArrayList<Pedido> listaPedidos = iped.getPedidos("WHERE IdCliente = " +usuario.getCliente().getIdCliente()
-                            + " AND Estado = 'n'");
-                    
-                    ArrayList<LineaPedido> listaLineasPedidos = null;
-                    for(Pedido pedido : listaPedidos){
-                        listaLineasPedidos = ilpd.getLineasPedidos("WHERE IdPedido = " +pedido.getIdPedido());
-                        pedido.setLineasPedidos(listaLineasPedidos);
-                        sesion.setAttribute("carrito", pedido);
+                    //El carrito solo es para usuario no admin
+                    if (usuario.getTipo().equals("u")) {
+                        ArrayList<Pedido> listaPedidos = iped.getPedidos("WHERE IdCliente = " + usuario.getCliente().getIdCliente()
+                                + " AND Estado = 'n'");
+
+                        ArrayList<LineaPedido> listaLineasPedidos = null;
+                        for (Pedido pedido : listaPedidos) {
+                            listaLineasPedidos = ilpd.getLineasPedidos("WHERE IdPedido = " + pedido.getIdPedido());
+                            pedido.setLineasPedidos(listaLineasPedidos);
+                            sesion.setAttribute("carrito", pedido);
+                        }
                     }
-                    
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getEmail() + "\" ha sido bloqueado");
                 }

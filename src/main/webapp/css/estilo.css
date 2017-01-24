@@ -248,6 +248,26 @@ span#numCarrito{
     border-radius: 50px;
 }
 
-#navegadorPrincipal{
+#tabla-carrito th{
+    background: #d34615;
+    color: rgb(253,253,253);
+}
 
+#resul-carrito{
+    background: rgba(25,25,50,0.8);
+    color: #fcfcfc;
+}
+
+/* Footer */
+
+footer div ul{
+    margin-top: 20px;
+}
+
+footer div ul li{
+    list-style: none;
+}
+
+panel{
+    box-shadow: 10px 10px 5px gray;
 }

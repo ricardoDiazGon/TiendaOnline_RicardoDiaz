@@ -9,7 +9,7 @@
 
         <form id="busqueda" class="col-sm-8 col-xs-12 row">
             <div class="input-group col-xs-12">
-                <input type="text" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscarProd('${pageContext.servletContext.contextPath}')">
+                <input type="search" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscarProd('${pageContext.servletContext.contextPath}')">
                 <div class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         <i class="glyphicon glyphicon-search"></i>
@@ -21,7 +21,7 @@
                 </table>
             </div>
         </form>
-        <c:if test="${sessionScope.carrito != null}">
+        <c:if test="${sessionScope.usuario.cliente != null}">
             <div class="col-sm-offset-1 col-sm-3 col-xs-12 row">
                 <a href="${pageContext.servletContext.contextPath}/carrito"><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>
                     <span id="numCarrito" class="col-xs-2">${sessionScope.carrito.lineasPedidos.size()}</span></a>

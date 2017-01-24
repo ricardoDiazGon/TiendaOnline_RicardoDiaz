@@ -1,5 +1,6 @@
 /*
-    Controlador de la navegación entre productos. También para cuando seleccionamos alguno para ampliarlo
+    Controlador de la navegación entre productos. También para cuando seleccionamos alguno para ampliarlo   
+    Este controlador es muy importante, ya que gestiona la paginación, ordenación y demás de cada sección
  */
 package es.albarregas.controladores;
 
@@ -28,6 +29,7 @@ public class NavProductos extends HttpServlet {
         String opcion = "ind";
         String orden = "1";
         String param = "1";
+        String prodPorPagina = "8";
         int pagina = 1;
 
         try {
@@ -46,6 +48,9 @@ public class NavProductos extends HttpServlet {
             }
             if (request.getParameter("ord") != null) {
                 orden = request.getParameter("ord");
+            }
+            if(request.getParameter("pxp") != null){
+                prodPorPagina = request.getParameter("pxp");
             }
 
             switch (opcion) {
@@ -88,8 +93,8 @@ public class NavProductos extends HttpServlet {
                     }
 
                     //Cosas propias de la paginación
-                    int max = 8 * pagina;
-                    int min = 8 * (pagina - 1);
+                    int max = Integer.parseInt(prodPorPagina) * pagina;
+                    int min = Integer.parseInt(prodPorPagina) * (pagina - 1);
                     double total = 0; //total de productos de la categoria que vamos a recorrer
                     if (!opcion.equals("tod")) {
                         for (int i = 0; i < productos.size(); i++) {
@@ -111,12 +116,13 @@ public class NavProductos extends HttpServlet {
                         }                     
                     }
                     //El número de páginas será el resultado del maximo entre el número de articulos, que serán 12              
-                    int pag = (int) Math.ceil(total / 8); //Math.ceil redondea al alza
+                    int pag = (int) Math.ceil(total / Integer.parseInt(prodPorPagina)); //Math.ceil redondea al alza
                     System.out.println(pag);
                     request.setAttribute("pag", pag);
 
                     request.setAttribute("orden", orden);
                     request.setAttribute("productosCat", productosCat);
+                    request.setAttribute("proxpag", prodPorPagina);
                     break;
 
                 default:

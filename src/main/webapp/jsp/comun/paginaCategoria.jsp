@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -11,9 +12,10 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/efectosProductos.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
     </head>
     <body class="container-fluid" onload="carousel()">
+        <c:set var="opt" value="cat"/>
         <div id="contenedor-arriba">
             <!-- Cabecera -->
             <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -42,17 +44,33 @@
                 <c:if test="${nombreCat != null}">
                     <h2>Sección de ${nombreCat}</h2>
 
-                    <!-- Método para hacer la ordenacion y sepamos donde poner el option seleccionado para saber que orden hay -->
-                    <c:set value="Nombre, Precio Ascendente, Precio Descendente, Popularidad" var="ordenacion"/>
-                    <div id="filtros" class="col-md-12 row">                
-                        <div class="col-md-3 col-md-offset-9">
+
+                    <!-- Hacemos el número de productos por página -->
+                    <div id="filtros" class="col-md-12 row">
+                        <c:set value="8,10,12,14,16,18,20" var="productosPorPagina"/>
+                        <div class="col-md-3 col-md-offset-6" onChange="location = document.getElementById('prodxpag').value;">
+                            <select id="prodxpag" class="form-control " size="1" name="npr">
+                                <c:forTokens delims="," items="${productosPorPagina}" var="pxp">
+                                    <c:if test="${pxp == requestScope.proxpag}">
+                                        <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${requestScope.orden}&pxp=${pxp}">Productos por página: ${pxp}</option>
+                                    </c:if>
+                                    <c:if test="${pxp != requestScope.proxpag}">
+                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}}&param=${idCat}&ord=${requestScope.orden}&pxp=${pxp}">${pxp}</option>
+                                    </c:if>
+                                </c:forTokens>
+                            </select>
+                        </div>
+
+                        <!-- Hacemos la ordenacion y sepamos donde poner el option seleccionado para saber que orden hay -->
+                        <c:set value="Nombre, Precio ascendente, Precio descendente, Popularidad" var="ordenacion"/>
+                        <div class="col-md-3">
                             <select id="ordenar" class="form-control" onChange="location = document.getElementById('ordenar').value;">
                                 <c:forTokens delims="," items="${ordenacion}" varStatus="loop" var="forma">
                                     <c:if test="${requestScope.orden == loop.index +1}">
-                                        <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${idCat}&ord=${loop.index +1}">Ordenado por ${forma}</option>
+                                        <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">${fn:toLowerCase(forma)}</option>
                                     </c:if>
                                     <c:if test="${requestScope.orden != loop.index +1}">
-                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${idCat}&ord=${loop.index +1}">${forma}</option>
+                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">Productos por página: ${pxp}</option>">${forma}</option>
                                     </c:if>
                                 </c:forTokens>
                             </select>
@@ -79,8 +97,15 @@
                                         <h3 class="precio">${pro.precioUnitario} €</h3>                                   
                                     </div>
                                 </a>
+
+                                <!-- Si no hay usuario registrado botones comprar disabled -->    
+                                <c:set value="btn-success" var="tipoBoton" />
+                                <c:if test="${sessionScope.usuario.cliente == null}">
+                                    <c:set var="dis" value="disabled"/>
+                                    <c:set value="btn-default" var="tipoBoton" />
+                                </c:if>    
                                 <div class="caption btn-carrito">
-                                    <p class="text-center btn-carrito"><button class="btn btn-success btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}','1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
+                                    <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +122,7 @@
                                     <li class="active"><a href="#">${loop.index}</a></li> 
                                     </c:when>
                                     <c:otherwise>
-                                    <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=cat&param=${idCat}&pag=${loop.index}&ord=${requestScope.orden}">${loop.index}</a></li> 
+                                    <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&pag=${loop.index}&ord=${requestScope.orden}&pxp=${requestScope.proxpag}">${loop.index}</a></li> 
                                     </c:otherwise>
                                 </c:choose>
 

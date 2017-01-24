@@ -46,6 +46,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- Lo pongo dentro del código porque es una acción muy específica que depende de una variable del request -->
 <c:if test="${requestScope.login != null}">
     <script>
         $("#cuadro-login").modal('toggle');

@@ -32,11 +32,11 @@
 
                 <!-- Menú de navegación -->
                 <div id="secciones" class="container row">
-                    <div class="col-md-offset-1 col-md-11 row">
+                    <div class="col-xs-offset-1 col-xs-11 row">
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4>Datos de tu carrito</h4></div>
                             <div class="panel-body">
-                                <table class="table table-responsive">
+                                <table id="tabla-carrito" class="table table-responsive table-striped">
                                     <tr><th colspan="2">ARTÍCULO</th><th>PRECIO</th> <th>IVA (%)</th> <th>PRECIO Iva incl</th> <th>UNIDADES</th><th>TOTAL</th></tr>
                                             <c:forEach items="${sessionScope.carrito.lineasPedidos}" var="lineaPed">
                                                 <c:forEach items="${productos}" var="pro">
@@ -45,7 +45,7 @@
                                                         <c:set value="${precioIva * lineaPed.cantidad}" var="precioTotalLinea"/>
                                                         <c:set value="${precioTotalLinea + precioTotal}" var="precioTotal"/>
                                                 <tr>
-                                                    <td><img height="75" width="75" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${pro.imagenes[1].imagen}" alt="${pro.imagenes[0].imagen}" /></td>
+                                                    <td><img height="75" width="75" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${pro.imagenes[0].imagen}" alt="${pro.imagenes[0].imagen}" /></td>
                                                     <td><c:out value="${pro.denominacion}"/></td>
                                                     <td><fmt:formatNumber type="currency" maxFractionDigits="2" value="${pro.precioUnitario}" /></td>
                                                     <td><fmt:formatNumber pattern="##" type="percent" value="${general.iva}"/></td>
@@ -57,7 +57,7 @@
 
                                         </c:forEach>
                                     </c:forEach>
-                                                <tr><td colspan="7"><h3 class="text-right">TOTAL: <fmt:formatNumber type="currency" minFractionDigits="2" value="${precioTotal}"/> </h3></td></tr>
+                                    <tr id="resul-carrito"><td colspan="7"><h3 class="text-right">TOTAL: <fmt:formatNumber type="currency" minFractionDigits="2" value="${precioTotal}"/> </h3></td></tr>
                                 </table>
                             </div>
                             <div class="panel-footer text-center">
