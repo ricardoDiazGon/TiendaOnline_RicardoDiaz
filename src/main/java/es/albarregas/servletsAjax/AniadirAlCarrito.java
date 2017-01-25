@@ -59,7 +59,8 @@ public class AniadirAlCarrito extends HttpServlet {
             LineaPedido lineaPedido = new LineaPedido();
             ArrayList<LineaPedido> listaLineasPedidos = null;
             int errorSql = 0;
-
+            
+            //Si el atributo de sesion está a null es que tenemos que crear el pedido también
             if (sesion.getAttribute("carrito") == null) {
                 //Si no habia nada en el carrito...
                 pedido = new Pedido();
@@ -91,7 +92,7 @@ public class AniadirAlCarrito extends HttpServlet {
                 boolean lineaEncontrada = false;
                 pedido = (Pedido) sesion.getAttribute("carrito");
                 int numeroLinea = pedido.getLineasPedidos().size() + 1;
-
+                
                 /* Si el producto que metemos en el carrito ya lo tenemos
                  habrá que actualizarlo con la cantidad total */
                 for (LineaPedido lineaPedAux : pedido.getLineasPedidos()) {
@@ -99,6 +100,7 @@ public class AniadirAlCarrito extends HttpServlet {
                         lineaEncontrada = true;
                         numeroLinea = lineaPedAux.getNumeroLinea();
                         cantidad += lineaPedAux.getCantidad();
+                        break;
                     }
                 }
 
@@ -106,7 +108,8 @@ public class AniadirAlCarrito extends HttpServlet {
                 lineaPedido.setNumeroLinea(numeroLinea);
                 lineaPedido.setIdPedido(pedido.getIdPedido());
                 lineaPedido.setIdProducto(idProducto);
-
+                
+                //Si el producto que vamos a añadir existe, tenemos que incrementar la cantidad
                 if (lineaEncontrada) {
 
                     errorSql = ilpd.updLineasPedidos(lineaPedido);
@@ -125,7 +128,12 @@ public class AniadirAlCarrito extends HttpServlet {
                         sesion.setAttribute("carrito", pedido);
                     }
 
+                    //Y sino existe tenemos que añadir la linea
                 } else {
+                    //Nos quedamos con el numero de linea de la ultima linea de productos. Esto se hace para
+                    //evitar problemas si eliminamos un producto, ya que siempre para el nuevo coge el numero anterior  +1
+                    numeroLinea = pedido.getLineasPedidos().get(numeroLinea - 2).getNumeroLinea() +1 ;
+                    lineaPedido.setNumeroLinea(numeroLinea);
                     errorSql = ilpd.addLineasPedidos(lineaPedido);
 
                     if (errorSql == 0) {

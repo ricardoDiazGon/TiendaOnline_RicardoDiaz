@@ -55,7 +55,7 @@
                                         <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${requestScope.orden}&pxp=${pxp}">Productos por página: ${pxp}</option>
                                     </c:if>
                                     <c:if test="${pxp != requestScope.proxpag}">
-                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}}&param=${idCat}&ord=${requestScope.orden}&pxp=${pxp}">${pxp}</option>
+                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${requestScope.orden}&pxp=${pxp}">${pxp}</option>
                                     </c:if>
                                 </c:forTokens>
                             </select>

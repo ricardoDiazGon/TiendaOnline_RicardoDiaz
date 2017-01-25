@@ -1,41 +1,49 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div id="cuadro-registro" class="row modal fade" tabindex="-1" role="dialog">
+<div id="panel-cv" class="row modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md row" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header text-center bg-primary">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 class="modal-title">Registro</h2>
-                <c:if test="${requestScope.error != null}">
-                    <div class="alert alert-danger" role="alert">
-                        <strong><c:out value="${requestScope.error}"/></strong>
-                    </div>
-                </c:if>
+                <h2 class="modal-title">Trabaja con nosotros</h2>
             </div>
             <div class="modal-body">
-                <form id="loginform" class="form-horizontal" role="form" method="post" action="${pageContext.servletContext.contextPath}/registro">
-                    <label for="email)" class="control-label">Nombre</label>
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="text" class="form-control" name="email" value="${requestScope.email}" placeholder="Email (UserName)">                                        
+                <form id="loginform" class="form-horizontal" role="form" method="post" action="#">
+                    <label for="nombre" class="control-label">Nombre</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="nombre" type="text" class="form-control" name="nombre" value="${sessionScope.usuario.cliente.nombre}" placeholder="Nombre">                                        
                     </div>
                     
-                    <label for="clave" class="control-label">Contraseña</label>
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="clave" type="password" class="form-control" name="clave" value="${requestScope.clave}" placeholder="Contraseña">
+                    <label for="apellidos" class="control-label">Apellidos</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="apellidos" type="text" class="form-control" name="apellidos" value="${sessionScope.usuario.cliente.apellidos}" placeholder="Apellidos">
                     </div>
                     
-                    <label for="claveRep" class="control-label">Repite tu contraseña</label>
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="claveRep" type="password" class="form-control" name="claveRep" value="${requestScope.claveRep}" placeholder="Repite tu contraseña">
+                    <label for="dni" class="control-label">DNI</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="dnip" type="text" class="form-control" name="dni" value="${sessionScope.usuario.cliente.nif}" placeholder="DNI/NIF">
                     </div>
+                    
+                    <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="fechaNacimiento" type="date" class="form-control" name="fechaNacimiento" value="${sessionScope.usuario.cliente.fechaNacimiento}">
+                    </div>
+                    
+                    <label for="email" class="control-label">Email</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="email" type="mail" class="form-control" name="claveRep" value="${sessionScope.usuario.email}" placeholder="Email">
+                    </div>
+                    
+                    <label for="cv" class="control-label">Curriculum Vitae (PDF/DOC)</label>
+                    <div style="margin-bottom: 10px">
+                        <input id="cv" type="file" class="form-control" name="cv" placeholder="Inserta el CV">
+                    </div>
+                    
                     <div class="modal-footer">
                         <div class="input-group col-md-12 text-center">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <input type="submit" class="btn btn-success" name="registrar" value="Registrarme"/>
+                            <input type="submit" class="btn btn-success" name="enviarCV" value="Enviar CV"/>
                         </div>
                     </div>
                 </form>     
@@ -44,3 +52,8 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+    <script>
+        function abrirCV(){
+            $("#panel-cv").modal('toggle');
+        }
+    </script>

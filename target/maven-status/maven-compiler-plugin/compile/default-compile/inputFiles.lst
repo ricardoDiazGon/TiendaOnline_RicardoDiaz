@@ -21,6 +21,7 @@ C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Line
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\ImagenesDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\PueblosDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\UsuariosDAO.java
+C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\servletsAjax\ModificarCantidadCarrito.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\controladores\Carrito.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Pueblo.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\PedidosDAO.java
@@ -51,6 +52,7 @@ C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\IProve
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\CaractYProd.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\controladores\Login.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\ProvinciasDAO.java
+C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\servletsAjax\EliminarCarrito.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\dao\ICaracteristicasDAO.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\daofactory\MySQLDAOFactory.java
 C:\proyectosJava\TiendaOnline_RicardoDiaz\src\main\java\es\albarregas\beans\Factura.java

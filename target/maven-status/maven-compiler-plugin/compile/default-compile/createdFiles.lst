@@ -3,6 +3,7 @@ es\albarregas\dao\UsuariosDAO.class
 es\albarregas\servletsAjax\BloqDesbloqAjax.class
 es\albarregas\dao\ProveedoresDAO.class
 es\albarregas\dao\GeneralDAO.class
+es\albarregas\servletsAjax\ModificarCantidadCarrito.class
 es\albarregas\dao\IDireccionesDAO.class
 es\albarregas\dao\IGeneralDAO.class
 es\albarregas\dao\IProveedoresDAO.class
@@ -33,6 +34,7 @@ es\albarregas\controladores\Login.class
 es\albarregas\beans\General.class
 es\albarregas\dao\CaractYProdsDAO.class
 es\albarregas\dao\CaracteristicasDAO.class
+es\albarregas\servletsAjax\EliminarCarrito.class
 es\albarregas\beans\LineaPedido.class
 es\albarregas\beans\Categoria.class
 es\albarregas\beans\Usuario.class

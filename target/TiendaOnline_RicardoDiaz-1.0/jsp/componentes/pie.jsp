@@ -14,8 +14,10 @@
     </div>
     <div class="col-xs-3 col-xs-offset-1">
         <ul>
-            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a href="#panel-cv" data-toogle="modal" onclick="abrirCV()">Trabaja con nosotros</a></li>
         </ul>
     </div>     
 </footer>
+
+        <jsp:include page="/jsp/componentes/trabajaConNosotros.jsp"/>
 </html>

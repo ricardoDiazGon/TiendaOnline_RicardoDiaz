@@ -251,12 +251,22 @@ span#numCarrito{
 #tabla-carrito th{
     background: #d34615;
     color: rgb(253,253,253);
+    text-align: center;
+}
+
+#tabla-carrito td{
+    vertical-align: center;
 }
 
 #resul-carrito{
     background: rgba(25,25,50,0.8);
     color: #fcfcfc;
 }
+
+#panel-carrito h2, #panel-carrito h3{
+    text-align: center;
+}
+
 
 /* Footer */
 

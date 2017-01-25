@@ -1,4 +1,7 @@
 # TiendaOnline_RicardoDiaz
+
+- Carrito mejorado, se pueden borrar lineas carrito, carrito entero y actualizar cantidades todo dinamico con ajax...
+además también hago panelillo de trabaje con nosotros. 25/01/2017 21:00
 - War actualizado, que se me había pasado... 24/01/2017 17:15
 - Implementada la paginación con opcion de elegir productos por página, mejora del carrito y añadir, empezando el trabaje con nosotros para Manuel.
 - Primera interfaz gráfica de carrito y primera mejora de añadir lineasPedido v1.0...

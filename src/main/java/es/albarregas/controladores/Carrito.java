@@ -26,7 +26,7 @@ public class Carrito extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String url = "";
         System.out.println("Pasando por controlador de carrito");
-        if(request.getSession().getAttribute("carrito") != null){
+        if(request.getSession().getAttribute("usuario") != null){
             url = "/jsp/cliente/carrito.jsp";
             System.out.println("Entrando en controlador de carrito");
         }

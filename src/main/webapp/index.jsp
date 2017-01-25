@@ -34,7 +34,7 @@
 
         <!-- Secciones -->
         <div id="secciones" class="container center-block row">
-            <section id="slider" class="col-sm-offset-2 col-sm-8 visible-lg visible-md visible-sm ">
+            <section id="slider" class="col-sm-offset-2 col-sm-8 visible-lg visible-md ">
                 <jsp:include page="/jsp/componentes/slider.jsp"/>
             </section>
 

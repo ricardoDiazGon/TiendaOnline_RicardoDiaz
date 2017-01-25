@@ -92,15 +92,11 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
         /* 
             Actualizamos solamente los datos que nos vengan diferentes, para ello comparamos con los datos obtenidos
             de la base de datos. Los que sean iguales se dejan.
-        */
+         */
 
         if (lineaPedido.getCantidad() != lineaPedido2.getCantidad()) {
-            if (set) {
-                sql.append(", Cantidad = " + lineaPedido.getCantidad());
-            } else {
-                sql.append("SET Cantidad = '" + lineaPedido.getCantidad() + "'");
-                set = true;
-            }
+            sql.append("SET Cantidad = '" + lineaPedido.getCantidad() + "'");
+            set = true;
         }
 
         if (lineaPedido.getPrecioUnitario() != lineaPedido2.getPrecioUnitario()) {
@@ -132,20 +128,20 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
 
     @Override
     public int delLineasPedidos(String clausulaWhere) {
-       int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
-        
-        String sql = "DELETE FROM LineasPedidos" + clausulaWhere;
+        int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
+
+        String sql = "DELETE FROM LineasPedidos " + clausulaWhere;
         Statement sentencia;
         try {
             sentencia = ConnectionFactory.getConnection().createStatement();
-            sentencia.executeUpdate(sql);           
+            sentencia.executeUpdate(sql);
             sentencia.close();
-            this.closeConnection();        
+            errorSQL = 0;
         } catch (SQLException ex) {
             ex.printStackTrace();
             errorSQL = ex.getErrorCode();
         }
-        
+        this.closeConnection();
         return errorSQL;
     }
 

@@ -129,7 +129,7 @@ public class PedidosDAO implements IPedidosDAO {
                 set = true;
             }
         }
-        
+
         if (pedido.getIva() != pedido2.getIva()) {
             if (set) {
                 sql.append(", Iva = " + pedido.getIva());
@@ -146,8 +146,8 @@ public class PedidosDAO implements IPedidosDAO {
                 sql.append("SET IdDireccion = " + pedido.getIdDireccion());
                 set = true;
             }
-        }        
-        
+        }
+
         if (set) {
             sql.append(" WHERE IdPedido = '" + pedido.getIdPedido() + "'");
             Statement sentencia = null;
@@ -168,21 +168,20 @@ public class PedidosDAO implements IPedidosDAO {
     @Override
     public int delPedidos(String clausulaWhere) {
         int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
-        
-        String sql = "DELETE FROM Pedidos" + clausulaWhere;
+
+        String sql = "DELETE FROM Pedidos " + clausulaWhere;
         Statement sentencia;
         try {
             sentencia = ConnectionFactory.getConnection().createStatement();
-            sentencia.executeUpdate(sql);           
+            sentencia.executeUpdate(sql);
             sentencia.close();
-            this.closeConnection();        
+            errorSQL = 0;
         } catch (SQLException ex) {
             ex.printStackTrace();
             errorSQL = ex.getErrorCode();
         }
-        
+        this.closeConnection();
         return errorSQL;
-        
     }
 
     @Override
