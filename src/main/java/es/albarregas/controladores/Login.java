@@ -110,8 +110,7 @@ public class Login extends HttpServlet {
             }
         }
 
-        request.getRequestDispatcher(url)
-                .forward(request, response);
+        request.getRequestDispatcher(url).forward(request, response);
     }
 
     @Override

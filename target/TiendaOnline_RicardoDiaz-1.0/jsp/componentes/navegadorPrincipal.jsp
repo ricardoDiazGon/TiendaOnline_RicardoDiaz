@@ -30,8 +30,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <c:choose>
                     <c:when test="${sessionScope.usuario == null}">
-                        <li><a href="#cuadro-registro" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                        <li><a href="#cuadro-login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+                        <li><a href="#cuadro-registro" data-toggle="modal" onclick="abrirRegistro()"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
+                        <li><a href="#cuadro-login" data-toggle="modal" onclick="abrirLogin()"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
                     </c:when>
                     <c:otherwise>
                         <c:if test="${sessionScope.usuario.tipo == 'u'}">

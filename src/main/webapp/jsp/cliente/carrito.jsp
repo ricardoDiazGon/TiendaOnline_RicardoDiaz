@@ -13,6 +13,8 @@
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/eliminarActualizarCarrito.js"></script>  
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/carritoAvanzar.js"></script>
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>

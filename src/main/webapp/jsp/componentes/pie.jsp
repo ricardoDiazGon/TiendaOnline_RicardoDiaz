@@ -16,8 +16,10 @@
         <ul>
             <li><a href="#panel-cv" data-toogle="modal" onclick="abrirCV()">Trabaja con nosotros</a></li>
         </ul>
-    </div>     
+    </div>  
+
+    <jsp:include page="/jsp/componentes/trabajaConNosotros.jsp"/>
 </footer>
 
-        <jsp:include page="/jsp/componentes/trabajaConNosotros.jsp"/>
+
 </html>

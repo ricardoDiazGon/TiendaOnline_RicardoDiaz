@@ -4,7 +4,7 @@
 
 <c:choose>
     <c:when test="${sessionScope.carrito != null}">
-        <div class="panel-heading"><h4>Datos de tu carrito</h4></div>
+        <div class="panel-heading"><h4>TU CARRITO | DATOS DEL PEDIDO</h4></div>
         <div class="panel-body">
             <table id="tabla-carrito" class="table table-responsive table-striped text-center">
                 <tr><th colspan="2">ARTÍCULO</th><th>PRECIO</th> <th>IVA (%)</th> <th>PRECIO Iva incl</th> <th>UNIDADES</th><th>TOTAL</th>
@@ -35,7 +35,7 @@
         <div class="panel-footer text-center container-fluid">
             <button class="btn btn-default btn-md col-xs-offset-2 col-xs-2" onclick="eliminarTodoCarrito('${pageContext.servletContext.contextPath}', '${carrito.idPedido}')" >Limpiar carrito</button>
             <a class="btn btn-primary btn-md col-xs-offset-1 col-xs-2" href="${pageContext.servletContext.contextPath}/navProductos">Seguir comprando</a>
-            <button class="btn btn-success btn-md col-xs-offset-1 col-xs-2" href="${pageContext.servletContext.contextPath}/carrito">Realizar pedido</button>
+            <button class="btn btn-success btn-md col-xs-offset-1 col-xs-2" onclick="irCarritoDatosPer('${pageContext.servletContext.contextPath}')">Realizar pedido</button>
         </div>
 
     </c:when>
@@ -44,7 +44,6 @@
         <div class="panel-body">
             <h2>Su carrito de la compra está vacío.</h2>
             <h3>Puede seguir comprando haciendo click <a href="${pageContext.servletContext.contextPath}/navProductos">aquí</a></h3>
-
         </div>       
     </div>
 </c:otherwise>

@@ -10,7 +10,8 @@
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
-                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>    
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
+                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -40,7 +41,7 @@
                             <div class="panel-heading"><h4>Datos de administrador</h4></div>
                             <form id="datos-user" class="form-inline" role="form">
                                 <div class="panel-body">
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="email" class="control-label">Email (UserName)</label>
                                         <input id="email" type="text" class="form-control" name="email" value="${sessionScope.usuario.email}" placeholder="Email (UserName)" readonly="">                                        
                                     </div>
@@ -69,23 +70,23 @@
                                         </div>
                                     </c:if>                      
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveAnt" class="control-label">Contraseña antigua</label>
-                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" placeholder="Contraseña antigua">                                        
+                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" required placeholder="Contraseña antigua">                                        
                                     </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNue" class="control-label">Contraseña nueva</label>
-                                        <input id="claveNue" type="password" class="form-control" name="claveNue" placeholder="Contraseña nueva">                                        
+                                        <input id="claveNue" type="password" class="form-control" name="claveNue" required placeholder="Contraseña nueva">                                        
                                     </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNueRep" class="control-label">Repetir contraseña</label>
-                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" placeholder="Repetir contraseña" >                                        
+                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" required placeholder="Repetir contraseña" >                                        
                                     </div> 
                                 </div>
                                 <div class="panel-footer">
-                                    <div class="input-group col-md-12 text-center">
+                                    <div class="input-group col-xs-12 text-center">
                                         <input type="submit" class="btn btn-success" name="updClave" value="Actualizar"/>
                                     </div>
                                 </div>

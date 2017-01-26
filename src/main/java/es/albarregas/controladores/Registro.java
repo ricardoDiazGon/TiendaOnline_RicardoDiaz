@@ -63,7 +63,6 @@ public class Registro extends HttpServlet {
                 usuario.setTipo("u");
                 usuario.setBloqueado("n");
                 usuario.setUltimoAcceso(new Date());
-                System.out.println(usuario.getUltimoAcceso());
                 sqlError = iud.addUsuarios(usuario);
                 if (sqlError == 1062) {
                     // 1022 es para las pk duplicadas
@@ -117,7 +116,6 @@ public class Registro extends HttpServlet {
                 error = "El campo FECHA DE NACIMIENTO no puede estar vacío";
             }
 
-            System.out.println("Fecha Nacimiento" + fechaNacimiento);
             if (error.equals("")) {
                 try {
                     usuario = (Usuario) sesion.getAttribute("usuario");
@@ -126,7 +124,7 @@ public class Registro extends HttpServlet {
                     cliente.setNombre(nombre);
                     cliente.setApellidos(apellidos);
                     cliente.setNIF(nif);
-                    SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+                    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/mm/yyyy");
                     Date fechaNac = null;
                     fechaNac = formatoFecha.parse(fechaNacimiento);
                     cliente.setFechaNacimiento(fechaNac);

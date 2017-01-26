@@ -2,11 +2,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header class="row container" id="cabecera">
-    <figure class="col-sm-3 col-xs-5"  id="logo">
+    <figure class="col-sm-3 col-xs-6"  id="logo">
         <a href="${pageContext.servletContext.contextPath}/navProductos"><img src="${pageContext.servletContext.contextPath}/imagenes/logoINFOAlbarregas1.png" alt="logoINFOAlbarregas1.png"/></a>
     </figure>
     
-    <div class="col-sm-offset-1 col-sm-8 col-xs-6 col-xs-offset-1 row text-right" style="padding-top: 60px;" id="toolbar">
+    <div class="col-sm-offset-1 col-sm-8 col-xs-6 row text-right" style="padding-top: 60px;" id="toolbar">
         <form id="busqueda" class="col-sm-8 col-xs-12 row">
             <div class="input-group col-xs-12">
                 <input type="search" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscarProd('${pageContext.servletContext.contextPath}')">

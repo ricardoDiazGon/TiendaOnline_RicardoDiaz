@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!-- Inicializamos los datos para saber si tenemos que dar la oportunidad de registro del cliente o no -->
 <c:set var="nameSubmit" value="addCliente"/>
@@ -29,6 +30,12 @@
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/direccion.js"></script>
+                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+
+                <!-- Con estas librerías de jquery pongo el campo fecha normal para firefox y otros navegadores donde no funciona el type date -->
+                <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/jquery-ui.css"> 
+                <script src="${pageContext.servletContext.contextPath}/js/jquery-ui.js"></script> 
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/campoFecha.js"></script>
             </head>
             <body class="container-fluid">
 
@@ -43,7 +50,7 @@
 
                     <!-- Si los usuarios no han dado de alta el cliente aun -->
                     <c:if test="${sessionScope.usuario.cliente.nombre == 'null'}">
-                        <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
+                        <div class="alert alert-info text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Regístrese como cliente para realizar compras</strong>
                         </div>
@@ -51,7 +58,7 @@
                     <!-- Si cuando venimos de registrar el cliente nos ha devuelto ok 
                          ó Si venimos de introducir una dirección y nos ha devuelto ok -->
                     <c:if test="${requestScope.errorDirec == 'ok' or  requestScope.errorCliente == 'ok'}">
-                        <div class="alert alert-success text-center center-block alert-dismissable col-md-offset-1 col-md-6">
+                        <div class="alert alert-success text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Los datos de cliente han sido guardados correctamente</strong>
                         </div>
@@ -85,30 +92,41 @@
                                         </div>
                                     </c:if>
                                     <!-- Controlamos si nos llega algún error -->                 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="nombre" class="control-label">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" value="${nombre}" ${readonly}>                                        
+                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" required ${readonly}>                                        
                                     </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="apellidos" class="control-label">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" ${readonly}>                                        
+                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" required ${readonly}>                                        
                                     </div>
 
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
+                                    <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="NIF" class="control-label">NIF</label>
-                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} value="${nif}">                                        
+                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} required value="${nif}">                                        
                                     </div>
-
-                                    <div style="margin-bottom: 25px" class="form-group col-md-4">
-                                        <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
-                                        <input id="fechaNacimiento" type="date" class="form-control" name="fechaNacimiento" ${readonly} value="${fechaNacimiento}"/>
-                                    </div> 
+                                    <c:if test="${readonly != null}">
+                                        <div style="margin-bottom: 25px" class="form-group col-xs-4">
+                                            <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+                                            <input id="fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" required value="<fmt:formatDate type="date" 
+                                                            dateStyle="long" timeStyle="long"  timeZone="GTM+1"
+                                                            value="${fechaNacimiento}" />" readonly placeholder="dd/mm/aaaa"/>
+                                        </div> 
+                                    </c:if>
+                                    <c:if test="${readonly == null}">
+                                        <div style="margin-bottom: 25px" class="form-group col-xs-4">
+                                            <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+                                            <input id="fecha" type="text" class="form-control" name="fechaNacimiento" required value="<fmt:formatDate type="date" 
+                                                            dateStyle="long" timeStyle="long"  timeZone="GTM+1"
+                                                            value="${fechaNacimiento}" />" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}"/>
+                                        </div> 
+                                    </c:if>
                                 </div>
 
                                 <c:if test="${readonly == null}">     
                                     <div class="panel-footer">
-                                        <div class="input-group col-md-12 text-center">
+                                        <div class="input-group col-xs-12 text-center">
                                             <input type="submit" class="btn btn-success" name="${nameSubmit}" value="${valueSubmit}"/>
                                         </div>
                                     </div>
@@ -173,7 +191,7 @@
                                                 <strong><c:out value="${requestScope.errorDirec}" /></strong>
                                             </div>
                                         </c:if>
-                                        
+
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="NombreDireccion" class="control-label">Nombre de la dirección</label>
                                             <input id="NombreDireccion" type="text" class="form-control" name="NombreDireccion" placeholder="Ej: Casa del pueblo" value="${requestScope.direc.nombreDireccion}">                                        
