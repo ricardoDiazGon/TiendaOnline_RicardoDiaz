@@ -1,5 +1,6 @@
 # TiendaOnline_RicardoDiaz
 
+- Interfaz de usuario y direcciones en carrito version 1.0 (mejoras en proceso)... 26/01/2017 20:05
 - Empezando interfaz de datos personales del carrito de la compra... cambio campo fecha a tipo jquery 26/01/2017 20:05
 - Carrito mejorado, se pueden borrar lineas carrito, carrito entero y actualizar cantidades todo dinamico con ajax...
 además también hago panelillo de trabaje con nosotros. 25/01/2017 21:00

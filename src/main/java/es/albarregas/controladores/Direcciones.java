@@ -41,11 +41,6 @@ public class Direcciones extends HttpServlet {
                 //Obtenemos el id de cliente
                 Usuario usuario = (Usuario) sesion.getAttribute("usuario");
                 int idCliente = usuario.getCliente().getIdCliente();
-                //Obtenemos el número de direcciones para saber cual es el IdDireccion
-                /*int idDireccion = 1;
-                if (usuario.getCliente().getListaDirecciones() != null) {
-                    idDireccion = usuario.getCliente().getListaDirecciones().size() + 1;
-                }*/
 
                 System.out.println("ID CLIENTE: " +idCliente);                
                 //Validamos lo básico
@@ -103,7 +98,13 @@ public class Direcciones extends HttpServlet {
                 if (!mensajeError.equals("") && !mensajeError.equals("ok")) {
                     request.setAttribute("direc", dir);
                 }
-                url = "/jsp/cliente/panelCli.jsp";
+                if(request.getParameter("formulario") != null && request.getParameter("formulario").equals("carrito")){
+                    url = "/jsp/cliente/carrito.jsp";
+                    request.setAttribute("datosDir", "ok");
+                }else{
+                    url = "/jsp/cliente/panelCli.jsp";
+                }
+                
 
             }
         }

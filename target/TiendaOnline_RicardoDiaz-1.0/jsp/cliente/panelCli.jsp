@@ -30,7 +30,7 @@
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/direccion.js"></script>
-                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
 
                 <!-- Con estas librerías de jquery pongo el campo fecha normal para firefox y otros navegadores donde no funciona el type date -->
                 <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/jquery-ui.css"> 
@@ -57,10 +57,17 @@
                     </c:if>
                     <!-- Si cuando venimos de registrar el cliente nos ha devuelto ok 
                          ó Si venimos de introducir una dirección y nos ha devuelto ok -->
-                    <c:if test="${requestScope.errorDirec == 'ok' or  requestScope.errorCliente == 'ok'}">
+                    <c:if test="${requestScope.errorCliente != null and  requestScope.errorCliente == 'ok'}">
                         <div class="alert alert-success text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Los datos de cliente han sido guardados correctamente</strong>
+                        </div>
+                    </c:if>
+                    
+                    <c:if test="${requestScope.errorDirec != null and requestScope.errorDirec == 'ok'}">
+                        <div class="alert alert-success text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>La dirección ha sido guardada correctamente</strong>
                         </div>
                     </c:if>
                 </div>

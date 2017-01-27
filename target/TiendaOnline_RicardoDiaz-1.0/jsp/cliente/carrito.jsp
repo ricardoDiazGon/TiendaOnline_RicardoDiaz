@@ -14,6 +14,7 @@
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/eliminarActualizarCarrito.js"></script>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/direccion.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/carritoAvanzar.js"></script>
             </head>
             <body class="container-fluid">
@@ -25,12 +26,6 @@
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
                         <li class="active">Carrito</li>
                     </ol>
-                    <c:if test="${sessionScope.usuario.cliente.nombre == 'null'}">
-                        <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"><strong>Regístrese como cliente para realizar compras</strong></a>
-                        </div>
-                    </c:if>
                 </div>
 
                 <!-- Menú de navegación -->
@@ -38,7 +33,18 @@
                     <div class="col-xs-offset-1 col-xs-11 row">
                         <div id="panel-carrito" class="panel panel-default">
                             <!-- Cargamos la página donde está el panel del carrito (haciendo un poco modulares los jsp) -->
-                            <jsp:include page="/jsp/componentes/panelCarritoIni.jsp"/>
+                            <c:choose>
+                                <c:when test="${requestScope.datosPer != null}">
+                                    <jsp:include page="/jsp/componentes/carritoDatosPer.jsp"/>
+                                </c:when>
+                                <c:when test="${requestScope.datosDir != null}">
+                                    <jsp:include page="/jsp/componentes/carritoDatosDir.jsp"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <jsp:include page="/jsp/componentes/panelCarritoIni.jsp"/>
+                                </c:otherwise>
+                            </c:choose>
+
                         </div>
                     </div>
                 </div>
