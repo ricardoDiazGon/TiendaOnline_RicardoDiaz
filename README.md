@@ -1,5 +1,6 @@
 # TiendaOnline_RicardoDiaz
 
+- Finalización del carrito, interfaz de pago completa por validar solo v.1.2 ... 30/01/2017 20:50
 - Interfaz de usuario y direcciones en carrito version 1.0 (mejoras en proceso)... 27/01/2017 20:05
 - Empezando interfaz de datos personales del carrito de la compra... cambio campo fecha a tipo jquery 26/01/2017 20:05
 - Carrito mejorado, se pueden borrar lineas carrito, carrito entero y actualizar cantidades todo dinamico con ajax...

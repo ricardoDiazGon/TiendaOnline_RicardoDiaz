@@ -8,14 +8,20 @@
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>Carrito | INFO Albarregas</title>
-                <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
-                <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
+                <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/migasPanCarrito.css" />
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/eliminarActualizarCarrito.js"></script>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/direccion.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/carritoAvanzar.js"></script>
+
+                <!-- Con estas librerías de jquery pongo el campo fecha normal para firefox y otros navegadores donde no funciona el type date -->
+                <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/jquery-ui.css"> 
+                <script src="${pageContext.servletContext.contextPath}/js/jquery-ui.js"></script> 
+
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -35,10 +41,10 @@
                             <!-- Cargamos la página donde está el panel del carrito (haciendo un poco modulares los jsp) -->
                             <c:choose>
                                 <c:when test="${requestScope.datosPer != null}">
-                                    <jsp:include page="/jsp/componentes/carritoDatosPer.jsp"/>
+                                    <jsp:include page="/jsp/componentes/panelCarritoDatosPer.jsp"/>
                                 </c:when>
                                 <c:when test="${requestScope.datosDir != null}">
-                                    <jsp:include page="/jsp/componentes/carritoDatosDir.jsp"/>
+                                    <jsp:include page="/jsp/componentes/panelCarritoDatosDir.jsp"/>
                                 </c:when>
                                 <c:otherwise>
                                     <jsp:include page="/jsp/componentes/panelCarritoIni.jsp"/>

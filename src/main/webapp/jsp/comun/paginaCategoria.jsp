@@ -105,7 +105,7 @@
                                     <c:set value="btn-default" var="tipoBoton" />
                                 </c:if>    
                                 <div class="caption btn-carrito">
-                                    <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
+                                    <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}, '${pro.stock}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
                                 </div>
                             </div>
                         </div>

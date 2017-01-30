@@ -62,6 +62,7 @@
 
 
                 <div class="row col-md-12">
+                    <div id="alerta-cantidad"></div>
                     <c:forEach items="${productos}" var="pro">
                         <c:if test="${pro.oferta == 's'}">
                             <div class="col-sm-6 col-md-4 col-lg-3">
@@ -82,10 +83,10 @@
                                         <c:set var="dis" value="disabled"/>
                                         <c:set value="btn-default" var="tipoBoton" />
                                     </c:if>
-                                        <div class="caption">
-                                            <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${contexto}', '${pro.idProducto}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
-                                        </div>
-                                    
+                                    <div class="caption">
+                                        <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${contexto}', '${pro.idProducto}', '${pro.stock}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
+                                    </div>
+
                                 </div>
                             </div>
                         </c:if>

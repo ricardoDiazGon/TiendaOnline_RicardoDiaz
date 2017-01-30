@@ -281,3 +281,11 @@ footer div ul li{
 panel{
     box-shadow: 10px 10px 5px gray;
 }
+
+/* Aviso de stock mínimo */
+.aviso-stock-usuario{
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    z-index: 1000;
+}

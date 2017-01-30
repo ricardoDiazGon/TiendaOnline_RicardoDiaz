@@ -156,7 +156,14 @@ public class Registro extends HttpServlet {
                 request.setAttribute("fechaNacimiento", fechaNacimiento);
             }
             request.setAttribute("errorCliente", error);
-            url = "/jsp/cliente/panelCli.jsp";
+            
+            if(request.getParameter("formulario") != null && request.getParameter("formulario").equals("carrito")){
+                request.setAttribute("datosPer", "ok");
+                url = "/jsp/cliente/carrito.jsp";
+            }else{
+                url = "/jsp/cliente/panelCli.jsp";
+            }
+            
 
         }
 

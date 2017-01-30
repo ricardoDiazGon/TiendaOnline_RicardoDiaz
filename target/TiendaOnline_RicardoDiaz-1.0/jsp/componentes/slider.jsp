@@ -30,7 +30,7 @@
                             </c:if>
 
 
-                            <p class="text-center"><button ${dis} class="btn ${tipoBoton} btn-lg " role="button" onclick="aniadirProducto('${contexto}', '${pro.idProducto}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
+                            <p class="text-center"><button ${dis} class="btn ${tipoBoton} btn-lg " role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '${pro.stock}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p> 
 
                         </div>
                 </div>

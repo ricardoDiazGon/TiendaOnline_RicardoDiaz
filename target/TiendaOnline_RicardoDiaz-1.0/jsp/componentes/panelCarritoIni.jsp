@@ -4,16 +4,30 @@
 
 <c:choose>
     <c:when test="${sessionScope.carrito != null}">
-        <div class="panel-heading"><h4>TU CARRITO | DATOS DEL PEDIDO</h4></div>
+        <div class="panel-heading bg-primary">
+            <h4>TU CARRITO | DATOS DEL PEDIDO</h4>
+        </div>
         <div class="panel-body">
+            <div class="center-block text-center">
+                <div class="row">
+                    <ul class="breadcrumb2  visible-lg visible-md">
+                        <li class="active"><a href="javascript:void(0);">Datos del pedido</a></li>
+                        <li><a href="javascript:void(0);">Datos personales</a></li>
+                        <li><a href="javascript:void(0);">Datos de envío</a></li>
+                        <li><a href="javascript:void(0);">Pago</a></li>
+                        <li><a href="javascript:void(0);">Factura</a></li>
+                    </ul>
+                </div>
+            </div>        
             <table id="tabla-carrito" class="table table-responsive table-striped text-center">
-                <tr><th colspan="2">ARTÍCULO</th><th>PRECIO</th> <th>IVA (%)</th> <th>PRECIO Iva incl</th> <th>UNIDADES</th><th>TOTAL</th>
+                <!--Al precio le quitamos el IVA, no se lo sumamos-->
+                <tr><th colspan="2">ARTÍCULO</th><th>PRECIO</th> <th>IVA (%)</th> <th>IVA (€)</th> <th>UNIDADES</th><th>TOTAL</th>
                     <th>ELIMINAR</th></tr>
                         <c:forEach items="${sessionScope.carrito.lineasPedidos}" var="lineaPed">
                             <c:forEach items="${productos}" var="pro">
                                 <c:if test="${lineaPed.idProducto == pro.idProducto}">
-                                    <c:set value="${(pro.precioUnitario * general.iva)/100 + pro.precioUnitario}" var="precioIva"/>
-                                    <c:set value="${precioIva * lineaPed.cantidad}" var="precioTotalLinea"/>
+                                    <c:set value="${(pro.precioUnitario * general.iva)/100}" var="precioIva"/>
+                                    <c:set value="${pro.precioUnitario * lineaPed.cantidad}" var="precioTotalLinea"/>
                                     <c:set value="${precioTotalLinea + precioTotal}" var="precioTotal"/>
                             <tr id="filaCarrito${lineaPed.numeroLinea}">
                                 <td><img height="75" width="75" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${pro.imagenes[0].imagen}" alt="${pro.imagenes[0].imagen}" /></td>
@@ -29,6 +43,8 @@
 
                     </c:forEach>
                 </c:forEach>
+                <c:set value="${precioTotal + general.gastosEnvio}" var="precioTotal"/>
+                <tr><td colspan="8"><h4><b>Gastos de envío: <fmt:formatNumber maxFractionDigits="2" type="currency" value="${general.gastosEnvio}"/></b></h4></td></td></tr>
                 <tr id="resul-carrito"><td colspan="8"><h3 class="text-right">TOTAL: <fmt:formatNumber type="currency" minFractionDigits="2" value="${precioTotal}"/> </h3></td></tr>
             </table>
         </div>

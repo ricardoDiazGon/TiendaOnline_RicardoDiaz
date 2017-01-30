@@ -64,7 +64,7 @@
                                     <h3>Producto en oferta. ¡Aproveche!</h3>
                                 </c:if>
                             </article>
-
+                            <div id="alerta-cantidad"></div>
                             <article class="producto container-fluid row">
                                 <div class="col-md-5">
                                     <h3><input id="cantidadProducto" class="form-control" type="number" min="1" max="100" value="1" size="5"/></h3>
@@ -78,7 +78,7 @@
                                 </c:if>  
 
                                 <div class="text-center  col-md-offset-1  col-md-6">
-                                    <h3 class="btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
+                                    <h3 class="btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '${pro.stock}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
                                 </div>                 
                             </article> 
                             <article class="producto container-fluid row">
