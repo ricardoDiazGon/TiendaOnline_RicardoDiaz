@@ -3,7 +3,9 @@
  */
 package es.albarregas.servletsAjax;
 
+import es.albarregas.beans.Producto;
 import es.albarregas.beans.Usuario;
+import es.albarregas.dao.IProductosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -21,29 +23,35 @@ public class BloqDesbloqAjax extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        
+
         String entidad = request.getParameter("entidad");
         String id = request.getParameter("id");
         String accion = request.getParameter("accion");
-        
-        if(entidad.equals("usuario")){
-            DAOFactory df = DAOFactory.getDAOFactory(1);
+        DAOFactory df = DAOFactory.getDAOFactory(1);
+        String estado = "n"; //variable con la que vemos si bloqueamos o desbloqueamos
+        if (entidad.equals("usuario")) {
             IUsuariosDAO iud = df.getUsuariosDAO();
-            String estado = "n"; //variable con la que vemos si bloqueamos o desbloqueamos
-            Usuario usuario = iud.getUsuarios("WHERE IdUsuario = " +Integer.parseInt(id)).get(0);
-            
-            if(accion.equals("bloquear")){
+            Usuario usuario = iud.getUsuarios("WHERE IdUsuario = " + id).get(0);
+
+            if (accion.equals("bloquear")) {
                 estado = "s";
             }
             usuario.setIdUsuario(Integer.parseInt(id));
             usuario.setBloqueado(estado);
             iud.updUsuarios(usuario);
-        }else{
-            //para los productos
-        }
-        
-    }
+        } else {
 
+            IProductosDAO iprd = df.getProductosDAO();
+            Producto producto = iprd.getProductos("WHERE IdProducto = " + id).get(0);
+            if (accion.equals("descatalogar")) {
+                estado = "s";
+            }
+            producto.setIdProducto(Integer.parseInt(id));
+            producto.setFueraCatalogo(estado);
+            iprd.updProductos(producto);
+        }
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -5,7 +5,7 @@
     <figure class="col-sm-3 col-xs-6"  id="logo">
         <a href="${pageContext.servletContext.contextPath}/navProductos"><img src="${pageContext.servletContext.contextPath}/imagenes/logoINFOAlbarregas1.png" alt="logoINFOAlbarregas1.png"/></a>
     </figure>
-    
+
     <div class="col-sm-offset-1 col-sm-8 col-xs-6 row text-right" style="padding-top: 60px;" id="toolbar">
         <form id="busqueda" class="col-sm-8 col-xs-12 row">
             <div class="input-group col-xs-12">
@@ -24,7 +24,13 @@
         <c:if test="${sessionScope.usuario.cliente != null}">
             <div class="col-sm-offset-1 col-sm-3 col-xs-12 row">
                 <a href="${pageContext.servletContext.contextPath}/carrito"><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>
-                    <span id="numCarrito" class="col-xs-2">${sessionScope.carrito.lineasPedidos.size()}</span></a>
+                    <c:if test="${sessionScope.carrito != null}">
+                        <span id="numCarrito" class="col-xs-2">${sessionScope.carrito.lineasPedidos.size()}</span>
+                    </c:if>
+                    <c:if test="${sessionScope.carrito == null}">
+                    <span id="numCarrito" class="col-xs-2">0</span>
+                    </c:if>
+                </a>
             </div>
         </c:if>
     </div>

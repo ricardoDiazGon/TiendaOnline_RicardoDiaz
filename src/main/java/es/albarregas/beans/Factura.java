@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Factura implements Serializable{
     
     private int NumeroFactura;
-    private int IdPedido;
+    private Pedido Pedido;
 
     public int getNumeroFactura() {
         return NumeroFactura;
@@ -24,12 +24,12 @@ public class Factura implements Serializable{
         this.NumeroFactura = NumeroFactura;
     }
 
-    public int getIdPedido() {
-        return IdPedido;
+    public Pedido getPedido() {
+        return Pedido;
     }
 
-    public void setIdPedido(int IdPedido) {
-        this.IdPedido = IdPedido;
+    public void setPedido(Pedido Pedido) {
+        this.Pedido = Pedido;
     }
     
     

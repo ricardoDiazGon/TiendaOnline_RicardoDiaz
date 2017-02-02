@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="panel-heading"><h4>TU CARRITO | DATOS DE PAGO</h4></div>
-<form method="post" action="" onsubmit=" return validarPago('${pageContext.servletContext.contextPath}')">
+<form method="post" action="" onsubmit=" return validarPago('${pageContext.servletContext.contextPath}', '${sessionScope.carrito.idPedido}')">
     <div class="panel-body">
 
         <div class="row">
@@ -13,7 +13,6 @@
                 <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosPer('${pageContext.servletContext.contextPath}')">Datos personales</a></li>
                 <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosDir('${pageContext.servletContext.contextPath}')">Datos de envío</a></li>           
                 <li class="active"><a href="javascript:void(0);">Pago</a></li>
-                <li><a href="javascript:void(0);">Factura</a></li>     
             </ul>
 
 
@@ -51,7 +50,7 @@
                 <input id="codigoSeg" type="text" class="form-control" name="codigoSeg" size="3" maxlength="3" placeholder="000" required>                                        
             </div>
 
-            </form>
+
         </div>
 
 
@@ -61,3 +60,5 @@
         </div>
 
     </div>   
+
+</form>

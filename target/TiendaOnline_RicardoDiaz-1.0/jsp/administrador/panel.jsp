@@ -31,7 +31,7 @@
                             <li class="warning active"><a href="#">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li><a href="#">Ver pedidos</a></li>
-                            <li><a href="#">Ver productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Descatalogar productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>

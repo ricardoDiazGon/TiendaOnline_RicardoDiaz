@@ -12,6 +12,7 @@ es\albarregas\beans\Producto.class
 es\albarregas\dao\IProductosDAO.class
 es\albarregas\controladores\NavProductos.class
 es\albarregas\dao\IPueblosDAO.class
+es\albarregas\servletsAjax\MostrarFactura.class
 es\albarregas\eventos\Inicializar.class
 es\albarregas\dao\IUsuariosDAO.class
 es\albarregas\dao\ConnectionFactory.class
@@ -23,6 +24,7 @@ es\albarregas\dao\PueblosDAO.class
 es\albarregas\dao\ClientesDAO.class
 es\albarregas\dao\ImagenesDAO.class
 es\albarregas\dao\ILineasPedidosDAO.class
+es\albarregas\controladores\ActualizarProAdm.class
 es\albarregas\servletsAjax\AniadirAlCarrito.class
 es\albarregas\dao\ProvinciasDAO.class
 es\albarregas\beans\Pueblo.class
@@ -46,11 +48,13 @@ es\albarregas\controladores\ActualizarUsuAdm.class
 es\albarregas\dao\FacturasDAO.class
 es\albarregas\servletsAjax\BusquedaProdAjax.class
 es\albarregas\controladores\Direcciones.class
+es\albarregas\servletsAjax\AniadirDireccionCarrito.class
 es\albarregas\beans\Caracteristica.class
 es\albarregas\beans\Pedido.class
 es\albarregas\beans\Cliente.class
 es\albarregas\beans\Imagen.class
 es\albarregas\beans\Provincia.class
+es\albarregas\servletsAjax\FinalizarCarrito.class
 es\albarregas\dao\IFacturasDAO.class
 es\albarregas\beans\Proveedor.class
 es\albarregas\dao\CategoriasDAO.class

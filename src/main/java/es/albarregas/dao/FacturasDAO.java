@@ -6,6 +6,7 @@
 package es.albarregas.dao;
 
 import es.albarregas.beans.Factura;
+import es.albarregas.beans.Pedido;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,8 +29,9 @@ public class FacturasDAO implements IFacturasDAO{
         sql = "INSERT INTO Facturas VALUES(0,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
-            preparada.setInt(1, factura.getIdPedido());
+            preparada.setInt(1, factura.getPedido().getIdPedido());
 
+            preparada.executeUpdate();
             preparada.close();
         } catch (SQLException ex) {
             Logger.getLogger(FacturasDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,7 +57,9 @@ public class FacturasDAO implements IFacturasDAO{
             while (resultado.next()) {
                 factura = new Factura();
                 factura.setNumeroFactura(resultado.getInt("NumeroFactura"));
-                factura.setIdPedido(resultado.getInt("IdPedido"));
+                Pedido pedido = new Pedido();
+                pedido.setIdPedido(resultado.getInt("IdPedido"));
+                factura.setPedido(pedido);
                 listaFacturas.add(factura);
             }
 

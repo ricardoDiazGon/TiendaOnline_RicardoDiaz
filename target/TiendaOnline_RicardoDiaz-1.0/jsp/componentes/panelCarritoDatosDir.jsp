@@ -26,7 +26,6 @@
             <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosPer('${pageContext.servletContext.contextPath}')">Datos personales</a></li>
             <li class="active"><a href="javascript:void(0);">Datos de envío</a></li>
             <li><a href="javascript:void(0);">Pago</a></li>
-            <li><a href="javascript:void(0);">Factura</a></li>
         </ul>
     </div>    
 
@@ -105,6 +104,7 @@
                 <div style="margin-bottom: 25px" class="form-group col-md-12">
                     <label for="direccion2" class="control-label">Dirección</label>
                     <input id="direccion2" type="text" class="form-control" name="direccion2" placeholder="Direccion" readonly />                                        
+                    <input type="hidden" name="idDireccion" id="idDireccion"/>
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group col-md-6">
@@ -126,6 +126,7 @@
                     <label for="Telefono2" class="control-label">Teléfono</label>
                     <input id="telefono2" type="text" class="form-control" name="Telefono2" placeholder="Teléfono" readonly />
                 </div>
+                
             </div>         
         </c:otherwise>
     </c:choose>

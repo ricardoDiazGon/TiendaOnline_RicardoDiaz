@@ -15,7 +15,6 @@
                         <li><a href="javascript:void(0);">Datos personales</a></li>
                         <li><a href="javascript:void(0);">Datos de envío</a></li>
                         <li><a href="javascript:void(0);">Pago</a></li>
-                        <li><a href="javascript:void(0);">Factura</a></li>
                     </ul>
                 </div>
             </div>        
@@ -25,17 +24,18 @@
                     <th>ELIMINAR</th></tr>
                         <c:forEach items="${sessionScope.carrito.lineasPedidos}" var="lineaPed">
                             <c:forEach items="${productos}" var="pro">
-                                <c:if test="${lineaPed.idProducto == pro.idProducto}">
-                                    <c:set value="${(pro.precioUnitario * general.iva)/100}" var="precioIva"/>
-                                    <c:set value="${pro.precioUnitario * lineaPed.cantidad}" var="precioTotalLinea"/>
-                                    <c:set value="${precioTotalLinea + precioTotal}" var="precioTotal"/>
+                                <c:if test="${lineaPed.producto.idProducto == pro.idProducto}">
+                            <!-- Es 121% porque es el 100% del producto más el 21% del iva -->
+                            <c:set value="${(pro.precioUnitario * general.iva)/121}" var="precioIva"/>
+                            <c:set value="${pro.precioUnitario * lineaPed.cantidad}" var="precioTotalLinea"/>
+                            <c:set value="${precioTotalLinea + precioTotal}" var="precioTotal"/>
                             <tr id="filaCarrito${lineaPed.numeroLinea}">
                                 <td><img height="75" width="75" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${pro.imagenes[0].imagen}" alt="${pro.imagenes[0].imagen}" /></td>
                                 <td><c:out value="${pro.denominacion}"/></td>
                                 <td><fmt:formatNumber type="currency" maxFractionDigits="2" value="${pro.precioUnitario}" /></td>
                                 <td><fmt:formatNumber pattern="##" type="percent" value="${general.iva}"/></td>
                                 <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioIva}"/></td>
-                                <td><input type="number" class="form-control" min="1" max="100" value="${lineaPed.cantidad}" onkeyup="actualizarCantidad('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}', this.value)"/></td>
+                                <td><input type="number" class="form-control" min="1" max="100" value="${lineaPed.cantidad}" onchange="actualizarCantidad('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}', this.value)"/></td>
                                 <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioTotalLinea}"/></td>
                                 <td><button onclick="eliminarLineaCarrito('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}')"><span class="glyphicon glyphicon-trash"></span></button></td>
                             </tr>

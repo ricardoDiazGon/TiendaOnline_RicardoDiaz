@@ -11,6 +11,11 @@ function irCarritoDatosDir(contexto) {
 }
 
 function irCarritoDatosPago(contexto) {
+    var idDireccion = document.getElementById("idDireccion").value;
+    var url = contexto + "/aniadirDireccionCarrito?idDir=" + idDireccion;
+    $.ajax({url: url, success: function (result) {
+            alert(result);
+        }});
     $("#panel-carrito").load(contexto + "/jsp/componentes/panelCarritoPago.jsp");
 }
 
@@ -42,13 +47,36 @@ function tratarElegirDireccion(direccion) {
     document.getElementById("poblacion2").value = direc.NombrePueblo;
     document.getElementById("provincia2").value = direc.NombreProvincia;
     document.getElementById("telefono2").value = direc.Telefono;
+    document.getElementById("idDireccion").value = direc.IdDireccion;
     document.getElementById("boton-confDir").disabled = false;
 }
 
 
-function validarPago(contexto, idPedido){
+function validarPago(contexto, idPedido) {
     //Con esta función conseguimos validar en html5 el formulario sin que haga el action
-    $("#panel-carrito").load(contexto + "/jsp/componentes/panelCarritoFinal.jsp");
-    alert(idPedido);
+
+    var url = contexto + "/finalizarCarrito?idPed=" + idPedido;
+
+//Esto es ajax pero con jquery. 
+    $.ajax({url: url, success: function (result) {
+            if (result != "" && result != "ok") {
+                $("#panel-carrito").html(result);
+            }
+        }});
+
     return false;
+}
+
+function mostrarFactura(contexto, idPedido) {
+    var url = contexto + "/mostrarFactura?idPed=" + idPedido;
+
+//Esto es ajax pero con jquery. 
+    $.ajax({url: url, success: function (result) {
+
+        }});
+
+    $("#mostrar-factura").load(contexto + "/jsp/componentes/panelFactura.jsp");
+    $('#panel-factura').modal('toogle');
+    $('#panel-factura').modal('show');
+    document.getElementById("numCarrito").innerHTML = "0";
 }

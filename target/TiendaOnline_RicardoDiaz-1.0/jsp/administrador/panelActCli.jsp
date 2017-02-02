@@ -12,7 +12,7 @@
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bloquearDesbloquear.js"></script>
-                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -30,9 +30,9 @@
                         <h3>Panel de Control</h3>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
-                            <li class="warning active"><a href="${pageContext.servletContext.contextPath}/actClientes">Actualizar clientes</a></li>
+                            <li class="warning active"><a href="#">Actualizar clientes</a></li>
                             <li><a href="#">Ver pedidos</a></li>
-                            <li><a href="#">Ver productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Descatalogar productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
@@ -81,6 +81,24 @@
                                 </tbody>
 
                             </table>
+
+                        </div>
+
+                        <!-- Paginación -->
+                        <div class=" container col-md-12 text-center center-block">
+                            <ul class="pagination">
+                                <c:forEach begin="1" end="${requestScope.pag}" varStatus="loop">
+                                    <c:choose>
+                                        <c:when test="${loop.index == requestScope.actual}">
+                                            <li class="active"><a href="#">${loop.index}</a></li> 
+                                            </c:when>
+                                            <c:otherwise>
+                                            <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm?pag=${loop.index}">${loop.index}</a></li> 
+                                            </c:otherwise>
+                                        </c:choose>
+
+                                </c:forEach>
+                            </ul>
 
                         </div>
 

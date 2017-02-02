@@ -117,8 +117,9 @@
 
                             </c:forEach>
                         </ul>
+                        
+                    </div>
                         </section>
-
                     </div>
 
 

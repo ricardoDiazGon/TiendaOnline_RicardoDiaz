@@ -18,12 +18,12 @@ public class Pedido implements Serializable {
     private int IdPedido;
     private Date Fecha;
     private String Estado;
-    private int IdCliente;
+    private Cliente Cliente;
     private double BaseImponible;
     private double Descuento;
     private double GastosEnvio;
     private double Iva;
-    private int IdDireccion;
+    private Direccion Direccion;
     private ArrayList<LineaPedido> lineasPedidos;
 
     public int getIdPedido() {
@@ -50,12 +50,12 @@ public class Pedido implements Serializable {
         this.Estado = Estado;
     }
 
-    public int getIdCliente() {
-        return IdCliente;
+    public Cliente getCliente() {
+        return Cliente;
     }
 
-    public void setIdCliente(int IdCliente) {
-        this.IdCliente = IdCliente;
+    public void setCliente(Cliente Cliente) {
+        this.Cliente = Cliente;
     }
 
     public double getBaseImponible() {
@@ -90,13 +90,14 @@ public class Pedido implements Serializable {
         this.Iva = Iva;
     }
 
-    public int getIdDireccion() {
-        return IdDireccion;
+    public Direccion getDireccion() {
+        return Direccion;
     }
 
-    public void setIdDireccion(int IdDireccion) {
-        this.IdDireccion = IdDireccion;
+    public void setDireccion(Direccion Direccion) {
+        this.Direccion = Direccion;
     }
+
 
     public ArrayList<LineaPedido> getLineasPedidos() {
         return lineasPedidos;

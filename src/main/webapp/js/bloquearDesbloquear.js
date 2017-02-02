@@ -1,3 +1,4 @@
+/* Usuarios */
 function bloquearUsuario(contexto, idUsuario) {
     accBloqueoDesbloqueo(contexto, "usuario", idUsuario, "bloquear", contexto);
 }
@@ -6,7 +7,16 @@ function desbloquearUsuario(contexto, idUsuario) {
     accBloqueoDesbloqueo(contexto, "usuario", idUsuario, "desbloquear", contexto);
 }
 
-//Entidad puede ser usuario o producto, y acción bloqueo o desbloqueo
+/* Productos */
+function descatalogarProducto(contexto, idProducto) {
+    accBloqueoDesbloqueo(contexto, "producto", idProducto, "descatalogar", contexto);
+}
+
+function catalogarProducto(contexto, idProducto) {
+    accBloqueoDesbloqueo(contexto, "producto", idProducto, "catalogar", contexto);
+}
+
+//Función puede ser bloquear y desbloquear usuarios y productos
 function accBloqueoDesbloqueo(contexto, entidad, id, accion, contexto) {
     var url = contexto + "/bloqDesbloqAjax?entidad=" + entidad + "&id=" + id + "&accion=" + accion;
     var peticion = false;
@@ -16,7 +26,7 @@ function accBloqueoDesbloqueo(contexto, entidad, id, accion, contexto) {
             if (entidad == "usuario") {
                 cambiarFilaUsuario(id, accion, contexto);
             } else {
-                //Para los productos
+                cambiarFilaProducto(id, accion, contexto);
             }
         }
     };
@@ -26,7 +36,7 @@ function accBloqueoDesbloqueo(contexto, entidad, id, accion, contexto) {
 }
 
 
-//Funcion que actualiza los datos en el jsp, para que si hemos bloqueado, aparezca como bloqueado
+//Funcion que actualiza los datos en el jsp, para que si hemos bloqueado, aparezca como bloqueado usuarios
 function cambiarFilaUsuario(id, accion, contexto) {
     var cadena;
 
@@ -37,3 +47,16 @@ function cambiarFilaUsuario(id, accion, contexto) {
     }
     document.getElementById("usuario" + id).innerHTML = cadena;
 }
+
+//Funcion que actualiza los datos en el jsp, para que si hemos descatalogado, aparezca como descatalogado productos
+function cambiarFilaProducto(id, accion, contexto) {
+    var cadena;
+
+    if (accion == "descatalogar") {
+        cadena = "\<button class=\"btn btn-danger btn-sm\"  title=\"Catalogar\" onclick=\"catalogarProducto('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ban-circle\">\</span>\</button>";
+    } else {
+        cadena = "\<button class=\"btn btn-success btn-sm\" title=\"Descatalogar\" onclick=\"descatalogarProducto('" +contexto + "', '" +id + "')\" >\<span class=\"glyphicon glyphicon-ok-sign\">\</span>\</button>";
+    }
+    document.getElementById("producto" + id).innerHTML = cadena;
+}
+

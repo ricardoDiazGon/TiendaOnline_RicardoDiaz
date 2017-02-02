@@ -6,8 +6,11 @@
 package es.albarregas.servletsAjax;
 
 import com.google.gson.Gson;
+import es.albarregas.beans.Cliente;
+import es.albarregas.beans.Direccion;
 import es.albarregas.beans.LineaPedido;
 import es.albarregas.beans.Pedido;
+import es.albarregas.beans.Producto;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.ILineasPedidosDAO;
 import es.albarregas.dao.IPedidosDAO;
@@ -66,14 +69,19 @@ public class AniadirAlCarrito extends HttpServlet {
                 pedido = new Pedido();
                 pedido.setFecha(new Date());
                 pedido.setEstado("n");
-                pedido.setIdCliente(usuario.getCliente().getIdCliente());
+                Cliente cliente = new Cliente();
+                cliente.setIdCliente(usuario.getCliente().getIdCliente());
+                pedido.setCliente(cliente);
+                pedido.setDireccion(new Direccion());
                 errorSql = iped.addPedidos(pedido);
 
                 lineaPedido.setCantidad(cantidad);
                 lineaPedido.setNumeroLinea(1);
-                lineaPedido.setIdProducto(idProducto);
+                Producto producto = new Producto();
+                producto.setIdProducto(idProducto);
+                lineaPedido.setProducto(producto);
 
-                ArrayList<Pedido> listaPedidos = iped.getPedidos("WHERE IdCliente = " + pedido.getIdCliente()
+                ArrayList<Pedido> listaPedidos = iped.getPedidos("WHERE IdCliente = " + pedido.getCliente().getIdCliente()
                         + " AND Estado = 'n'");
                 //En teoria tiene que haber un solo pedido nuevo (en carrito) por cliente, por eso debe ser único...
                 //Para saber el idpedido para lineaspedidos tenemos que acceder otra vez al pedido que hemos introducido
@@ -96,7 +104,7 @@ public class AniadirAlCarrito extends HttpServlet {
                 /* Si el producto que metemos en el carrito ya lo tenemos
                  habrá que actualizarlo con la cantidad total */
                 for (LineaPedido lineaPedAux : pedido.getLineasPedidos()) {
-                    if (lineaPedAux.getIdProducto() == idProducto) {
+                    if (lineaPedAux.getProducto().getIdProducto() == idProducto) {
                         lineaEncontrada = true;
                         numeroLinea = lineaPedAux.getNumeroLinea();
                         cantidad += lineaPedAux.getCantidad();
@@ -107,7 +115,9 @@ public class AniadirAlCarrito extends HttpServlet {
                 lineaPedido.setCantidad(cantidad);
                 lineaPedido.setNumeroLinea(numeroLinea);
                 lineaPedido.setIdPedido(pedido.getIdPedido());
-                lineaPedido.setIdProducto(idProducto);
+                Producto producto = new Producto();
+                producto.setIdProducto(idProducto);
+                lineaPedido.setProducto(producto);
                 
                 //Si el producto que vamos a añadir existe, tenemos que incrementar la cantidad
                 if (lineaEncontrada) {

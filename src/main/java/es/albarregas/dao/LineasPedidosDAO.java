@@ -6,6 +6,7 @@
 package es.albarregas.dao;
 
 import es.albarregas.beans.LineaPedido;
+import es.albarregas.beans.Producto;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,7 +31,7 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
             preparada.setInt(1, lineaPedido.getIdPedido());
             preparada.setInt(2, lineaPedido.getNumeroLinea());
-            preparada.setInt(3, lineaPedido.getIdProducto());
+            preparada.setInt(3, lineaPedido.getProducto().getIdProducto());
             preparada.setInt(4, lineaPedido.getCantidad());
             preparada.setDouble(5, lineaPedido.getPrecioUnitario());
             preparada.executeUpdate();
@@ -60,7 +61,9 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
                 lineaPedido = new LineaPedido();
                 lineaPedido.setIdPedido(resultado.getInt("IdPedido"));
                 lineaPedido.setNumeroLinea(resultado.getInt("NumeroLinea"));
-                lineaPedido.setIdProducto(resultado.getInt("IdProducto"));
+                Producto producto = new Producto();
+                producto.setIdProducto(resultado.getInt("IdProducto"));
+                lineaPedido.setProducto(producto);
                 lineaPedido.setCantidad(resultado.getInt("Cantidad"));
                 lineaPedido.setPrecioUnitario(resultado.getDouble("PrecioUnitario"));
                 listaLineasPedidos.add(lineaPedido);

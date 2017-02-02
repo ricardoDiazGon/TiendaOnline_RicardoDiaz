@@ -15,7 +15,7 @@ public class LineaPedido implements Serializable{
     
     private int IdPedido;
     private int NumeroLinea;
-    private int IdProducto;
+    private Producto producto;
     private int Cantidad;
     private double PrecioUnitario;
 
@@ -35,12 +35,12 @@ public class LineaPedido implements Serializable{
         this.NumeroLinea = NumeroLinea;
     }
 
-    public int getIdProducto() {
-        return IdProducto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(int IdProducto) {
-        this.IdProducto = IdProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public int getCantidad() {

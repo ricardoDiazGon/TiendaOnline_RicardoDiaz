@@ -5,6 +5,8 @@
  */
 package es.albarregas.dao;
 
+import es.albarregas.beans.Cliente;
+import es.albarregas.beans.Direccion;
 import es.albarregas.beans.Pedido;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -32,12 +34,12 @@ public class PedidosDAO implements IPedidosDAO {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
             preparada.setTimestamp(1, new java.sql.Timestamp(pedido.getFecha().getTime()));
             preparada.setString(2, pedido.getEstado());
-            preparada.setInt(3, pedido.getIdCliente());
+            preparada.setInt(3, pedido.getCliente().getIdCliente());
             preparada.setDouble(4, pedido.getBaseImponible());
             preparada.setDouble(5, pedido.getDescuento());
             preparada.setDouble(6, pedido.getGastosEnvio());
             preparada.setDouble(7, pedido.getIva());
-            preparada.setInt(8, pedido.getIdDireccion());
+            preparada.setInt(8, pedido.getDireccion().getIdDireccion());
             preparada.executeUpdate();
             preparada.close();
         } catch (SQLException ex) {
@@ -66,12 +68,16 @@ public class PedidosDAO implements IPedidosDAO {
                 pedido.setIdPedido(resultado.getInt("IdPedido"));
                 pedido.setFecha(resultado.getDate("Fecha"));
                 pedido.setEstado(resultado.getString("Estado"));
-                pedido.setIdCliente(resultado.getInt("IdCliente"));
+                Cliente cliente = new Cliente();
+                cliente.setIdCliente(resultado.getInt("IdCliente"));
+                pedido.setCliente(cliente);
                 pedido.setBaseImponible(resultado.getDouble("BaseImponible"));
                 pedido.setDescuento(resultado.getDouble("Descuento"));
                 pedido.setGastosEnvio(resultado.getDouble("GastosEnvio"));
                 pedido.setIva(resultado.getDouble("Iva"));
-                pedido.setIdDireccion(resultado.getInt("IdDireccion"));
+                Direccion direccion = new Direccion();
+                direccion.setIdDireccion(resultado.getInt("idDireccion"));
+                pedido.setDireccion(direccion);
                 listaPedidos.add(pedido);
             }
 
@@ -90,6 +96,7 @@ public class PedidosDAO implements IPedidosDAO {
     public int updPedidos(Pedido pedido) {
         int errorSQL = -1; //Ponemos a -1, para saber hemos realizado la consulta o no
         boolean set = false;
+
         ArrayList<Pedido> listaPedidos = this.getPedidos("WHERE IdPedido = '" + pedido.getIdPedido() + "'");
         Pedido pedido2 = listaPedidos.get(0);
         StringBuilder sql = new StringBuilder();
@@ -139,15 +146,15 @@ public class PedidosDAO implements IPedidosDAO {
             }
         }
 
-        if (pedido.getIdDireccion() != pedido2.getIdDireccion()) {
+        if (pedido.getDireccion().getIdDireccion() != pedido2.getDireccion().getIdDireccion()) {
             if (set) {
-                sql.append(", IdDireccion = " + pedido.getIdDireccion());
+                sql.append(", IdDireccion = " + pedido.getDireccion().getIdDireccion());
             } else {
-                sql.append("SET IdDireccion = " + pedido.getIdDireccion());
+                sql.append("SET IdDireccion = " + pedido.getDireccion().getIdDireccion());
                 set = true;
             }
-        }
-
+        }        
+        
         if (set) {
             sql.append(" WHERE IdPedido = '" + pedido.getIdPedido() + "'");
             Statement sentencia = null;

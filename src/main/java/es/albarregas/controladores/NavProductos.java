@@ -115,9 +115,8 @@ public class NavProductos extends HttpServlet {
                             }
                         }                     
                     }
-                    //El número de páginas será el resultado del maximo entre el número de articulos, que serán 12              
-                    int pag = (int) Math.ceil(total / Integer.parseInt(prodPorPagina)); //Math.ceil redondea al alza
-                    System.out.println(pag);
+                    //El número de páginas será el resultado del maximo entre el número de articulos           
+                    int pag = (int) Math.ceil(total / Double.parseDouble(prodPorPagina)); //Math.ceil redondea al alza
                     request.setAttribute("pag", pag);
 
                     request.setAttribute("orden", orden);

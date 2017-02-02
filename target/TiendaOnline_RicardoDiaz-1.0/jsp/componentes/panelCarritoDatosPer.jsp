@@ -28,7 +28,6 @@
             <li class="active"><a href="javascript:void(0);">Datos personales</a></li>
             <li><a href="javascript:void(0);">Datos de envío</a></li>
             <li><a href="javascript:void(0);">Pago</a></li>
-            <li><a href="javascript:void(0);">Factura</a></li>
         </ul>
     </div>    
 
