@@ -289,3 +289,22 @@ panel{
     top: 100px;
     z-index: 9999;
 }
+
+/* Tabla productos */
+
+#tablaProductos #stock, #tablaProductos #stockMinimo{
+    width: 50px;
+}
+
+#tablaProductos #precio{
+    width: 75px;
+}
+
+#tablaProductos th{
+    background: grey;
+    color: rgb(253,253,253);
+}
+
+#tablaProductos > tr{
+    border-radius: 20px;
+}

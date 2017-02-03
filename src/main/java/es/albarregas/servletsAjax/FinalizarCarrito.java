@@ -17,6 +17,7 @@ import es.albarregas.dao.IProductosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -121,6 +122,7 @@ public class FinalizarCarrito extends HttpServlet {
             excesoCantidad = excesoCantidad.substring(0, excesoCantidad.length() - 2);
         }
 
+        carrito.setFecha(new Date());
         //Como hemos hecho el pedido, lo tenemos que quitar del carrito
         sesion.removeAttribute("carrito");
         iped.updPedidos(carrito);

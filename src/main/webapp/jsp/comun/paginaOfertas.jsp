@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>INFO Albarregas</title>
+        <jsp:include page="/jsp/componentes/meta.jsp"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -68,7 +70,7 @@
                                         <div class="caption">
                                             <h4 class="deno">${pro.denominacion}</h4>
                                             <c:forEach begin="1" end="${pro.rating}"><span class="estrella glyphicon glyphicon-star"></span></c:forEach>
-                                            <h3 class="precio">${pro.precioUnitario} €</h3>                                   
+                                            <h3 class="precio"><fmt:formatNumber value="${pro.precioUnitario}" type="currency"/></h3>                                   
                                         </div>
                                     </a>
 

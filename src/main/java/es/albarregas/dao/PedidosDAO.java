@@ -145,6 +145,15 @@ public class PedidosDAO implements IPedidosDAO {
                 set = true;
             }
         }
+        
+        if (!pedido.getFecha().equals(pedido2.getFecha())) {
+            if (set) {
+                sql.append(", Fecha = '" + new java.sql.Timestamp(pedido.getFecha().getTime()) + "'");
+            } else {
+                sql.append("SET Fecha = '" + new java.sql.Timestamp(pedido.getFecha().getTime()) + "'");
+                set = true;
+            }
+        }
 
         if (pedido.getDireccion().getIdDireccion() != pedido2.getDireccion().getIdDireccion()) {
             if (set) {

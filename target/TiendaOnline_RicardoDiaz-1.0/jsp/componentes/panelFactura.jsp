@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div id="panel-factura" class="row modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg  row" role="document">
@@ -22,6 +23,9 @@
 
                     <div style="margin-bottom: 25px" class="col-xs-4">
                         <h3>FACTURA Nº ${sessionScope.factura.numeroFactura}</h3>
+                        <p><b>Fecha de factura: </b><fmt:formatDate type="both" 
+                                                            dateStyle="long" timeStyle="long"  timeZone="GMT+1"
+                                                            value="${usu.ultimoAcceso}" /></p>
                     </div>
                     <hr/>
                 </div>
@@ -50,19 +54,19 @@
                         <c:forEach items="${sessionScope.factura.pedido.lineasPedidos}" var="linea">
                             <tr>
                                 <td>${linea.producto.denominacion}</td>
-                                <td>${linea.precioUnitario}</td>
+                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario}"/></td>
                                 <td>${linea.cantidad}</td>
-                                <td>${linea.precioUnitario * linea.cantidad}</td>
+                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario * linea.cantidad}"/></td>
                             </tr>
                         </c:forEach>
 
-                        <tr><th colspan="3">Base imponible</th><td>${sessionScope.factura.pedido.baseImponible}</td></tr>
-                        <tr><th colspan="3">IVA (${general.iva} %)</th><td>${sessionScope.factura.pedido.iva}</td></tr>
-                        <tr><th colspan="3">Gastos de envío</th><td>${general.gastosEnvio}</td></tr>
+                        <tr><th colspan="3">Base imponible</th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible}"/></td></tr>
+                        <tr><th colspan="3">IVA (${general.iva} %)</th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.iva}"/></td></tr>
+                        <tr><th colspan="3">Gastos de envío</th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${general.gastosEnvio}"/></td></tr>
                         <tr>
                             <th colspan="3">TOTAL FACTURA: </th>
-                            <td>${sessionScope.factura.pedido.baseImponible + sessionScope.factura.pedido.iva +
-                                  general.gastosEnvio}</td>
+                            <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible + sessionScope.factura.pedido.iva +
+                                  general.gastosEnvio}"/></td>
                         </tr>
                     </table>
 

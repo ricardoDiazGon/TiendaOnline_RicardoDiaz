@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!--<div class="container visible-lg visible-md visible-sm center-block">-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -22,7 +23,7 @@
                     </a>
                         <div class="carousel-caption">
                             <h3>${pro.denominacion}</h3>
-                            <h3 class="precioProducto"><b>${pro.precioUnitario} €</b></h3>
+                            <h3 class="precioProducto"><b><fmt:formatNumber value="${pro.precioUnitario}" type="currency"/></b></h3>
                             <c:set value="btn-success" var="tipoBoton" />
                             <c:if test="${sessionScope.usuario.cliente == null}">
                                 <c:set var="dis" value="disabled"/>

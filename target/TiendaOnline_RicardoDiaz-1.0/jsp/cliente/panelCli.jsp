@@ -101,23 +101,23 @@
                                     <!-- Controlamos si nos llega algún error -->                 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="nombre" class="control-label">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" required ${readonly}>                                        
+                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" pattern="^[a-zA-Z ]+$" maxlength="25" required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="apellidos" class="control-label">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" required ${readonly}>                                        
+                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" pattern="^[a-zA-Z ]+$" maxlength="40" required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="NIF" class="control-label">NIF</label>
-                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} required value="${nif}">                                        
+                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} pattern="^[0-9]{8}[a-zA-Z]{1}$" required value="${nif}">                                        
                                     </div>
                                     <c:if test="${readonly != null}">
                                         <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                             <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
                                             <input id="fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" required value="<fmt:formatDate type="date" 
-                                                            dateStyle="long" timeStyle="long"  timeZone="GTM+1"
+                                                            dateStyle="long" timeStyle="long"  timeZone="GMT+1"
                                                             value="${fechaNacimiento}" />" readonly placeholder="dd/mm/aaaa"/>
                                         </div> 
                                     </c:if>
@@ -125,7 +125,7 @@
                                         <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                             <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
                                             <input id="fecha" type="text" class="form-control" name="fechaNacimiento" required value="<fmt:formatDate type="date" 
-                                                            dateStyle="long" timeStyle="long"  timeZone="GTM+1"
+                                                            dateStyle="long" timeStyle="long"  timeZone="GMT+1"
                                                             value="${fechaNacimiento}" />" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}"/>
                                         </div> 
                                     </c:if>
@@ -201,16 +201,16 @@
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="NombreDireccion" class="control-label">Nombre de la dirección</label>
-                                            <input id="NombreDireccion" type="text" class="form-control" name="NombreDireccion" placeholder="Ej: Casa del pueblo" value="${requestScope.direc.nombreDireccion}">                                        
+                                            <input id="NombreDireccion" type="text" class="form-control" name="NombreDireccion" placeholder="Ej: Casa del pueblo" value="${requestScope.direc.nombreDireccion}" required maxlength="20">                                        
                                         </div>     
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="direccion" class="control-label">Dirección</label>
-                                            <input id="direccion" type="text" class="form-control" name="Direccion" placeholder="Direccion" value="${requestScope.direc.direccion}">                                        
+                                            <input id="direccion" type="text" class="form-control" name="Direccion" placeholder="Direccion" value="${requestScope.direc.direccion}" maxlength="50" required>                                        
                                         </div>                                      
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="CodigoPostal" class="control-label">Código Postal</label>
-                                            <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
+                                            <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" required pattern="^[0-9]{5}$" value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
                                         </div>
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
@@ -225,7 +225,7 @@
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="Telefono" class="control-label">Teléfono</label>
-                                            <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono " value="${requestScope.direc.telefono}"/>
+                                            <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono " required pattern="^[6|7|9]{1}[0-9]{8}$" value="${requestScope.direc.telefono}"/>
                                         </div>
 
                                         <input type="hidden" id="IdProvincia" name="IdProvincia" value="${requestScope.direc.idProvincia}"/>

@@ -102,7 +102,7 @@ public class MostrarFactura extends HttpServlet {
         }
 
         factura.setPedido(pedido);
-        System.out.println("Numero factura: " + factura.getNumeroFactura() + " Numero pedido :" + factura.getPedido().getIdPedido());
+     
         sesion.setAttribute("factura", factura);
     }
 

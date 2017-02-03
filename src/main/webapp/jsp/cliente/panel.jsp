@@ -79,17 +79,17 @@
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveAnt" class="control-label">Contraseña antigua</label>
-                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" placeholder="Contraseña antigua" required>                                        
+                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" placeholder="Contraseña antigua" minlength="4" maxlength="50" required>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNue" class="control-label">Contraseña nueva</label>
-                                        <input id="claveNue" type="password" class="form-control" name="claveNue" placeholder="Contraseña nueva" required>                                        
+                                        <input id="claveNue" type="password" class="form-control" name="claveNue" placeholder="Contraseña nueva" minlength="4" maxlength="50" required>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNueRep" class="control-label">Repetir contraseña</label>
-                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" placeholder="Repetir contraseña" required>                                        
+                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" placeholder="Repetir contraseña" minlength="4" maxlength="50" required>                                        
                                     </div> 
                                 </div>
                                 <div class="panel-footer">

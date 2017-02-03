@@ -17,7 +17,6 @@ es\albarregas\eventos\Inicializar.class
 es\albarregas\dao\IUsuariosDAO.class
 es\albarregas\dao\ConnectionFactory.class
 es\albarregas\servletsAjax\DireccionAjax.class
-es\albarregas\servletsAjax\DescatalogarProd.class
 es\albarregas\dao\ICaracteristicasDAO.class
 es\albarregas\dao\IMarcasDAO.class
 es\albarregas\dao\PueblosDAO.class
@@ -35,6 +34,7 @@ es\albarregas\dao\IPedidosDAO.class
 es\albarregas\controladores\Login.class
 es\albarregas\beans\General.class
 es\albarregas\dao\CaractYProdsDAO.class
+es\albarregas\controladores\MostrarPedidos.class
 es\albarregas\dao\CaracteristicasDAO.class
 es\albarregas\servletsAjax\EliminarCarrito.class
 es\albarregas\beans\LineaPedido.class
@@ -63,6 +63,7 @@ es\albarregas\dao\DireccionesDAO.class
 es\albarregas\dao\MarcasDAO.class
 es\albarregas\controladores\ActualizarUsuCli.class
 es\albarregas\dao\ProductosDAO.class
+es\albarregas\servletsAjax\ActualizarProductos.class
 es\albarregas\beans\Direccion.class
 es\albarregas\dao\LineasPedidosDAO.class
 es\albarregas\beans\Marca.class

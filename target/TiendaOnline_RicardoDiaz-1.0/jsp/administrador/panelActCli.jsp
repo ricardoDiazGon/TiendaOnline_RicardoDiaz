@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:choose>
     <c:when test="${sessionScope.usuario != null and sessionScope.usuario.tipo == 'a'}">
         <!DOCTYPE html>
@@ -32,7 +33,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
                             <li class="warning active"><a href="#">Actualizar clientes</a></li>
                             <li><a href="#">Ver pedidos</a></li>
-                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Descatalogar productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
@@ -40,7 +41,9 @@
                     <div class="col-md-offset-1 col-md-8">
                         <h3 class="text-center">Lista de Usuarios</h3>
                         <div class="table-responsive">
-                            <table id="mytable" class="table table-bordred table-striped">
+                            <!-- Al table le pongo la id de tabla productos porque ya tiene asignado un css, pero no vamos a usar ese
+                                id para nada más -->
+                            <table id="tablaProductos" class="table table-bordred table-striped">
                                 <thead>
                                 <th>Id</th>
                                 <th>Email (UserName)</th>
@@ -53,7 +56,10 @@
                                             <tr>
                                                 <td>${usu.idUsuario}</td>
                                                 <td>${usu.email}</td>
-                                                <td>${usu.ultimoAcceso}</td>
+                                                <td><fmt:formatDate type="both" 
+                                                                dateStyle="long" timeStyle="long"  timeZone="GMT+1"
+                                                                value="${usu.ultimoAcceso}" />
+                                                </td>
                                                 <c:choose>
                                                     <c:when test="${usu.bloqueado == 'n'}">
                                                         <td>

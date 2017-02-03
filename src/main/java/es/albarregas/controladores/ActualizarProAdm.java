@@ -48,7 +48,7 @@ public class ActualizarProAdm extends HttpServlet {
         int pag = (int) Math.ceil(Double.valueOf(total) / Double.valueOf(15));
         request.setAttribute("actual", pagina);
         request.setAttribute("pag", pag);
-        url = "jsp/administrador/panelDescatalogar.jsp";
+        url = "jsp/administrador/panelActPro.jsp";
         request.getRequestDispatcher(url).forward(request, response);
     }
 

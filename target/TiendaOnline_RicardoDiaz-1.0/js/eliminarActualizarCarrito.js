@@ -24,7 +24,7 @@ function realizarEliminacionCarrito(contexto, idPedido, numLinea) {
 
 function actualizarCantidad(contexto, idPedido, numLinea, cantidad) {
     //Solo hacemos la accion si no introducimos caracters
-    if (!isNaN(numLinea)) {
+    if (!isNaN(numLinea) && !isNaN(cantidad) && cantidad > 0) {
         var url = contexto + "/modificarCantidadCarrito?npe=" + idPedido + "&nli=" + numLinea + "&can=" + cantidad;
         var peticion = false;
         peticion = new XMLHttpRequest();

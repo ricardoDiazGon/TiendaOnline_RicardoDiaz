@@ -18,19 +18,19 @@
                     <label for="email" class="control-label">Email (UserName)</label>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="email" class="form-control" name="email" value="${requestScope.email}" placeholder="Email (UserName)" required>                                        
+                        <input id="email" type="email" class="form-control" name="email" value="${requestScope.email}" placeholder="Email (UserName)"  maxlength="60" required>                                        
                     </div>
 
                     <label for="clave" class="control-label">Contraseña</label>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="clave" type="password" class="form-control" name="clave" value="${requestScope.clave}" placeholder="Contraseña" required>
+                        <input id="clave" type="password" class="form-control" name="clave" value="${requestScope.clave}" placeholder="Contraseña" minlength="4" maxlength="50" required>
                     </div>
 
                     <label for="claveRep" class="control-label">Repite tu contraseña</label>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="claveRep" type="password" class="form-control" name="claveRep" value="${requestScope.claveRep}" placeholder="Repite tu contraseña" required>
+                        <input id="claveRep" type="password" class="form-control" name="claveRep" value="${requestScope.claveRep}" placeholder="Repite tu contraseña" minlength="4" maxlength="50" required>
                     </div>
                     <div class="modal-footer">
                         <div class="input-group col-md-12 text-center">

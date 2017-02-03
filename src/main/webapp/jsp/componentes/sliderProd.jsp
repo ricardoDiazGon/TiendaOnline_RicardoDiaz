@@ -46,7 +46,7 @@
                                     <li data-target="#myCarousel" data-slide-to="${centinela}" >
                                     </c:otherwise>
                                 </c:choose>
-                                <img class="img-responsive img-thumbnail" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${imag.imagen}" alt="${imag.imagen}"/>
+                                        <img class="img-responsive img-thumbnail" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${imag.imagen}" alt="${imag.imagen}" style="height: 150px"/>
                             </li>
                             <c:set var="centinela" value="${centinela+1}"/> 
                         </c:forEach>

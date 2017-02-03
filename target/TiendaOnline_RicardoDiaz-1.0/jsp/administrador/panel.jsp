@@ -11,7 +11,7 @@
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
-                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -30,13 +30,20 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li class="warning active"><a href="#">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
-                            <li><a href="#">Ver pedidos</a></li>
-                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Descatalogar productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
 
                     <div class="col-md-offset-1 col-md-8">
+                        <c:if test="${sessionScope.alertaStock != null}">
+                            <div class="alert alert-info text-center center-block alert-dismissable col-md-12" style="margin-bottom: 25px;">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <a href="${pageContext.servletContext.contextPath}/actualizarProAdm"><strong>Hay productos por debajo del Stock mínimo</strong></a>
+                        </div>
+                        </c:if>
+                        
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4>Datos de administrador</h4></div>
                             <form id="datos-user" class="form-inline" role="form">
@@ -72,17 +79,17 @@
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveAnt" class="control-label">Contraseña antigua</label>
-                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" required placeholder="Contraseña antigua">                                        
+                                        <input id="claveAnt" type="password" class="form-control" name="claveAnt" required placeholder="Contraseña antigua" minlength="4" maxlength="50">                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNue" class="control-label">Contraseña nueva</label>
-                                        <input id="claveNue" type="password" class="form-control" name="claveNue" required placeholder="Contraseña nueva">                                        
+                                        <input id="claveNue" type="password" class="form-control" name="claveNue" required placeholder="Contraseña nueva" minlength="4" maxlength="50">                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="claveNueRep" class="control-label">Repetir contraseña</label>
-                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" required placeholder="Repetir contraseña" >                                        
+                                        <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" required placeholder="Repetir contraseña"  minlength="4" maxlength="50">                                        
                                     </div> 
                                 </div>
                                 <div class="panel-footer">

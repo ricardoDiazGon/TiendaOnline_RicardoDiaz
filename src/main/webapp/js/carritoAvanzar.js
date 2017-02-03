@@ -14,7 +14,6 @@ function irCarritoDatosPago(contexto) {
     var idDireccion = document.getElementById("idDireccion").value;
     var url = contexto + "/aniadirDireccionCarrito?idDir=" + idDireccion;
     $.ajax({url: url, success: function (result) {
-            alert(result);
         }});
     $("#panel-carrito").load(contexto + "/jsp/componentes/panelCarritoPago.jsp");
 }

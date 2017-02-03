@@ -57,7 +57,6 @@ public class ModificarCantidadCarrito extends HttpServlet {
             Pedido pedido = (Pedido) request.getSession().getAttribute("carrito");
             pedido.setLineasPedidos(listaLineaPedidos);
             request.getSession().setAttribute("carrito", pedido);
-            System.out.println("Modificada error: " +errorSql +"Cantidad: " +lineaPedido.getCantidad());
         } catch (NumberFormatException ex) {
             ex.printStackTrace();
         }

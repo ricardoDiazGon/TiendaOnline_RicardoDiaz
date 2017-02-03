@@ -4,7 +4,13 @@
  */
 package es.albarregas.controladores;
 
+import es.albarregas.beans.Categoria;
 import es.albarregas.beans.Producto;
+import es.albarregas.dao.ICaracteristicasDAO;
+import es.albarregas.dao.IGeneralDAO;
+import es.albarregas.dao.IIMagenesDAO;
+import es.albarregas.dao.IProductosDAO;
+import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -49,7 +55,7 @@ public class NavProductos extends HttpServlet {
             if (request.getParameter("ord") != null) {
                 orden = request.getParameter("ord");
             }
-            if(request.getParameter("pxp") != null){
+            if (request.getParameter("pxp") != null) {
                 prodPorPagina = request.getParameter("pxp");
             }
 
@@ -75,7 +81,37 @@ public class NavProductos extends HttpServlet {
                     }
                     request.setAttribute("actual", pagina);
                     //Rescatamos el array de productos del contexto de la aplicación, para poder manejarlo
+                    
+                    //Actualizamos la información del contexto
+                    DAOFactory df = DAOFactory.getDAOFactory(1);
+                    IIMagenesDAO iid = df.getImagenesDAO();
+                    IProductosDAO ipd = df.getProductosDAO();
+                    ICaracteristicasDAO icard = df.getCaracteristicasDAO();
+                    IGeneralDAO igd = df.getGeneralDAO();
+
+                    ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
+
+                    //Introducimos las imagenes y las caracteristicas en los productos
+                    
+                    for (Producto producto : listaProductos) {
+                        producto.setImagenes(iid.getImagenes("WHERE IdProducto = " + producto.getIdProducto()));
+                        producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " + producto.getIdProducto()));
+                    }
+                    request.getServletContext().setAttribute("productos", listaProductos);
                     ArrayList<Producto> productos = (ArrayList<Producto>) request.getServletContext().getAttribute("productos");
+                    //Cargamos los productos del slider
+                    ArrayList<Producto> listaProductosSlider = new ArrayList();
+                    int cont = 0;
+                    for (int i = 0; i < listaProductos.size() && cont < 4; i++) {
+                        if (listaProductos.get(i).getOferta().equals("s")) {
+                            listaProductosSlider.add(listaProductos.get(i));
+                            cont++;
+                        }
+                    }
+                    request.getServletContext().setAttribute("proSlider", listaProductosSlider);
+                    //Finaliza la actualización de la información del contexto
+
+                    //Según el orden que nos venga en el atributo, ordenamos de una forma u otra
                     ArrayList<Producto> productosCat = new ArrayList();
 
                     switch (orden) {
@@ -107,13 +143,13 @@ public class NavProductos extends HttpServlet {
                                 total++;
                             }
                         }
-                    }else{
+                    } else {
                         total = productos.size();
                         for (int i = 0; i < productos.size(); i++) {
                             if (i >= min && i < max) {
                                 productosCat.add(productos.get(i));
                             }
-                        }                     
+                        }
                     }
                     //El número de páginas será el resultado del maximo entre el número de articulos           
                     int pag = (int) Math.ceil(total / Double.parseDouble(prodPorPagina)); //Math.ceil redondea al alza

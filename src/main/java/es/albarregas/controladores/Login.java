@@ -4,11 +4,13 @@ import es.albarregas.beans.Cliente;
 import es.albarregas.beans.Direccion;
 import es.albarregas.beans.LineaPedido;
 import es.albarregas.beans.Pedido;
+import es.albarregas.beans.Producto;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IClientesDAO;
 import es.albarregas.dao.IDireccionesDAO;
 import es.albarregas.dao.ILineasPedidosDAO;
 import es.albarregas.dao.IPedidosDAO;
+import es.albarregas.dao.IProductosDAO;
 import es.albarregas.dao.IUsuariosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.io.IOException;
@@ -29,6 +31,7 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String url = "/index.jsp";
+      
         StringBuffer error = new StringBuffer();
         HttpSession sesion = request.getSession(true);
         //Si viene de hacer login
@@ -94,6 +97,22 @@ public class Login extends HttpServlet {
                             pedido.setLineasPedidos(listaLineasPedidos);
                             sesion.setAttribute("carrito", pedido);
                         }
+                    } else {
+                        //Comprobamos si hay productos con menos stock que el mínimo
+                        IProductosDAO iprd = df.getProductosDAO();
+                        ArrayList<Producto> listaProductos = iprd.getProductos("WHERE FueraCatalogo = 'n'");
+                        boolean alertaStock = false;
+                        for (Producto producto : listaProductos) {
+                            if (producto.getStock() < producto.getStockMinimo()) {
+                                sesion.setAttribute("alertaStock", ilpd);
+                                alertaStock = true;
+                            }
+                        }
+                        
+                        if(alertaStock){
+                            sesion.setAttribute("alertaStock", "error");
+                        }
+
                     }
                 } else {
                     request.setAttribute("login", "El usuario \"" + usuario.getEmail() + "\" ha sido bloqueado");
