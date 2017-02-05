@@ -89,11 +89,11 @@
                             </article>
                             <article class="producto col-md-5 col-sm-offset-1">
                                 <h2>Características</h3>
-                                    <ul>
+                                    <table class="table table-responsive table-striped">
                                         <c:forEach items="${pro.caracteristicas}" var="carac">
-                                            <li><b>${carac.nombre}</b> ${carac.descripcion}</li>
+                                            <tr><th>${carac.nombre}</th> <td>${carac.descripcion}</td></tr>
                                                 </c:forEach>
-                                    </ul>
+                                    </table>
                             </article>
 
                         </div>
