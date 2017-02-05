@@ -79,8 +79,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp">Datos de Usuario</a></li>
                             <li class="warning active"><a href="#">Datos de Cliente</a></li>
-                            <li><a href="#">Pedidos</a></li>
-                            <li><a href="#">Facturas</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Mis pedidos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
@@ -101,12 +100,12 @@
                                     <!-- Controlamos si nos llega algún error -->                 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="nombre" class="control-label">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" pattern="^[a-zA-Z ]+$" maxlength="25" required ${readonly}>                                        
+                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="25" required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="apellidos" class="control-label">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" pattern="^[a-zA-Z ]+$" maxlength="40" required ${readonly}>                                        
+                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">

@@ -12,7 +12,7 @@
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>  
-                        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
+                <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
             </head>
             <body class="container-fluid">
                 <jsp:include page="/jsp/componentes/cabecera.jsp"/>
@@ -26,7 +26,7 @@
                     <c:if test="${sessionScope.usuario.cliente.nombre == 'null'}">
                         <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"><strong>Regístrese como cliente para realizar compras</strong></a>
+                            <a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"> <span class="glyphicon glyphicon-pushpin"></span> <strong> Regístrese como cliente para realizar compras pinchando aquí</strong></a>
                         </div>
                     </c:if>
                 </div>
@@ -38,8 +38,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li class="warning active"><a href="#">Datos de Usuario</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de Cliente</a></li>
-                            <li><a href="#">Pedidos</a></li>
-                            <li><a href="#">Facturas</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Mis pedidos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>

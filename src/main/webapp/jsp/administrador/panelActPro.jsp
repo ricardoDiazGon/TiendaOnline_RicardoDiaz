@@ -32,7 +32,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
-                            <li><a href="#">Ver pedidos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li  class="warning active"><a href="#">Actualizar Productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
@@ -47,13 +47,13 @@
 
                             <table id="tablaProductos" class="table table-condensed table-responsive table-striped">
                                 <thead>
-                                <th>Id</th>
-                                <th>Denominacion</th>
-                                <th>Marca</th>
-                                <th>Stock</th>
-                                <th>Stock Mínimo</th>
-                                <th>Precio Unitario</th>
-                                <th>Descatalogar</th>
+                                <th  class="text-center">Id</th>
+                                <th class="text-center">Denominacion</th>
+                                <th class="text-center">Marca</th>
+                                <th class="text-center">Stock</th>
+                                <th class="text-center">Stock Mínimo</th>
+                                <th class="text-center">Precio Unitario</th>
+                                <th class="text-center">Descatalogar</th>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${requestScope.listaProductos}" var="pro">

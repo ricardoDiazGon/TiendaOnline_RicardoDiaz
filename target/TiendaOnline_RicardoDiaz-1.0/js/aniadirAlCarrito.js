@@ -1,13 +1,11 @@
-//$(document).ready(function () {
-//    $("#alerta-cantidad").fadeOut(6000);
-//});
+//Funciones para añadir productos al carrito
 
 function aniadirProducto(contexto, idProducto, stock, cantidad) {
-
     if (cantidad == undefined) {
         cantidad = document.getElementById("cantidadProducto").value;
     }
 
+//Controlamos que el numero metido sea conrrecto
     if (isNaN(cantidad) || cantidad == "" || cantidad % 1 != 0) {
 
         $("#alerta-cantidad").html(
@@ -16,6 +14,7 @@ function aniadirProducto(contexto, idProducto, stock, cantidad) {
                 + "<strong>Por favor, introduzca un número entero en la cantidad</strong></div>");
         $("#alerta-cantidad").fadeIn(1000);
         $("#alerta-cantidad").fadeOut(3000);
+//Controlamos que la cantidad no sea mayor que el stock existente
     } else if ((stock - cantidad) < 0) {
         $("#alerta-cantidad").html(
                 "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
@@ -23,7 +22,7 @@ function aniadirProducto(contexto, idProducto, stock, cantidad) {
                 + "<strong>La cantidad de producto introducida (" + cantidad + ") es mayor que el stock (" + stock + ") </strong></div>");
         $("#alerta-cantidad").fadeIn(1000);
         $("#alerta-cantidad").fadeOut(3000);
-
+//Si no hay problemas detectado llamamos al controlador con ajax
     } else {
         var url = contexto + "/aniadirAlCarrito?pro=" + idProducto + "&can=" + cantidad;
         var peticion = false;

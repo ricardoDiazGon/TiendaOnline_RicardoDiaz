@@ -45,8 +45,8 @@ public class Registro extends HttpServlet {
             IUsuariosDAO iud = df.getUsuariosDAO();
             IClientesDAO icd = df.getClientesDAO();
             //Validamos 
-            if (email.equals("")) {
-                error = "El campo Email (UserName) no puede estar vacío. ";
+            if (email.equals("") || email.length() > 60) {
+                error = "El campo Email (UserName) no puede estar vacío y tiene que tener una longitud máxima de 60 caracteres. ";
             } else if (clave.equals("")) {
                 error += "El campo CLAVE no puede estar vacía. ";
             } else if (claveRep.equals("")) {

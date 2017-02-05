@@ -1,8 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    En este controlador vamos a cargar los productos que el administrador puede actualizar.
+    Hace paginación.
+*/
 package es.albarregas.controladores;
 
 import es.albarregas.beans.Producto;

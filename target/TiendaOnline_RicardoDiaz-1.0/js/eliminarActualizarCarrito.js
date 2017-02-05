@@ -1,3 +1,8 @@
+/* 
+    Funciones principalmente para eliminar las lineas de pedidos del carrito o 
+    para actualizar la cantidad de los productos que están en el mismo
+ */
+
 function eliminarLineaCarrito(contexto, idPedido, numLinea) {
     realizarEliminacionCarrito(contexto, idPedido, numLinea);
 }

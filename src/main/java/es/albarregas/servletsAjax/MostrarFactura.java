@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Este es servlet para ajax en el que pasandole el idPedido se va a encargar de sacar
+    la factura correspondiente, con todos los datos cargados. Tenemos que tener en cuenta
+    que la factura lleva muchísimos datos cargados, para eso se requiere cargar un bean en otro
+    arraylist, etc...
  */
 package es.albarregas.servletsAjax;
 

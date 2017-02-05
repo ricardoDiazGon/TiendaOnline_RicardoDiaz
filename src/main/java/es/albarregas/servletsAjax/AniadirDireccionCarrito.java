@@ -1,14 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Servlet para ajax con el que añadimos las direcciones desde el carrito.
+    Podriamos haber usado el otro controlador que hace esto, pero el problema de fondo
+    es que como el carrito casi en su totalidad está compuesto por paginas insertadas en capas
+    y por carga en ajax, resulta más cómodo tener controladores a parte, ya que su naturaleza es distinta.
  */
 package es.albarregas.servletsAjax;
 
 import es.albarregas.beans.Direccion;
 import es.albarregas.beans.Pedido;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

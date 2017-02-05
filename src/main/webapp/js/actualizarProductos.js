@@ -1,3 +1,5 @@
+/* Funciones principalmente para la actualización de los productos */
+
 function actualizarProducto(contexto, idProducto, valor, campo) {
     //Solo hacemos la accion si no introducimos caracters
     if (!isNaN(idProducto) && !isNaN(valor) && valor >= 0) {

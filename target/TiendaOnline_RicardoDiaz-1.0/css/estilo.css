@@ -11,15 +11,23 @@ h1,h2,figure{
     text-align: center;
 }
 
+h2, h3{
+    margin-bottom: 30px;
+}
 
 footer{
-    height: 100px;
     background: #14171a;
     color: white;
+    padding: 75px auto;
+    text-align: center;
 }
 
 footer p{
     text-align: center;
+}
+
+footer ul li{
+    margin: 10px auto;
 }
 
 #logo img{
@@ -292,6 +300,9 @@ panel{
 
 /* Tabla productos */
 
+#tablaProductos thead th{
+    text-align: center;
+}
 #tablaProductos #stock, #tablaProductos #stockMinimo{
     width: 50px;
 }
@@ -307,4 +318,8 @@ panel{
 
 #tablaProductos > tr{
     border-radius: 20px;
+}
+
+a.enlace-mano{
+    cursor: pointer;
 }

@@ -32,7 +32,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
                             <li class="warning active"><a href="#">Actualizar clientes</a></li>
-                            <li><a href="#">Ver pedidos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar productos</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
@@ -56,8 +56,10 @@
                                             <tr>
                                                 <td>${usu.idUsuario}</td>
                                                 <td>${usu.email}</td>
-                                                <td><fmt:formatDate type="both" 
+                                                <td><fmt:formatDate type="date" 
                                                                 dateStyle="long" timeStyle="long"  timeZone="GMT+1"
+                                                                value="${usu.ultimoAcceso}" /> <fmt:formatDate type="time" timeStyle="short"
+                                                                timeZone="GMT+1"
                                                                 value="${usu.ultimoAcceso}" />
                                                 </td>
                                                 <c:choose>

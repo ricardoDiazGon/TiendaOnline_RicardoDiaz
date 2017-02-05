@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class PedidosDAO implements IPedidosDAO {
 
-    // Estados: - P: Pendiente, X: Remitido, R: Recibido, N: Nuevo
+    // Estados: - P: Pendiente, X: Enviado, R: Recibido, N: Nuevo
     @Override
     public int addPedidos(Pedido pedido) {
         int errorSQL = 0;
@@ -66,7 +66,7 @@ public class PedidosDAO implements IPedidosDAO {
             while (resultado.next()) {
                 pedido = new Pedido();
                 pedido.setIdPedido(resultado.getInt("IdPedido"));
-                pedido.setFecha(resultado.getDate("Fecha"));
+                pedido.setFecha(resultado.getTimestamp("Fecha"));
                 pedido.setEstado(resultado.getString("Estado"));
                 Cliente cliente = new Cliente();
                 cliente.setIdCliente(resultado.getInt("IdCliente"));

@@ -1,3 +1,8 @@
+/* 
+ En este fichero js vamos a bloquear y desbloquear usuarios, así como a descatalogar y poner en catalogo 
+ los productos
+ */
+
 /* Usuarios */
 function bloquearUsuario(contexto, idUsuario) {
     accBloqueoDesbloqueo(contexto, "usuario", idUsuario, "bloquear", contexto);
@@ -62,7 +67,7 @@ function cambiarFilaProducto(id, accion, contexto, mensaje) {
         $("#alerta-producto").html(
                 "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
                 + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
-                + "<strong>" +mensaje +"</strong></div>");
+                + "<strong>" + mensaje + "</strong></div>");
         $("#alerta-producto").fadeIn(1000);
         $("#alerta-producto").fadeOut(5000);
     }

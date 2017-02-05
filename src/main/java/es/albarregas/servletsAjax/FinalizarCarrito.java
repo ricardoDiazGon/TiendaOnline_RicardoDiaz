@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Cuando finalizamos el carrito tenemos que guardar y modificar una gran cantidad de información,
+    este es el servlet para ajax que gestiona ese proceso.
  */
 package es.albarregas.servletsAjax;
 
@@ -114,7 +113,7 @@ public class FinalizarCarrito extends HttpServlet {
                 System.out.println("Actualizacion stock prod " + producto.getIdProducto() + ", cod sql: " + errorSql);
             }
 
-            carrito.setEstado("r"); //recibido
+            carrito.setEstado("x"); //enviado
 
         } else {
             //Si no hay las cantidades, tenemos que cambiar el estado del pedido sin cambiar las cantidades del producto

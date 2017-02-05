@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Este servlet de ajax no tiene más cometido que eliminar lineas del carrito de la compra
+    o el mismo carrito de la compra entero. Cuando eliminamos la ultima linea de pedido elimina el pedido
  */
 package es.albarregas.servletsAjax;
 

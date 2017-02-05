@@ -1,8 +1,8 @@
+/* Controlador donde insertamos las direcciones principalmente */
+
 package es.albarregas.controladores;
 
 import es.albarregas.beans.Direccion;
-import es.albarregas.beans.Provincia;
-import es.albarregas.beans.Pueblo;
 import es.albarregas.beans.Usuario;
 import es.albarregas.dao.IDireccionesDAO;
 import es.albarregas.daofactory.DAOFactory;
@@ -42,8 +42,9 @@ public class Direcciones extends HttpServlet {
                 Usuario usuario = (Usuario) sesion.getAttribute("usuario");
                 int idCliente = usuario.getCliente().getIdCliente();
 
-                System.out.println("ID CLIENTE: " +idCliente);                
-                //Validamos lo básico
+                System.out.println("ID CLIENTE: " + idCliente);
+                //Validamos básica de direcciones por contenido vacío y máximo de caracteres.
+                //La validación más exhaustiva se realiza en cliente
                 if (nombreDir.equals("")) {
                     mensajeError = "Rellene el campo NOMBRE DE DIRECCION";
                 } else if (direccion.equals("")) {
@@ -56,7 +57,14 @@ public class Direcciones extends HttpServlet {
                     mensajeError = "Introduzca un CÓDIGO POSTAL correcto . ";
                 } else if (telefono.equals("")) {
                     mensajeError = "Rellene el campo TELÉFONO. ";
+                }else if (nombreDir.length() > 20 ) {
+                    mensajeError = "El campo NOMBRE DE DIRECCION no puede tener más de 20 caracteres";
+                } else if (direccion.length() > 50) {
+                    mensajeError = "El campo DIRECCION no puede tener más de 50 caracteres";
+                } else if (codigoPostal.length() > 5) {
+                    mensajeError = "El campo CÓDIGO POSTAL no puede tener más de 5 caracteres";
                 }
+               
 
                 Direccion dir = new Direccion();
 
@@ -65,7 +73,7 @@ public class Direcciones extends HttpServlet {
                 dir.setTelefono(telefono);
                 dir.setDireccion(direccion);
                 dir.setIdCliente(idCliente);
-                
+
                 //Para meter los enteros tenemos que comprobar que no vienen vacíos
                 if (!pueblo.equals("")) {
                     dir.setIdPueblo(Integer.parseInt(pueblo));
@@ -83,9 +91,9 @@ public class Direcciones extends HttpServlet {
                     int errorSQL = idd.addDirecciones(dir);
                     if (errorSQL == 0) {
                         //Si todo ha salido bien, para pintar que se ha añadido correctamente
-                        mensajeError = "ok"; 
+                        mensajeError = "ok";
                         //Actualizamos las direcciones del usuarios en sesion
-                        usuario.getCliente().setListaDirecciones(idd.getDirecciones("WHERE IdCliente = " +usuario.getIdUsuario()));
+                        usuario.getCliente().setListaDirecciones(idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario()));
                         sesion.setAttribute("usuario", usuario);
                     } else {
                         mensajeError = "No se ha podido guardar la dirección " + nombreDir.toUpperCase();
@@ -98,13 +106,12 @@ public class Direcciones extends HttpServlet {
                 if (!mensajeError.equals("") && !mensajeError.equals("ok")) {
                     request.setAttribute("direc", dir);
                 }
-                if(request.getParameter("formulario") != null && request.getParameter("formulario").equals("carrito")){
+                if (request.getParameter("formulario") != null && request.getParameter("formulario").equals("carrito")) {
                     url = "/jsp/cliente/carrito.jsp";
                     request.setAttribute("datosDir", "ok");
-                }else{
+                } else {
                     url = "/jsp/cliente/panelCli.jsp";
                 }
-                
 
             }
         }

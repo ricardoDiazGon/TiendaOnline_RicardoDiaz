@@ -1,3 +1,7 @@
+/* Aquí hacemos que aparezca el botón de comprar producto cuando pasamos el ratón por encima 
+ y que desaparezca. Lo hacen con efecto lento usando fade in y fade out de jquery
+ */
+
 $(document).ready(function () {
 
 //Muestra el botón de carrito cuando pasamos por encima de un producto        

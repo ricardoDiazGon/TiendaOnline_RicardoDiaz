@@ -42,34 +42,55 @@ public class MostrarPedidos extends HttpServlet {
         IDireccionesDAO idd = df.getDireccionesDAO();
         ArrayList<Pedido> listaPedidos = null;
         String url = "";
-        
+
+        /* 
+            En este if entramos si nos piden pasar un producto de enviado a recibido 
+            No es el lugar idoneo para ponerlo, pero lo pongo aquí para no aumentar demasiado
+            el número de controladores/servlets
+        */
+        if (request.getParameter("idPed") != null) {
+            String idPedido = request.getParameter("idPed");
+            listaPedidos = iped.getPedidos("WHERE IdPedido = " + idPedido);
+            for (Pedido pedido : listaPedidos) {
+                if (pedido.getEstado().equals("x")) {
+                    pedido.setEstado("r");
+                    iped.updPedidos(pedido);
+                }
+
+            }
+        }
+
         //Si lo busca el usuario
         if (usuario.getTipo().equals("u")) {
-            listaPedidos = iped.getPedidos("WHERE IdCliente = " + usuario.getIdUsuario() + " AND Estado <> 'n'");
+            listaPedidos = iped.getPedidos("WHERE IdCliente = " + usuario.getIdUsuario() + " AND Estado <> 'n' "
+                    + "ORDER BY Fecha DESC");
             ArrayList<Direccion> listaDirecciones = idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario());
             for (Pedido pedido : listaPedidos) {
                 for (Direccion direccion : listaDirecciones) {
                     if (pedido.getDireccion().getIdDireccion() == direccion.getIdDireccion()) {
                         pedido.setDireccion(direccion);
+                        break;
                     }
                 }
             }
             url = "/jsp/cliente/panelPedidosCli.jsp";
-            
+
             //Si lo busca el administrador
         } else {
-            listaPedidos = iped.getPedidos("WHERE Estado <> 'n' ");
+            listaPedidos = iped.getPedidos("WHERE Estado <> 'n'");
             ArrayList<Cliente> listaClientes = icd.getClientes("");
             for (Pedido pedido : listaPedidos) {
                 for (Cliente cliente : listaClientes) {
                     if (cliente.getIdCliente() == pedido.getCliente().getIdCliente()) {
                         pedido.setCliente(cliente);
+                        break;
                     }
                 }
             }
             url = "/jsp/administrador/panelPedidosAdm.jsp";
         }
-        
+
+        request.setAttribute("listaPedidos", listaPedidos);
         request.getRequestDispatcher(url).forward(request, response);
 
     }

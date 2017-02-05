@@ -70,6 +70,7 @@ public class NavProductos extends HttpServlet {
                 case "tod":
                 case "ofe":
                 case "ind":
+                case "mve":
                 case "cat":
                     if (opcion.equals("cat")) {
                         url = "/jsp/comun/paginaCategoria.jsp";
@@ -78,26 +79,28 @@ public class NavProductos extends HttpServlet {
                         url = "/jsp/comun/paginaTodos.jsp";
                     } else if (opcion.equals("ofe")) {
                         url = "/jsp/comun/paginaOfertas.jsp";
+                    } else if (opcion.equals("mve")) {
+                        url = "/jsp/comun/paginaMasVendidos.jsp";
                     }
                     request.setAttribute("actual", pagina);
                     //Rescatamos el array de productos del contexto de la aplicación, para poder manejarlo
-                    
+
                     //Actualizamos la información del contexto
                     DAOFactory df = DAOFactory.getDAOFactory(1);
                     IIMagenesDAO iid = df.getImagenesDAO();
                     IProductosDAO ipd = df.getProductosDAO();
                     ICaracteristicasDAO icard = df.getCaracteristicasDAO();
                     IGeneralDAO igd = df.getGeneralDAO();
-
-                    ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
+                    ArrayList<Producto> listaProductos = null;
+                    listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
 
                     //Introducimos las imagenes y las caracteristicas en los productos
-                    
                     for (Producto producto : listaProductos) {
                         producto.setImagenes(iid.getImagenes("WHERE IdProducto = " + producto.getIdProducto()));
                         producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " + producto.getIdProducto()));
                     }
                     request.getServletContext().setAttribute("productos", listaProductos);
+
                     ArrayList<Producto> productos = (ArrayList<Producto>) request.getServletContext().getAttribute("productos");
                     //Cargamos los productos del slider
                     ArrayList<Producto> listaProductosSlider = new ArrayList();
@@ -110,6 +113,17 @@ public class NavProductos extends HttpServlet {
                     }
                     request.getServletContext().setAttribute("proSlider", listaProductosSlider);
                     //Finaliza la actualización de la información del contexto
+
+                    if (opcion.equals("mve")) {
+                        productos = ipd.getProductos("WHERE P.IdProducto IN ( SELECT IdProducto FROM Pedidos PE "
+                                + " INNER JOIN LineasPedidos LP ON PE.IdPedido = LP.IdPedido WHERE PE.Estado in ('p','x','r'))");
+
+                        for (Producto producto : productos) {
+                            producto.setImagenes(iid.getImagenes("WHERE IdProducto = " + producto.getIdProducto()));
+                            producto.setCaracteristicas(icard.getCaracteristicas("WHERE IdProducto = " + producto.getIdProducto()));
+                        }
+
+                    }
 
                     //Según el orden que nos venga en el atributo, ordenamos de una forma u otra
                     ArrayList<Producto> productosCat = new ArrayList();
@@ -132,7 +146,8 @@ public class NavProductos extends HttpServlet {
                     int max = Integer.parseInt(prodPorPagina) * pagina;
                     int min = Integer.parseInt(prodPorPagina) * (pagina - 1);
                     double total = 0; //total de productos de la categoria que vamos a recorrer
-                    if (!opcion.equals("tod")) {
+                    //Si hemos seleccionado los productos más vendidos
+                    if (!opcion.equals("tod") && !opcion.equals("mve")) {
                         for (int i = 0; i < productos.size(); i++) {
                             if (productos.get(i).getIdCategoria() == Integer.parseInt(param) && total >= min && total < max) {
                                 productosCat.add(productos.get(i));
@@ -168,7 +183,8 @@ public class NavProductos extends HttpServlet {
             ex.printStackTrace();
         }
 
-        request.getRequestDispatcher(url).forward(request, response);
+        request.getRequestDispatcher(url)
+                .forward(request, response);
     }
 
     @Override

@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Servlet para ajax con el que insertamos productos al carrito.
+    Lo eficiente de este servlet es que si introduces dos veces un producto,
+    no crea lineas de pedidos diferente, sino que suma a la ya existe los productos que sean
  */
 package es.albarregas.servletsAjax;
 

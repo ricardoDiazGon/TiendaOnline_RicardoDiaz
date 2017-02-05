@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Principalmente, este servlet para ajax está encargado de 
+    modificar las cantidades de productos seleccionados en el carrito
  */
 package es.albarregas.servletsAjax;
 

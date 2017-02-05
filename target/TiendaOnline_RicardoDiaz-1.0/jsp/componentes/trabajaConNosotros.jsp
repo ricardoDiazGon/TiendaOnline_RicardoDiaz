@@ -13,18 +13,18 @@
                 <form class="form-horizontal" role="form" method="post" action="#">
 
                     <div style="margin-bottom: 10px">
-                        <label for="nombre" class="control-label">Nombre</label>
-                        <input id="nombre" type="text" class="form-control" name="nombre" value="${sessionScope.usuario.cliente.nombre}" placeholder="Nombre">                                        
+                        <label for="nombre" class="control-label">Nombre</label> 
+                        <input id="nombre" type="text" class="form-control" name="nombre" value="${sessionScope.usuario.cliente.nombre}" placeholder="Nombre" required="" maxlength="20">                                        
                     </div>
                     
                     <div style="margin-bottom: 10px">
                         <label for="apellidos" class="control-label">Apellidos</label>
-                        <input id="apellidos" type="text" class="form-control" name="apellidos" value="${sessionScope.usuario.cliente.apellidos}" placeholder="Apellidos">
+                        <input id="apellidos" type="text" class="form-control" name="apellidos" value="${sessionScope.usuario.cliente.apellidos}" placeholder="Apellidos" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" required="" maxlength="30">
                     </div>
                    
                     <div style="margin-bottom: 10px">
                         <label for="dni" class="control-label">DNI</label>
-                        <input id="dnip" type="text" class="form-control" name="dni" value="${sessionScope.usuario.cliente.NIF}" placeholder="DNI/NIF">
+                        <input id="dnip" type="text" class="form-control" name="dni" value="${sessionScope.usuario.cliente.NIF}" placeholder="DNI/NIF" required="" pattern="^[0-9]{8}[a-zA-Z]{1}$">
                     </div>
              
                     <div style="margin-bottom: 10px">

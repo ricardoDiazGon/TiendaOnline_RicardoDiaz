@@ -1,3 +1,8 @@
+/* 
+ Funciones donde ejecutamos la llamada para buscar la localidad y provincia que concuerde con el 
+ codigo postal que le pasamos. Es una busqueda dinámica con ajax
+ */
+
 function getPueblos(contexto) {
     var cp = document.getElementById("CodigoPostal").value;
     if (cp.length == 5) {
@@ -12,11 +17,12 @@ function getPueblos(contexto) {
 
         peticion.open("GET", url, true);
         peticion.send();
-    }else{
+    } else {
         vaciar();
     }
 }
 
+//Función para tratar el fichero json que se nos devuelve con la direccion
 function tratar_fichero(json) {
     var listaPueblos = JSON.parse(json.responseText)
 
@@ -35,9 +41,11 @@ function tratar_fichero(json) {
     }
 }
 
+//Vaciamos los campos si no se pulsa algo correcto, para garantizar la integridad de los datos
 function vaciar() {
     document.getElementById("Provincia").value = "";
     document.getElementById("Poblacion").value = "";
     document.getElementById("IdPueblo").value = "";
     document.getElementById("IdProvincia").value = "";
 }
+

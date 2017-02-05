@@ -24,6 +24,7 @@
                     </ul>
                 </li>
                 <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=ofe&pag=1">OFERTAS</a></li>
+                <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=mve&pag=1">MÁS VENDIDOS</a></li>
                 <li><a href="${pageContext.servletContext.contextPath}/navProductos?opt=tod&pag=1">TODOS</a></li>
             </ul>
 

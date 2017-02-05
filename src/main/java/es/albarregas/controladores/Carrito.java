@@ -1,17 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    En este controlador solo vamos a redireccionar hacia el carrito, 
+    No tiene mucho sentido, pero lo tengo por el MVC y por si en futuras
+    versiones fuese necesario.
  */
 package es.albarregas.controladores;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,10 +25,11 @@ public class Carrito extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String url = "";
-        System.out.println("Pasando por controlador de carrito");
-        if(request.getSession().getAttribute("usuario") != null){
+
+        HttpSession sesion = request.getSession(true);
+        
+        if(sesion.getAttribute("usuario") != null){
             url = "/jsp/cliente/carrito.jsp";
-            System.out.println("Entrando en controlador de carrito");
         }
         
         

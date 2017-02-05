@@ -40,7 +40,7 @@
                         <c:if test="${sessionScope.alertaStock != null}">
                             <div class="alert alert-info text-center center-block alert-dismissable col-md-12" style="margin-bottom: 25px;">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <a href="${pageContext.servletContext.contextPath}/actualizarProAdm"><strong>Hay productos por debajo del Stock mínimo</strong></a>
+                            <a href="${pageContext.servletContext.contextPath}/actualizarProAdm"><span class="glyphicon glyphicon-pushpin"></span>  <strong> Hay productos por debajo del Stock mínimo</strong></a>
                         </div>
                         </c:if>
                         

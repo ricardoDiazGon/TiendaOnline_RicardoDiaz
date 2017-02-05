@@ -1,3 +1,8 @@
+/* Es este fichero llevamos la gestión del avance del carrito implementando las cosas necesarias
+ Y además también llevamos la función para mostrar factura que también será usada en el panel de
+ cliente y administrador para ver la factura. Además en el carrito también se ve la factura al finalizar
+ */
+
 function irCarritoDatosIni(contexto) {
     $("#panel-carrito").load(contexto + "/jsp/componentes/panelCarritoIni.jsp");
 }
@@ -73,9 +78,25 @@ function mostrarFactura(contexto, idPedido) {
     $.ajax({url: url, success: function (result) {
 
         }});
-
+    
+    document.getElementById("mostrar-factura").innerHTML = "";
     $("#mostrar-factura").load(contexto + "/jsp/componentes/panelFactura.jsp");
     $('#panel-factura').modal('toogle');
     $('#panel-factura').modal('show');
     document.getElementById("numCarrito").innerHTML = "0";
+}
+
+function ocultarFactura() {
+    document.getElementById("mostrar-factura").innerHTML = "";
+}
+
+//En esta función el usuario nos dice que ya ha recibido su producto
+//Por tanto, este pasaría de enviado a recibido.
+function recibirProducto(contexto, idPedido){
+    var url = contexto + "/mostrarPedidos?idPed=" + idPedido;
+
+//Esto es ajax pero con jquery. 
+    $.ajax({url: url, success: function (result) {
+
+        }});
 }

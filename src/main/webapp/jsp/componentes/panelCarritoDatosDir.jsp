@@ -30,7 +30,7 @@
     </div>    
 
     <c:choose>
-        <c:when test="${fn:length(sessionScope.usuario.cliente.listaDirecciones) == 0}">
+        <c:when test="${fn:length(sessionScope.usuario.cliente.listaDirecciones) == 0 or requestScope.aniadirDir != null}">
             <c:if test="${requestScope.errorDirec != null and requestScope.errorDirec != 'ok'}">
                 <div class="col-md-12 alert alert-danger text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -38,12 +38,6 @@
                 </div>
             </c:if>
 
-            <c:if test="${requestScope.errorDirec != null and requestScope.errorDirec == 'ok'}">
-                <div class="col-md-12 alert alert-success text-center center-block alert-dismissable col-xs-offset-1 col-xs-6">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>La dirección ha sido guardada correctamente</strong>
-                </div>
-            </c:if>
             <form role="form"  method="post" action="${pageContext.servletContext.contextPath}/direcciones">
 
                 <div style="margin-bottom: 25px" class="form-group col-md-4">
@@ -97,7 +91,7 @@
                         <option value="${dir.idDireccion}">${dir.nombreDireccion}</option>
                     </c:forEach>                
                 </select>
-
+                <div><h4><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp"><span class="glyphicon glyphicon-plus"></span>Añadir una dirección</a></h4></div>
             </div>
             <!-- Se rellena automáticamente cuando ponemos una dirección -->
             <div id="datos-direccion" class="col-md-8 col-md-offset-1">

@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    En este servlet para ajax se van a modificar las propiedades de los productos
  */
 package es.albarregas.servletsAjax;
 
@@ -34,8 +32,10 @@ public class ActualizarProductos extends HttpServlet {
         try {
 
             String idProducto = request.getParameter("idPro");
+            //Valor nuevo
             String valor = request.getParameter("val");
-            String campo = request.getParameter("cam");
+            //El campo que debemos modificar
+            String campo = request.getParameter("cam"); 
 
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IProductosDAO iprd = df.getProductosDAO();
@@ -45,6 +45,7 @@ public class ActualizarProductos extends HttpServlet {
                 producto = productoAux;
             }
 
+            //Vemos que es lo que debemos modificar
             if (Double.parseDouble(valor) >= 0) {
                 switch (campo) {
                     case "stock":
@@ -68,6 +69,7 @@ public class ActualizarProductos extends HttpServlet {
 
         } catch (NumberFormatException | NullPointerException ex) {
             ex.printStackTrace();
+            //Si ocurre algún error lo debemos saber
             valorAnt = "error";
         }
 
@@ -88,6 +90,7 @@ public class ActualizarProductos extends HttpServlet {
                 }
             }
 
+            //AlertaStock es una variable que si es true nos dice que el stock es inferior al stock mínimo
             if (alertaStock) {
                 sesion.setAttribute("alertaStock", "error");
             }else{

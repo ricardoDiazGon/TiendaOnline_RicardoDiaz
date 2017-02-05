@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Como se puede ver, tenemos un buscador muy eficiente y totalmente dinámico con ajax, 
+    pues este es el que se encarga de encontrar en los productos aquellos que empiecen por
+    la cadena que le pasamos...
  */
 package es.albarregas.servletsAjax;
 

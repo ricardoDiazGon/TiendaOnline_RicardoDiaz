@@ -17,7 +17,7 @@ public class UsuariosDAO implements IUsuariosDAO {
         int errorSQL = 0;
         String sql = null;
 
-        sql = "INSERT INTO usuarios VALUES(0,?,?,?,?,?)";
+        sql = "INSERT INTO usuarios VALUES(0,?,AES_ENCRYPT(?,'laClaveQueLePasamos'),?,?,?)";
         try {
             PreparedStatement preparada = ConnectionFactory.getConnection().prepareStatement(sql);
             preparada.setString(1, usuario.getEmail());
@@ -41,7 +41,8 @@ public class UsuariosDAO implements IUsuariosDAO {
     @Override
     public ArrayList<Usuario> getUsuarios(String clausulaWhere) {
 
-        String sql = "SELECT * FROM Usuarios " + clausulaWhere;
+        String sql = "SELECT IdUsuario, Email, AES_DECRYPT(Clave,'laClaveQueLePasamos') as Clave, UltimoAcceso,"
+                + "Tipo, Bloqueado FROM Usuarios " + clausulaWhere;
         Statement sentencia = null;
         ResultSet resultado = null;
         ArrayList<Usuario> listaUsuarios = null;
@@ -91,9 +92,9 @@ public class UsuariosDAO implements IUsuariosDAO {
 
         if (!usuario.getClave().equals(usuario2.getClave())) {
             if (set) {
-                sql.append(", Clave = '" + usuario.getClave() + "'");
+                sql.append(", Clave = AES_ENCRYPT('" + usuario.getClave() + "', 'laClaveQueLePasamos')");
             } else {
-                sql.append("SET Clave = '" + usuario.getClave() + "'");
+                sql.append("SET Clave = AES_ENCRYPT('" + usuario.getClave() + "', 'laClaveQueLePasamos')");
                 set = true;
             }
         }

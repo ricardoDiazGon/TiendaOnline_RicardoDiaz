@@ -68,10 +68,10 @@
                             <select id="ordenar" class="form-control" onChange="location = document.getElementById('ordenar').value;">
                                 <c:forTokens delims="," items="${ordenacion}" varStatus="loop" var="forma">
                                     <c:if test="${requestScope.orden == loop.index +1}">
-                                        <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">${fn:toLowerCase(forma)}</option>
+                                        <option selected value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">Ordenado por ${fn:toLowerCase(forma)}</option>
                                     </c:if>
                                     <c:if test="${requestScope.orden != loop.index +1}">
-                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">Productos por página: ${pxp}</option>">${forma}</option>
+                                        <option value="${pageContext.servletContext.contextPath}/navProductos?opt=${opt}&param=${idCat}&ord=${loop.index +1}&pxp=${requestScope.proxpag}">${forma}</option>
                                     </c:if>
                                 </c:forTokens>
                             </select>
@@ -106,7 +106,7 @@
                                     <c:set value="btn-default" var="tipoBoton" />
                                 </c:if>    
                                 <div class="caption btn-carrito">
-                                    <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}, '${pro.stock}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
+                                    <p class="text-center btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-md btn-block" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '${pro.stock}', '1')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></p>
                                 </div>
                             </div>
                         </div>

@@ -48,17 +48,17 @@
         <!-- Controlamos si nos llega algún error -->                 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="nombre" class="control-label">Nombre</label>
-            <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" maxlength="25" pattern="\S{1-25}" value="${nombre}" required ${readonly}>                                        
+            <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre"  value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required ${readonly}>                                        
         </div>
 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="apellidos" class="control-label">Apellidos</label>
-            <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" maxlength="40" value="${apellidos}" required ${readonly}>                                        
+            <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos"   value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required  ${readonly}>                                        
         </div>
 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="NIF" class="control-label">NIF</label>
-            <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" maxlength="9" ${readonly} required value="${nif}">                                        
+            <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" pattern="^[0-9]{8}[a-zA-Z]{1}$" required  ${readonly}  value="${nif}">                                        
         </div>
         <c:if test="${readonly != null}">
             <div style="margin-bottom: 25px" class="form-group col-xs-6">
