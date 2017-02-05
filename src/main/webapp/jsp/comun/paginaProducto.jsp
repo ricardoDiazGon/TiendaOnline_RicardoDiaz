@@ -47,9 +47,9 @@
 
                         <div class="col-md-offset-1 col-md-6">
                             <article id="caracteristicas" class=" producto text-center container-fluid row">
-                                <h3><b>${pro.denominacion}</b></h3>
+                                <h1><b>${pro.denominacion}</b></h1>
                                 <h3 class="precioProducto"><fmt:formatNumber value="${pro.precioUnitario}" type="currency"/></h3>
-                                <p>Rating: <c:forEach begin="1" end="${pro.rating}"><span class="estrella glyphicon glyphicon-star"></span></c:forEach></p>
+                                <h1><c:forEach begin="1" end="${pro.rating}"><span class="estrella glyphicon glyphicon-star"></span></c:forEach></h1>
                                 </article>
 
                                 <article class="producto container-fluid row">
