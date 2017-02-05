@@ -51,7 +51,6 @@ public class ActualizarUsuAdm extends HttpServlet {
 
         int pag = (int) Math.ceil(total / Double.valueOf(8));
         
-        System.out.println("Total = " +total +", paginas = " +pag);
         request.setAttribute("listaUsuarios", listaUsuarios);
         
         request.setAttribute("pag", pag);

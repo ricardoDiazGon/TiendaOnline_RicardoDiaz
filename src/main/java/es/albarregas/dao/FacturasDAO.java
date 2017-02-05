@@ -39,7 +39,6 @@ public class FacturasDAO implements IFacturasDAO{
         }
 
         this.closeConnection();
-        System.out.println("Error sql " + errorSQL);
         return errorSQL;
     }
 

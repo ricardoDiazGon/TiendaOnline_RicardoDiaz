@@ -78,12 +78,18 @@ function mostrarFactura(contexto, idPedido) {
     $.ajax({url: url, success: function (result) {
 
         }});
-    
+
     document.getElementById("mostrar-factura").innerHTML = "";
-    $("#mostrar-factura").load(contexto + "/jsp/componentes/panelFactura.jsp");
-    $('#panel-factura').modal('toogle');
-    $('#panel-factura').modal('show');
-    document.getElementById("numCarrito").innerHTML = "0";
+
+    //Dormimos un poco el proceso para que de tiempo a ejecutarse el servlet (1 seg)
+    //sino puede ser que se cargue antes la ventana de que el servlet termine de ejecutarse y haya fallos
+    setTimeout(function () {
+        $("#mostrar-factura").load(contexto + "/jsp/componentes/panelFactura.jsp");
+        $('#panel-factura').modal('toogle');
+        $('#panel-factura').modal('show');
+        document.getElementById("numCarrito").innerHTML = "0";
+    }, 1000);
+
 }
 
 function ocultarFactura() {
@@ -92,7 +98,7 @@ function ocultarFactura() {
 
 //En esta función el usuario nos dice que ya ha recibido su producto
 //Por tanto, este pasaría de enviado a recibido.
-function recibirProducto(contexto, idPedido){
+function recibirProducto(contexto, idPedido) {
     var url = contexto + "/mostrarPedidos?idPed=" + idPedido;
 
 //Esto es ajax pero con jquery. 

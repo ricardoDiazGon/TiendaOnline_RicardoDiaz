@@ -57,7 +57,7 @@ public class FinalizarCarrito extends HttpServlet {
         clausulaWhereProds = clausulaWhereProds.substring(0, clausulaWhereProds.length() - 1);
 
         clausulaWhereProds += ")";
-        System.out.println(clausulaWhereProds);
+
         ArrayList<Producto> listaProductos = iprd.getProductos(clausulaWhereProds);
 
         General general = (General) request.getServletContext().getAttribute("general");

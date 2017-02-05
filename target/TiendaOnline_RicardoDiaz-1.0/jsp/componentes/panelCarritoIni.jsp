@@ -10,7 +10,7 @@
         <div class="panel-body">
             <div class="center-block text-center">
                 <div class="row">
-                    <ul class="breadcrumb2  visible-lg visible-md">
+                    <ul class="breadcrumb2  visible-lg visible-md col-xs-10 col-xs-offset-1">
                         <li class="active"><a href="javascript:void(0);">Datos del pedido</a></li>
                         <li><a href="javascript:void(0);">Datos personales</a></li>
                         <li><a href="javascript:void(0);">Datos de envío</a></li>

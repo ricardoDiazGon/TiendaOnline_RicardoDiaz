@@ -7,7 +7,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Administrador | INFO Albarregas</title>
+                <title>Panel admin | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -22,19 +22,19 @@
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Administrador</li>
+                        <li class="active">Panel de admin</li>
                     </ol>
                 </div>
                 <div id="secciones" class="container row">
                     <!-- Menú de navegación -->
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de admin</h3>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de administrador</a></li>
                             <li class="warning active"><a href="#">Actualizar clientes</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar productos</a></li>
-                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
+                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar sesión</a></li>
                         </ul>
                     </nav>
                     <!-- Listado de usuarios -->

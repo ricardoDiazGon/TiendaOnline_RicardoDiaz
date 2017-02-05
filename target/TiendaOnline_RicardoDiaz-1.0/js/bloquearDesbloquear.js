@@ -69,7 +69,7 @@ function cambiarFilaProducto(id, accion, contexto, mensaje) {
                 + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
                 + "<strong>" + mensaje + "</strong></div>");
         $("#alerta-producto").fadeIn(1000);
-        $("#alerta-producto").fadeOut(5000);
+        $("#alerta-producto").fadeOut(6000);
     }
 
 }

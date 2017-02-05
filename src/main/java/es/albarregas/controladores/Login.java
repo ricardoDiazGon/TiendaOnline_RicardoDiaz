@@ -57,7 +57,7 @@ public class Login extends HttpServlet {
 
             //Si no hay errores seguimos...
             if (error.length() == 0) {
-                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE Email = '" + email + "' AND Clave = AES_ENCRYPT(" +clave +",'laClaveQueLePasamos')");
+                ArrayList<Usuario> listaUsuarios = iud.getUsuarios(" WHERE Email = '" + email + "' AND Clave = AES_ENCRYPT('" +clave +"','laClaveQueLePasamos')");
                 if (listaUsuarios.isEmpty()) {
                     error.append("El email (UserName) o la clave no son correctos.");
                 } else {

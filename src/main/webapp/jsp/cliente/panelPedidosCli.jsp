@@ -9,7 +9,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Cliente | INFO Albarregas</title>
+                <title>Panel usuario | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -31,19 +31,19 @@
                 <div class="row">
                     <ol class="breadcrumb col-md-4">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Usuario</li>
+                        <li class="active">Panel de usuario</li>
                     </ol>
                 </div>
 
                 <!-- Menú de navegación -->
                 <div id="secciones" class="container row">
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de usuario</h3>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp">Datos de Usuario</a></li>
-                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de Cliente</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp">Datos de usuario</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de cliente</a></li>
                             <li class="warning active"><a href="#">Mis pedidos</a></li>
-                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
+                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar sesión</a></li>
                         </ul>
                     </nav>
 
@@ -92,13 +92,13 @@
                                                                                    value="${ped.fecha}" /></td>
                                                     <td class="${marcarFila}">${ped.direccion.direccion} ${ped.direccion.nombrePueblo} ${ped.direccion.codigoPostal} - ${ped.direccion.nombreProvincia}</td>
                                                     <td class="${marcarFila}"><fmt:formatNumber value="${ped.baseImponible}" 
-                                                              type="currency"/></td>
+                                                                                     type="currency"/></td>
                                                     <td class="${marcarFila}"><fmt:formatNumber value="${ped.iva}" 
-                                                              type="currency"/></td>
+                                                                                     type="currency"/></td>
                                                     <td class="${marcarFila}">
                                                         <b>${estado}</b>
                                                         <c:if test="${ped.estado == 'x'}">
-                                                            <br/><a href="" class="btn btn-xs btn-primary" onclick="recibirProducto('${pageContext.servletContext.contextPath}','${ped.idPedido}')">¡Recibido!</a>
+                                                            <br/><a href="" class="btn btn-xs btn-primary" onclick="recibirProducto('${pageContext.servletContext.contextPath}', '${ped.idPedido}')">¡Recibido!</a>
                                                         </c:if>
                                                     </td> 
                                                     <td class="${marcarFila}"><button class="btn btn-md btn-success" onclick="mostrarFactura('${pageContext.servletContext.contextPath}', '${ped.idPedido}')">Ver factura <span class="glyphicon glyphicon-save-file"></span></button></td>
@@ -108,6 +108,24 @@
 
                                     </table>
                                     <label>*Los pedidos que están pendientes aparecen sombreados de rojo y los enviados de azul</label>
+                                    <!-- Paginación -->
+                                    <div class=" container col-md-12 text-center center-block">
+                                        <ul class="pagination">
+                                            <c:forEach begin="1" end="${requestScope.pag}" varStatus="loop">
+                                                <c:choose>
+                                                    <c:when test="${loop.index == requestScope.actual}">
+                                                        <li class="active"><a href="#">${loop.index}</a></li> 
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                        <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos?pag=${loop.index}">${loop.index}</a></li> 
+                                                        </c:otherwise>
+                                                    </c:choose>
+
+                                            </c:forEach>
+                                        </ul>
+
+                                    </div>                                
+
                                 </div>
 
                             </c:when>
@@ -115,23 +133,6 @@
                                 <h2 class="text-center">No existen pedidos disponibles.</h2>
                             </c:otherwise>
                         </c:choose>
-                        <!-- Paginación -->
-                        <div class=" container col-md-12 text-center center-block">
-                            <ul class="pagination">
-                                <c:forEach begin="1" end="${requestScope.pag}" varStatus="loop">
-                                    <c:choose>
-                                        <c:when test="${loop.index == requestScope.actual}">
-                                            <li class="active"><a href="#">${loop.index}</a></li> 
-                                            </c:when>
-                                            <c:otherwise>
-                                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm?pag=${loop.index}">${loop.index}</a></li> 
-                                            </c:otherwise>
-                                        </c:choose>
-
-                                </c:forEach>
-                            </ul>
-
-                        </div>
 
                     </div>
                 </div>

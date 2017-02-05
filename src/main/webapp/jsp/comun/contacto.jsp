@@ -34,30 +34,10 @@
         </div>    
 
         <!-- Secciones -->
-        <div id="secciones" class="container center-block row">
+        <div id="secciones" class="container center-block row datosContacto" style="margin-bottom: 50px;">
 
-            <!-- OFERTAS DEL MES -->
             <section id="contacto" class="col-md-12 row">
-
-                <div class="col-md-6">
-                    <div style="margin-bottom: 50px;">
-                        <h2>Localización</h2>
-                        <div class="center-block text-center">
-                            <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3104.023402899694!2d-6.336369144347554!3d38.92344258078297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1486250487231" frameborder="0" height="400" width="400 "style="border:0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div>
-                        <h2>Redes sociales</h2>
-                        <div class="row">
-                            <a href="https://www.facebook.com/" title="Facebook"><img class="img-responsive col-md-3 col-md-offset-3" src="${pageContext.servletContext.contextPath}/imagenes/facebook-icon.png"></a>
-                            <a href="https://twitter.com/?lang=es" title="Twitter"><img class="img-responsive col-md-3 " src="${pageContext.servletContext.contextPath}/imagenes/twitter-icon.png"></a>
-                        </div>
-                    </div>                     
-
-                </div>
-
-
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-bottom: 50px;">
                     <div style="margin-bottom: 50px;">
                         <h2>Datos de contacto</h2>
                         <p><b>Nombre de la empresa:</b> INFO Albarregas</p>
@@ -65,7 +45,20 @@
                         <p><b>Persona de contacto: </b>Ricardo Díaz González</p>
                         <p><b>Teléfono de contacto: </b>902202122</p>
                     </div>
+
                     <div>
+                        <h2>Localización</h2>
+                        <div class="center-block text-center">
+                            <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3104.023402899694!2d-6.336369144347554!3d38.92344258078297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1486250487231" frameborder="0" height="400" width="400 "style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-6" style="margin-bottom: 50px;">
+                    <div style="margin-bottom: 50px;">
 
                         <form class="form-horizontal" role="form" method="post" action="#">
                             <caption><h2>Formulario de contacto</h2></caption>
@@ -91,7 +84,7 @@
 
                             <div style="margin-bottom: 10px">
                                 <label for="informacion" class="control-label">Curriculum Vitae (PDF/DOC)</label>
-                                <textarea id="informacion" name="informacion" cols="70" rows="5" placeholder="Escriba su información aquí"></textarea>
+                                <textarea id="informacion" name="informacion" cols="50" rows="5" placeholder="Escriba su información aquí"></textarea>
                             </div>
 
                             <div class="modal-footer">
@@ -102,7 +95,17 @@
                         </form>
                     </div> 
 
+                    <div>
+                        <h2>Redes sociales</h2>
+                        <div class="row">
+                            <a href="https://www.facebook.com/" title="Facebook"><img class="img-responsive col-xs-3 col-xs-offset-3" src="${pageContext.servletContext.contextPath}/imagenes/facebook-icon.png"></a>
+                            <a href="https://twitter.com/?lang=es" title="Twitter"><img class="img-responsive col-xs-3 " src="${pageContext.servletContext.contextPath}/imagenes/twitter-icon.png"></a>
+                        </div>
+                    </div>                     
+
                 </div>
+
+
 
 
             </section>

@@ -42,7 +42,6 @@ public class LineasPedidosDAO implements ILineasPedidosDAO {
         }
 
         this.closeConnection();
-        System.out.println("Error sql " + errorSQL);
         return errorSQL;
     }
 

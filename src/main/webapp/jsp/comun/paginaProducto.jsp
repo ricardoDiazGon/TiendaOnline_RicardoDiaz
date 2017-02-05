@@ -36,16 +36,11 @@
                 <div id="secciones" class="container center-block row">
 
                     <!-- Producto individual -->
-                    <section id="producto" class="col-sm-12">
+                    <section id="producto" class="col-sm-12 datosContacto">
 
                         <div class="col-sm-5">
                             <article id="foto" class=" producto container-fluid row">
                                 <jsp:include page="/jsp/componentes/sliderProd.jsp"/>
-                            </article>
-
-                            <article class="producto container-fluid row">
-                                <h2>Descripción</h3>
-                                    <p>${pro.descripcion}</p>
                             </article>
 
                         </div>
@@ -58,8 +53,8 @@
                                 </article>
 
                                 <article class="producto container-fluid row">
-                                    <h3>Marca: ${pro.denoMarca}</h3>
-                                <h3>Disponibilidad: ${pro.stock} Unidades</h3>
+                                    <h3><b>Marca: </b>${pro.denoMarca}</h3>
+                                <h3><b>Disponibilidad: </b>${pro.stock} Unidades</h3>
 
                                 <c:if test="${pro.oferta == 's'}">
                                     <h3>Producto en oferta. ¡Aproveche!</h3>
@@ -68,7 +63,8 @@
                             <div id="alerta-cantidad"></div>
                             <article class="producto container-fluid row">
                                 <div class="col-md-5">
-                                    <h3><input id="cantidadProducto" class="form-control" type="number" min="1" max="100" value="1" size="5"/></h3>
+                                    <h4>Cantidad: </h4>
+                                    <h4><input id="cantidadProducto" class="form-control" type="number" min="1" max="100" value="1" size="5"/></h4>
                                 </div>
 
                                 <!-- Si no hay usuario registrado botones comprar disabled -->    
@@ -81,8 +77,17 @@
                                 <div class="text-center  col-md-offset-1  col-md-6">
                                     <h3 class="btn-carrito"><button ${dis} class="btn ${tipoBoton} btn-lg" role="button" onclick="aniadirProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', '${pro.stock}')">Añadir al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button></h3>
                                 </div>                 
-                            </article> 
-                            <article class="producto container-fluid row">
+                            </article>  
+
+
+                        </div>
+
+                        <div class="col-sm-12">
+                            <article class="producto row col-sm-6">
+                                <h2>Descripción</h3>
+                                    <p>${pro.descripcion}</p>
+                            </article>
+                            <article class="producto col-md-5 col-sm-offset-1">
                                 <h2>Características</h3>
                                     <ul>
                                         <c:forEach items="${pro.caracteristicas}" var="carac">
@@ -93,6 +98,7 @@
 
                         </div>
                     </section>
+
 
                 </div>
             </c:if>

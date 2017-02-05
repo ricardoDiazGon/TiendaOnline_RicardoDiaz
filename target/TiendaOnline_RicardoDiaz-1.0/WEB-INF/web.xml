@@ -20,11 +20,11 @@
     </welcome-file-list>
     <error-page>
         <error-code>500</error-code>
-        <location>/JSP/ERRORES/error500.jsp</location>
+        <location>/jsp/errores/error500.jsp</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/JSP/ERRORES/error404.jsp</location>
+        <location>/jsp/errores/error404.jsp</location>
     </error-page>
     
     <listener>

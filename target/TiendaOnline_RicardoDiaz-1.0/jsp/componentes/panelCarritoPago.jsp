@@ -8,7 +8,7 @@
     <div class="panel-body">
 
         <div class="row">
-            <ul class="breadcrumb2">
+            <ul class="breadcrumb2 visible-lg visible-md col-xs-10 col-xs-offset-1">
                 <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosIni('${pageContext.servletContext.contextPath}')">Datos del pedido</a></li>
                 <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosPer('${pageContext.servletContext.contextPath}')">Datos personales</a></li>
                 <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosDir('${pageContext.servletContext.contextPath}')">Datos de envío</a></li>           
@@ -20,12 +20,12 @@
 
             <div style="margin-bottom: 25px" class="form-group col-xs-offset-3 col-xs-7">
                 <label for="nombre" class="control-label">Titular de la tarjeta</label>
-                <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Titular de la tarjeta" maxlength="30" required />                                        
+                <input id="nombre" type="text" class="form-control" name="nombre" value="${sessionScope.usuario.cliente.nombre} ${sessionScope.usuario.cliente.apellidos}" placeholder="Titular de la tarjeta" maxlength="30" title="No se permiten números ni caracteres raros" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" required />                                        
             </div>
 
             <div style="margin-bottom: 25px" class="form-group col-xs-offset-3 col-xs-7">
                 <label for="numTarjeta" class="control-label">Número de tarjeta</label>
-                <input id="numTarjeta" type="text" class="form-control" name="numTarjeta" placeholder="Número de la tarjeta" maxlength="20" required />                                        
+                <input id="numTarjeta" type="text" class="form-control" name="numTarjeta" placeholder="Número de la tarjeta" title="Más de un número" pattern="^[0-9]+$" maxlength="20" required />                                        
             </div>
 
             <div style="margin-bottom: 25px" class="form-group col-xs-offset-3 col-xs-3">
@@ -47,7 +47,7 @@
 
             <div style="margin-bottom: 25px" class="form-group col-xs-offset-1 col-xs-3">
                 <label for="codigoSeg" class="control-label">CVV2/CVC2</label>
-                <input id="codigoSeg" type="text" class="form-control" name="codigoSeg" size="3" maxlength="3" placeholder="000" required>                                        
+                <input id="codigoSeg" type="text" class="form-control" name="codigoSeg" size="3" pattern="^[0-9]{3}$" title="Los tres números de la parte trasera de la tarjeta" maxlength="3" placeholder="000" required>                                        
             </div>
 
 

@@ -6,10 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class UsuariosDAO implements IUsuariosDAO {
+
+    static final org.apache.log4j.Logger LOG_ERROR = org.apache.log4j.Logger.getRootLogger();
+    static final org.apache.log4j.Logger LOG_INFO = org.apache.log4j.Logger.getLogger(UsuariosDAO.class);
 
     @Override
     public int addUsuarios(Usuario usuario) {
@@ -28,20 +29,20 @@ public class UsuariosDAO implements IUsuariosDAO {
             preparada.executeUpdate();
 
             preparada.close();
+            LOG_INFO.info("Se ha añadido el usuario con email " + usuario.getEmail() + " de forma exitosa");
         } catch (SQLException ex) {
-            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOG_ERROR.fatal("Error SQL al añadir Usuario: " +ex.getErrorCode());
             errorSQL = ex.getErrorCode();
         }
 
         this.closeConnection();
-        System.out.println("Error sql " + errorSQL);
         return errorSQL;
     }
 
     @Override
     public ArrayList<Usuario> getUsuarios(String clausulaWhere) {
 
-        String sql = "SELECT IdUsuario, Email, AES_DECRYPT(Clave,'laClaveQueLePasamos') as Clave, UltimoAcceso,"
+        String sql = "SELECT IdUsuario, Email, AES_DECRYPT(Clave,'laClaveQueLePasamos') Clave, UltimoAcceso,"
                 + "Tipo, Bloqueado FROM Usuarios " + clausulaWhere;
         Statement sentencia = null;
         ResultSet resultado = null;
@@ -62,10 +63,11 @@ public class UsuariosDAO implements IUsuariosDAO {
                 usuario.setBloqueado(resultado.getString("Bloqueado"));
                 listaUsuarios.add(usuario);
             }
-                sentencia.close();
-                resultado.close();
+            sentencia.close();
+            resultado.close();
+            LOG_INFO.info("Se ha consultado usuarios de forma exitosa");
         } catch (SQLException ex) {
-            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOG_ERROR.fatal("Error SQL al consultar usuarios: " +ex.getErrorCode());
         }
 
         this.closeConnection();
@@ -134,8 +136,9 @@ public class UsuariosDAO implements IUsuariosDAO {
                 sentencia.executeUpdate(sql.toString());
                 sentencia.close();
                 errorSQL = 0;
+                LOG_INFO.info("Se ha actualizado el usuario con ID " +usuario.getIdUsuario() +" de forma exitosa");
             } catch (SQLException ex) {
-                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+                LOG_ERROR.fatal("Error SQL al actualizar usuarios: " +ex.getErrorCode());
                 errorSQL = ex.getErrorCode();
             }
         }

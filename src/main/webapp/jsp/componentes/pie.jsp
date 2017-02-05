@@ -15,7 +15,8 @@
     </div>
     <div class="col-xs-3 col-xs-offset-1">
         <ul>
-            <li>Creado por Ricardo Díaz © 2017</li>
+            <li>Creado por Ricardo Díaz González </li>
+            <li>© Info Albarregas 2017</li>
         </ul>
     </div>
     <div class="col-xs-3 col-xs-offset-1">
@@ -32,7 +33,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('[data-toggle="popover"]').popover()
+        $('[data-toggle="popover"]').popover();
     })
 </script>
 

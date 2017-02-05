@@ -34,3 +34,40 @@ function accActualizarProducto(respuesta) {
                 + "<strong>" + mensaje + "</strong></div>";
     }
 }
+
+
+/* Funciones para poner o quitar productos de oferta */
+function ofertarProducto(contexto, idProducto) {
+    accOfertar(contexto, idProducto, "ofertar");
+}
+
+function noOfertarProducto(contexto, idProducto) {
+    accOfertar(contexto, idProducto, "noOfertar");
+}
+
+function accOfertar(contexto, id, accion) {
+    var url = contexto + "/ponerOferta?id=" + id + "&accion=" + accion;
+    var peticion = false;
+    peticion = new XMLHttpRequest();
+    peticion.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            cambiarFilaOferta(id, accion, contexto);
+        }
+    };
+
+    peticion.open("GET", url, true);
+    peticion.send();
+}
+
+
+function cambiarFilaOferta(id, accion, contexto) {
+    var cadena;
+
+        if (accion == "noOfertar") {
+            cadena = "\<button class=\"btn btn-danger btn-sm\"  title=\"Poner en oferta\" onclick=\"ofertarProducto('" + contexto + "', '" + id + "')\" >\<span class=\"glyphicon glyphicon-ban-circle\">\</span>\</button>";
+        } else {
+            cadena = "\<button class=\"btn btn-success btn-sm\" title=\"Quitar de ofertas\" onclick=\"noOfertarProducto('" + contexto + "', '" + id + "')\" >\<span class=\"glyphicon glyphicon-ok-sign\">\</span>\</button>";
+        }
+        document.getElementById("productoOfe" + id).innerHTML = cadena;
+
+}

@@ -1,5 +1,6 @@
 /*
-    En este servlet para ajax se van a modificar las propiedades de los productos
+    En este servlet para ajax se van a modificar algunas propiedades de los productos
+    (Otras propiedades se modifican en otros servlets)
  */
 package es.albarregas.servletsAjax;
 
@@ -35,7 +36,7 @@ public class ActualizarProductos extends HttpServlet {
             //Valor nuevo
             String valor = request.getParameter("val");
             //El campo que debemos modificar
-            String campo = request.getParameter("cam"); 
+            String campo = request.getParameter("cam");
 
             DAOFactory df = DAOFactory.getDAOFactory(1);
             IProductosDAO iprd = df.getProductosDAO();
@@ -84,7 +85,7 @@ public class ActualizarProductos extends HttpServlet {
             boolean alertaStock = false;
             HttpSession sesion = request.getSession(true);
             for (Producto producto : listaProductos) {
-                if (producto.getStock() < producto.getStockMinimo()) {                 
+                if (producto.getStock() < producto.getStockMinimo()) {
                     sesion.setAttribute("alertaStock", "error");
                     alertaStock = true;
                 }
@@ -93,11 +94,8 @@ public class ActualizarProductos extends HttpServlet {
             //AlertaStock es una variable que si es true nos dice que el stock es inferior al stock mínimo
             if (alertaStock) {
                 sesion.setAttribute("alertaStock", "error");
-            }else{
-                if(sesion.getAttribute("alertaStock") != null){
-                    sesion.removeAttribute("alertaStock");
-                }
-                
+            } else if (sesion.getAttribute("alertaStock") != null) {
+                sesion.removeAttribute("alertaStock");
             }
 
         } else {
@@ -106,9 +104,6 @@ public class ActualizarProductos extends HttpServlet {
         out.flush();
         out.close();
 
-        if (actualizar) {
-
-        }
     }
 
     @Override

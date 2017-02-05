@@ -51,7 +51,7 @@ public class MostrarFactura extends HttpServlet {
         ArrayList<LineaPedido> listaLineasPedidos = ilped.getLineasPedidos("WHERE IdPedido = " + idPedido);
         Pedido pedido = new Pedido();
         HttpSession sesion = request.getSession(true);
-        System.out.println("Mostrar factura: " +idPedido);
+
         //Es un solo pedido, así que lo cogemos
         for (Pedido pedidoAux : listaPedidos) {
             pedido = pedidoAux;

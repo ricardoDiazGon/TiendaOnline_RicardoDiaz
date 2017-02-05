@@ -1,0 +1,1456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 13:16:44 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-7 thread">http-apr-8084-exec-7</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td title="http-apr-8084-exec-7 thread">http-apr-8084-exec-7</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>59</td>
+<td title="http-apr-8084-exec-7 thread">http-apr-8084-exec-7</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 2 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>129422</td>
+<td title="http-apr-8084-exec-15 thread">http-apr-8084-exec-15</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>132199</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>132230</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>132301</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>141282</td>
+<td title="http-apr-8084-exec-4 thread">http-apr-8084-exec-4</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>141284</td>
+<td title="http-apr-8084-exec-4 thread">http-apr-8084-exec-4</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>152115</td>
+<td title="http-apr-8084-exec-14 thread">http-apr-8084-exec-14</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>152118</td>
+<td title="http-apr-8084-exec-14 thread">http-apr-8084-exec-14</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>259755</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>259756</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 14:01:54 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-68 thread">http-apr-8084-exec-68</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>4951</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>4959</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5008</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>294974</td>
+<td title="http-apr-8084-exec-67 thread">http-apr-8084-exec-67</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>294977</td>
+<td title="http-apr-8084-exec-67 thread">http-apr-8084-exec-67</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 15:54:51 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-11 thread">http-apr-8084-exec-11</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha añadido el usuario con email riki@gmail.com de forma exitosa</td>
+</tr>
+
+<tr>
+<td>37</td>
+<td title="http-apr-8084-exec-11 thread">http-apr-8084-exec-11</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>74748</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>74787</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>74841</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1804413</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1804420</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1804482</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2401508</td>
+<td title="http-apr-8084-exec-20 thread">http-apr-8084-exec-20</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2401517</td>
+<td title="http-apr-8084-exec-20 thread">http-apr-8084-exec-20</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2401581</td>
+<td title="http-apr-8084-exec-20 thread">http-apr-8084-exec-20</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2505979</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2505984</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2506135</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2603991</td>
+<td title="http-apr-8084-exec-17 thread">http-apr-8084-exec-17</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2605750</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2607167</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2614493</td>
+<td title="http-apr-8084-exec-20 thread">http-apr-8084-exec-20</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2772538</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2772542</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2772631</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 16:58:58 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>86</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>590914</td>
+<td title="http-apr-8084-exec-26 thread">http-apr-8084-exec-26</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha añadido el usuario con email jesus@gmail.com de forma exitosa</td>
+</tr>
+
+<tr>
+<td>590920</td>
+<td title="http-apr-8084-exec-26 thread">http-apr-8084-exec-26</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>595620</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>595625</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>595736</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>690732</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>690736</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>690871</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>803415</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>803425</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>803476</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2021223</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2024016</td>
+<td title="http-apr-8084-exec-30 thread">http-apr-8084-exec-30</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2024104</td>
+<td title="http-apr-8084-exec-30 thread">http-apr-8084-exec-30</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2024195</td>
+<td title="http-apr-8084-exec-30 thread">http-apr-8084-exec-30</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 2 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5325473</td>
+<td title="http-apr-8084-exec-29 thread">http-apr-8084-exec-29</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5325495</td>
+<td title="http-apr-8084-exec-29 thread">http-apr-8084-exec-29</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5325613</td>
+<td title="http-apr-8084-exec-29 thread">http-apr-8084-exec-29</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5695991</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5695996</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5696136</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>7992587</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>7992594</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>7992793</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8146472</td>
+<td title="http-apr-8084-exec-25 thread">http-apr-8084-exec-25</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha añadido el usuario con email luis@gmail.com de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8146472</td>
+<td title="http-apr-8084-exec-25 thread">http-apr-8084-exec-25</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8148144</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8148144</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8148253</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 7 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8796763</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha añadido el usuario con email manuel@gmail.com de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8796779</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8799662</td>
+<td title="http-apr-8084-exec-28 thread">http-apr-8084-exec-28</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8799662</td>
+<td title="http-apr-8084-exec-28 thread">http-apr-8084-exec-28</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8799755</td>
+<td title="http-apr-8084-exec-28 thread">http-apr-8084-exec-28</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 8 de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 20:08:17 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-37 thread">http-apr-8084-exec-37</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td title="http-apr-8084-exec-37 thread">http-apr-8084-exec-37</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>73</td>
+<td title="http-apr-8084-exec-37 thread">http-apr-8084-exec-37</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>114012</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>114023</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>114086</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>194790</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>194796</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>194854</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>200981</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>200985</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>201064</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>247275</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>247279</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>247438</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>291255</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>291259</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>291343</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>318749</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>318755</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>318857</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>467706</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>467714</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>467813</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>472903</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>472906</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>472957</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>965607</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>968727</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>968828</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>968883</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1237238</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1237250</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1237292</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2565571</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2568737</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2568739</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2568807</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2578168</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2578212</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2587380</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2587382</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2587472</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2597761</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2597819</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2601447</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2601449</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2615858</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2615859</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2685241</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2685243</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2705096</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2705098</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2755202</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2755202</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2755233</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 7 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3047215</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3047215</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3047262</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 4 de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 21:02:18 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>4490099</td>
+<td title="http-apr-8084-exec-51 thread">http-apr-8084-exec-51</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 23:20:07 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>68</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 23:27:56 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>48</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>381937</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>381941</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>382063</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 1 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>410811</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>410812</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>480814</td>
+<td title="http-apr-8084-exec-9 thread">http-apr-8084-exec-9</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>480818</td>
+<td title="http-apr-8084-exec-9 thread">http-apr-8084-exec-9</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>480943</td>
+<td title="http-apr-8084-exec-9 thread">http-apr-8084-exec-9</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 8 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>561984</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>561988</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>562072</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>658557</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>658559</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>658649</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha actualizado el usuario con ID 2 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>663975</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>
+
+<tr>
+<td>663977</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.UsuariosDAO category">es.albarregas.dao.UsuariosDAO</td>
+<td title="Message">Se ha consultado usuarios de forma exitosa</td>
+</tr>

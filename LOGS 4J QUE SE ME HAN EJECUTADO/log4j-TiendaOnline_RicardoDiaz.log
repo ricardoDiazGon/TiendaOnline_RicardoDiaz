@@ -1,0 +1,406 @@
+2017-02-05 13:16:44 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:16:44 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:16:44 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 13:16:44 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:16:44 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 2 de forma exitosa
+2017-02-05 13:18:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:18:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:18:56 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:18:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:18:56 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 13:19:05 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:19:05 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:19:05 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:05 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:13 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:16 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:19:16 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:19:16 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:16 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:22 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:19:24 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 13:19:24 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:20:28 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 13:20:28 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:21:03 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:21:03 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 13:21:03 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:21:03 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 13:21:06 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 14:01:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 14:01:59 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 14:01:59 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 14:01:59 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 14:01:59 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 14:06:49 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 14:06:49 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 14:06:49 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 14:06:49 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 15:54:51 INFO  UsuariosDAO:32 - Se ha añadido el usuario con email riki@gmail.com de forma exitosa
+2017-02-05 15:54:51 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 15:54:51 INFO  ClientesDAO:37 - Se ha añadido el cliente con ID 3 de forma exitosa
+2017-02-05 15:56:06 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 15:56:06 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 15:56:06 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 15:56:06 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 15:56:06 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 16:02:19 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:02:19 INFO  ClientesDAO:132 - Se ha actualizado el cliente con ID 3 de forma exitosa
+2017-02-05 16:24:55 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:24:55 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:24:55 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:24:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:24:56 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 16:33:24 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:33:46 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:34:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:34:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:34:53 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:34:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:34:53 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 16:36:37 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:36:37 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:36:37 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:36:37 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:36:37 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 16:38:15 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:38:17 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:38:18 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:38:26 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:41:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:41:04 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:41:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:41:04 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 16:58:58 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:58:58 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 16:58:58 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 16:58:58 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 16:58:58 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 17:08:49 INFO  UsuariosDAO:32 - Se ha añadido el usuario con email jesus@gmail.com de forma exitosa
+2017-02-05 17:08:49 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:08:49 INFO  ClientesDAO:37 - Se ha añadido el cliente con ID 4 de forma exitosa
+2017-02-05 17:08:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:08:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 17:08:53 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 17:08:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:08:53 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 17:10:01 FATAL root:34 - Error SQL al añadir Usuario: 1062
+2017-02-05 17:10:18 FATAL root:34 - Error SQL al añadir Usuario: 1062
+2017-02-05 17:10:28 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:10:28 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 17:10:28 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 17:10:28 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:10:28 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 17:12:21 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:12:21 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 17:12:21 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 17:12:21 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:12:21 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 17:20:43 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 17:28:09 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 17:28:09 INFO  ClientesDAO:132 - Se ha actualizado el cliente con ID 4 de forma exitosa
+2017-02-05 17:29:30 INFO  DireccionesDAO:33 - Se ha añadido direccion para el cliente con ID 4 de forma exitosa
+2017-02-05 17:29:30 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 17:32:39 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:32:42 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:32:42 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 17:32:42 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 17:32:42 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 2 de forma exitosa
+2017-02-05 17:39:06 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 18:27:43 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 18:27:43 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 18:27:43 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 18:27:43 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 18:27:43 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 18:33:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 18:33:54 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 18:33:54 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 18:33:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 18:33:54 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 19:12:10 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:12:10 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 19:12:10 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:12:10 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:12:10 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 19:14:44 INFO  UsuariosDAO:32 - Se ha añadido el usuario con email luis@gmail.com de forma exitosa
+2017-02-05 19:14:44 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:14:44 INFO  ClientesDAO:37 - Se ha añadido el cliente con ID 7 de forma exitosa
+2017-02-05 19:14:46 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:14:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 19:14:46 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:14:46 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:14:46 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 7 de forma exitosa
+2017-02-05 19:18:02 INFO  DireccionesDAO:33 - Se ha añadido direccion para el cliente con ID 4 de forma exitosa
+2017-02-05 19:18:02 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:21:28 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 19:21:28 INFO  ClientesDAO:132 - Se ha actualizado el cliente con ID 7 de forma exitosa
+2017-02-05 19:23:48 INFO  DireccionesDAO:33 - Se ha añadido direccion para el cliente con ID 7 de forma exitosa
+2017-02-05 19:23:48 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:25:34 INFO  UsuariosDAO:32 - Se ha añadido el usuario con email manuel@gmail.com de forma exitosa
+2017-02-05 19:25:34 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:25:35 INFO  ClientesDAO:37 - Se ha añadido el cliente con ID 8 de forma exitosa
+2017-02-05 19:25:37 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:25:37 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 19:25:37 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:25:37 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 19:25:37 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 8 de forma exitosa
+2017-02-05 19:32:19 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 19:32:19 INFO  ClientesDAO:132 - Se ha actualizado el cliente con ID 8 de forma exitosa
+2017-02-05 19:50:31 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 19:50:31 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:08:17 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:08:17 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:08:17 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:08:17 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:08:17 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:08:19 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:10:11 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:10:11 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:10:11 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:10:11 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:10:11 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:11:31 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:11:31 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:11:31 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:11:31 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:11:32 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:11:38 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:11:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:11:38 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:11:38 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:11:38 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:12:24 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:12:24 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:12:24 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:12:24 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:12:24 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:13:08 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:13:08 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:13:08 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:13:08 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:13:08 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:13:35 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:13:35 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:13:35 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:13:35 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:13:36 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:16:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:16:04 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:16:04 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:16:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:16:04 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:16:10 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:16:10 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:16:10 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:16:10 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:16:10 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 20:23:09 INFO  DireccionesDAO:33 - Se ha añadido direccion para el cliente con ID 3 de forma exitosa
+2017-02-05 20:23:09 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:23:28 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:23:28 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:23:36 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:23:36 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:23:59 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:24:22 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:24:25 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:24:25 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:24:26 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:24:26 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:24:26 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 20:28:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:28:54 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:28:54 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:28:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:28:54 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 20:29:42 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:34 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:34 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:30:38 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:30:41 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:41 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:30:45 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:45 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:30:53 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:30:58 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:30:58 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:01 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:01 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:06 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:06 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:11 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:11 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:19 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:19 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:30 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:30 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:40 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:40 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:31:46 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:31:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:36:00 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:45:47 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:45:58 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:46:06 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:46:08 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:46:08 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:46:30 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:29 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:29 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:30 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:30 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:48:36 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:36 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:48:42 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:42 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:48:49 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:49 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:48:57 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:48:57 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:02 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:02 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:08 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:08 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:18 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:19 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:20 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:20 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:28 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:28 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:35 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:35 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:39 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:39 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:46 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:49:51 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:49:51 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:02 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:05 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:05 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:05 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:05 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 20:51:15 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:15 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 20:51:24 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:24 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:24 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:24 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 20:51:34 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:35 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 20:51:38 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:38 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:38 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:50 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:53 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:51:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:51:53 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:02 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:53:02 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:53:02 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:02 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:02 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:02 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:22 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:53:22 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:53:22 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:22 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:22 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:53:22 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:54:12 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:54:12 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:54:12 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 7 de forma exitosa
+2017-02-05 20:57:39 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:57:44 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:59:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:59:04 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 20:59:04 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:59:04 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 20:59:04 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 4 de forma exitosa
+2017-02-05 20:59:08 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:59:10 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:59:10 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 20:59:13 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 21:02:18 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 22:17:08 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 22:17:08 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 22:17:08 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:20:07 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:20:07 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:20:07 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:20:07 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:20:07 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 23:27:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:27:56 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:27:56 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:27:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:27:56 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 23:28:14 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:20 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:20 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:29:34 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:34 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:29:41 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:45 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:45 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:48 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:48 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:29:58 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:29:58 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:30:03 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:30:03 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:30:21 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:30:21 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:30:25 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:30:25 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:30:32 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:30:32 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:30:49 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:34:09 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:34:18 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:34:18 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:34:18 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:34:18 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 1 de forma exitosa
+2017-02-05 23:34:46 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:34:46 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:34:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:34:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:34:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:34:46 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:35:15 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:35:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:35:56 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:35:56 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:35:56 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:35:57 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 8 de forma exitosa
+2017-02-05 23:37:18 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:37:18 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:37:18 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:37:18 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:37:18 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 3 de forma exitosa
+2017-02-05 23:38:11 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:38:11 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:38:39 INFO  DireccionesDAO:77 - Se han consultado direcciones de forma exitosa
+2017-02-05 23:38:39 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:38:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:38:54 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:38:54 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:38:54 INFO  UsuariosDAO:139 - Se ha actualizado el usuario con ID 2 de forma exitosa
+2017-02-05 23:39:00 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:39:00 INFO  UsuariosDAO:68 - Se ha consultado usuarios de forma exitosa
+2017-02-05 23:39:00 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:00 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:00 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:00 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:01 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:04 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:05 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:24 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa
+2017-02-05 23:39:26 INFO  ClientesDAO:71 - Se ha consultado clientes de forma exitosa

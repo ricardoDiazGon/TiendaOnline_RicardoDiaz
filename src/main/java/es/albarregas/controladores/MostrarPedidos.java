@@ -32,8 +32,14 @@ public class MostrarPedidos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        HttpSession sesion = request.getSession(true);
+        int pagina = 1;
+        if (request.getParameter("pag") != null) {
+            pagina = Integer.parseInt(request.getParameter("pag")); //Número de página
+        }
 
+        int min = 5 * (pagina - 1); //5 pedidos por página        
+        
+        HttpSession sesion = request.getSession(true);
         Usuario usuario = (Usuario) sesion.getAttribute("usuario");
 
         DAOFactory df = DAOFactory.getDAOFactory(1);
@@ -60,10 +66,14 @@ public class MostrarPedidos extends HttpServlet {
             }
         }
 
+        int total = 0;
         //Si lo busca el usuario
         if (usuario.getTipo().equals("u")) {
             listaPedidos = iped.getPedidos("WHERE IdCliente = " + usuario.getIdUsuario() + " AND Estado <> 'n' "
                     + "ORDER BY Fecha DESC");
+            total = listaPedidos.size();
+            listaPedidos = iped.getPedidos("WHERE IdCliente = " + usuario.getIdUsuario() + " AND Estado <> 'n' "
+                    + "ORDER BY Fecha DESC LIMIT " +min +",5");
             ArrayList<Direccion> listaDirecciones = idd.getDirecciones("WHERE IdCliente = " + usuario.getIdUsuario());
             for (Pedido pedido : listaPedidos) {
                 for (Direccion direccion : listaDirecciones) {
@@ -77,7 +87,9 @@ public class MostrarPedidos extends HttpServlet {
 
             //Si lo busca el administrador
         } else {
-            listaPedidos = iped.getPedidos("WHERE Estado <> 'n'");
+            listaPedidos = iped.getPedidos("WHERE Estado <> 'n' ORDER BY Fecha DESC");
+            total = listaPedidos.size();
+            listaPedidos = iped.getPedidos("WHERE Estado <> 'n' ORDER BY Fecha DESC LIMIT " +min +",5");
             ArrayList<Cliente> listaClientes = icd.getClientes("");
             for (Pedido pedido : listaPedidos) {
                 for (Cliente cliente : listaClientes) {
@@ -91,6 +103,9 @@ public class MostrarPedidos extends HttpServlet {
         }
 
         request.setAttribute("listaPedidos", listaPedidos);
+        int pag = (int) Math.ceil(Double.valueOf(total) / Double.valueOf(5));
+        request.setAttribute("actual", pagina);
+        request.setAttribute("pag", pag);
         request.getRequestDispatcher(url).forward(request, response);
 
     }

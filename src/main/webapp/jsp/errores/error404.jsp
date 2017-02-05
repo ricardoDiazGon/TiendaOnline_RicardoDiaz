@@ -1,26 +1,57 @@
-<%-- 
-    Document   : error404
-    Created on : 07-dic-2016, 19:13:56
-    Author     : Ricardo
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>
-        <title>Error 404 | INFO Albarregas</title>
+        <title>INFO Albarregas</title>
+        <!-- Incluimos las etiquetas meta -->
+        <jsp:include page="/jsp/componentes/meta.jsp"/>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/efectosProductos.js"></script>
+        <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
     </head>
-    <body>
-        <div id="errores">
-            <h1>No se ha encontrado la página que buscaba</h1>
+    <body class="container-fluid">
+        <c:set var="opt" value="ind" />
+        <c:set value="${pageContext.servletContext.contextPath}" var="contexto"/>
+        <div id="contenedor-arriba">
+            <!-- Cabecera -->
+            <jsp:include page="/jsp/componentes/cabecera.jsp"/>
 
-            <a href="${pageContext.servletContext.contextPath}">
-                <img src="${pageContext.servletContext.contextPath}/imagenes/error404.jpg" alt="Error404" />
-            </a>
+            <!-- Navegación -->
+            <jsp:include page="/jsp/componentes/navegadorPrincipal.jsp"/>
+        </div>
+        <!-- Miga de pan -->
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
+                <li class="active">Pagina no encontrada</li>
+            </ol>
+        </div>    
 
-            <h3>Pulse la imagen para continuar</h3>
-        </div> 
-    </body>
+        <!-- Secciones -->
+        <div id="secciones" class="container center-block row">
+
+
+            <section id="contacto" class="col-md-12 row">
+
+                <div class="col-md-8 col-md-offset-2 text-center">
+
+                    <h3>Puede seguir comprando haciendo click <a href="${pageContext.servletContext.contextPath}/navProductos">aquí</a> </h3>
+                    <h1><img alt="Página no encontrada" src="${pageContext.servletContext.contextPath}/imagenes/pagina-no-encontrada.jpg"</h1>
+                    <h3>Puede seguir comprando haciendo click <a href="${pageContext.servletContext.contextPath}/navProductos">aquí</a> </h3>
+                </div>  
+            </section>
+        </div>
+
+
+
+    <jsp:include page="/jsp/componentes/cuadroLogin.jsp"/>
+    <jsp:include page="/jsp/componentes/cuadroRegistro.jsp"/>   
+    <jsp:include page="/jsp/componentes/pie.jsp"/>
+</body>
 </html>

@@ -36,7 +36,7 @@
 
         <!-- Secciones -->
         <div id="secciones" class="container center-block row">
-            <h2>OFERTAS DE 2017</h2>
+            <h2>OFERTAS DEL MES</h2>
             <section id="slider" class="col-sm-offset-2 col-sm-8 visible-lg visible-md ">
                 <jsp:include page="/jsp/componentes/slider.jsp"/>
             </section>
@@ -44,7 +44,7 @@
 
             <!-- OFERTAS DEL MES -->
             <section id="productos" class="col-md-12">
-                <h2>OTROS PRODUCTOS EN OFERTA</h2>
+                <h2>PRODUCTOS EN OFERTA</h2>
                 <!-- Método para hacer la ordenacion y sepamos donde poner el option seleccionado para saber que orden hay -->
                 <c:set value="Nombre, Precio ascendente, Precio descendente, Popularidad" var="ordenacion"/>
                 <div id="filtros" class="col-md-12 row">                

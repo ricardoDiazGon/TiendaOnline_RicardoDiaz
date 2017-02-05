@@ -7,11 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DireccionesDAO implements IDireccionesDAO {
-
+    
+    static final org.apache.log4j.Logger LOG_ERROR = org.apache.log4j.Logger.getRootLogger();
+    static final org.apache.log4j.Logger LOG_INFO = org.apache.log4j.Logger.getLogger(DireccionesDAO.class);
+    
     @Override
     public int addDirecciones(Direccion direccion) {
         int errorSQL = 0;
@@ -29,12 +30,14 @@ public class DireccionesDAO implements IDireccionesDAO {
             preparada.setString(6, direccion.getTelefono());
             preparada.executeUpdate();
             preparada.close();
+            LOG_INFO.info("Se ha añadido direccion para el cliente con ID " + direccion.getIdCliente() + " de forma exitosa");
         } catch (SQLException ex) {
             errorSQL = ex.getErrorCode();
+            LOG_ERROR.fatal("Error SQL al añadir direcciones: " +ex.getErrorCode());
         }
 
         this.closeConnection();
-        System.out.println("Error sql " + errorSQL);
+            
         return errorSQL;        
     }
 
@@ -71,8 +74,9 @@ public class DireccionesDAO implements IDireccionesDAO {
             }
             sentencia.close();
             resultado.close();
+            LOG_INFO.info("Se han consultado direcciones de forma exitosa");
         } catch (SQLException ex) {
-            Logger.getLogger(DireccionesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOG_ERROR.fatal("Error SQL al añadir direcciones: " +ex.getErrorCode());
         }
 
         this.closeConnection();

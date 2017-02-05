@@ -30,7 +30,6 @@ public class ConnectionFactory {
                 conexion.close();
             }
         } catch (SQLException e) {
-            System.out.println("Error al cerrar la conexión a la BD");
             e.printStackTrace();
         }
     }

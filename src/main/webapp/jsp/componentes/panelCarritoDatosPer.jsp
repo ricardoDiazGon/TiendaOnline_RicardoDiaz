@@ -23,7 +23,7 @@
 <div class="panel-body">
 
     <div class="row">
-        <ul class="breadcrumb2">
+        <ul class="breadcrumb2 visible-lg visible-md col-xs-10 col-xs-offset-1">
             <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosIni('${pageContext.servletContext.contextPath}')">Datos del pedido</a></li>
             <li class="active"><a href="javascript:void(0);">Datos personales</a></li>
             <li><a href="javascript:void(0);">Datos de envío</a></li>
@@ -48,17 +48,17 @@
         <!-- Controlamos si nos llega algún error -->                 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="nombre" class="control-label">Nombre</label>
-            <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre"  value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required ${readonly}>                                        
+            <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre"  value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" title="No se permiten números ni caracteres raros" maxlength="40" required ${readonly}>                                        
         </div>
 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="apellidos" class="control-label">Apellidos</label>
-            <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos"   value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required  ${readonly}>                                        
+            <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos"   value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" title="No se permiten números ni caracteres raros" maxlength="40" required  ${readonly}>                                        
         </div>
 
         <div style="margin-bottom: 25px" class="form-group col-xs-6">
             <label for="NIF" class="control-label">NIF</label>
-            <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" pattern="^[0-9]{8}[a-zA-Z]{1}$" required  ${readonly}  value="${nif}">                                        
+            <input id="NIF" type="text" class="form-control" name="NIF" placeholder="00000000A" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="8 números y 1 letra" required  ${readonly}  value="${nif}">                                        
         </div>
         <c:if test="${readonly != null}">
             <div style="margin-bottom: 25px" class="form-group col-xs-6">
@@ -75,12 +75,12 @@
         <c:if test="${readonly == null}">
             <div style="margin-bottom: 25px" class="form-group col-xs-6">
                 <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
-                <input id="fecha" type="text" class="form-control" name="fechaNacimiento" required placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}"/>
+                <input id="fecha" type="text" class="form-control" name="fechaNacimiento" required placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" title="dd/mm/aaaa"/>
             </div> 
-
+            <label>* Todos los campos son obligatorios</label>
             <div class="panel-footer">
                 <div class="input-group col-xs-12 text-center">
-                    <input type="submit" class="btn btn-success" name="${nameSubmit}" value="${valueSubmit}"/>
+                    <input type="submit" class="btn btn-warning" name="${nameSubmit}" value="${valueSubmit}"/>
                 </div>
             </div>
             <c:set var="disabled" value="disabled"/>

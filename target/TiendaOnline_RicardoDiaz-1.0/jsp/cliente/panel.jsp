@@ -7,7 +7,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Cliente | INFO Albarregas</title>
+                <title>Panel usuario | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <ol class="breadcrumb col-md-4">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Usuario</li>
+                        <li class="active">Panel de usuario</li>
                     </ol>
                     <c:if test="${sessionScope.usuario.cliente.nombre == 'null'}">
                         <div class="alert alert-info text-center center-block alert-dismissable col-md-offset-1 col-md-6">
@@ -34,12 +34,12 @@
                 <!-- Menú de navegación -->
                 <div id="secciones" class="container row">
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de usuario</h3>
                         <ul class="nav nav-pills nav-stacked">
-                            <li class="warning active"><a href="#">Datos de Usuario</a></li>
-                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de Cliente</a></li>
+                            <li class="warning active"><a href="#">Datos de usuario</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panelCli.jsp">Datos de cliente</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Mis pedidos</a></li>
-                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
+                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar sesión</a></li>
                         </ul>
                     </nav>
                     <div class="col-md-offset-1 col-md-8 row">
@@ -90,6 +90,7 @@
                                         <label for="claveNueRep" class="control-label">Repetir contraseña</label>
                                         <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" placeholder="Repetir contraseña" minlength="4" maxlength="50" required>                                        
                                     </div> 
+                                    <label>* Todos los campos son obligatorios</label>
                                 </div>
                                 <div class="panel-footer">
                                     <div class="input-group col-xs-12 text-center">

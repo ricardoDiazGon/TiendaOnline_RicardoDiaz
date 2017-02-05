@@ -6,7 +6,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Administrador | INFO Albarregas</title>
+                <title>Panel admin | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -20,13 +20,13 @@
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Administrador</li>
+                        <li class="active">Panel de admin</li>
                     </ol>
                 </div>
                 <div id="secciones" class="container row">
                     <!-- Menú de navegación -->
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de admin</h3>
                         <ul class="nav nav-pills nav-stacked">
                             <li class="warning active"><a href="#">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
@@ -91,6 +91,7 @@
                                         <label for="claveNueRep" class="control-label">Repetir contraseña</label>
                                         <input id="claveNueRep" type="password" class="form-control" name="claveNueRep" required placeholder="Repetir contraseña"  minlength="4" maxlength="50">                                        
                                     </div> 
+                                    <label>* Todos los campos son obligatorios</label>
                                 </div>
                                 <div class="panel-footer">
                                     <div class="input-group col-xs-12 text-center">

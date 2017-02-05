@@ -26,10 +26,13 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 
 
 $(document).ready(function () {
+    var fechaActual = new Date();
+    //Los años van desde 18 a 90
+    var rangoFechas = (fechaActual.getFullYear() - 90) + ":" +(fechaActual.getFullYear() - 18);
     $fecha = $('#fecha');
     $("#fecha").datepicker({
         changeMonth: true,
         changeYear: true,
-        yearRange: '1930:'
+        yearRange: rangoFechas
     });
 });

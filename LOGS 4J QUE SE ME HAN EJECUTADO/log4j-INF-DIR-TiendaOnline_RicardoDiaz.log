@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 13:16:44 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>23</td>
+<td title="http-apr-8084-exec-7 thread">http-apr-8084-exec-7</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>160240</td>
+<td title="http-apr-8084-exec-11 thread">http-apr-8084-exec-11</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>224792</td>
+<td title="http-apr-8084-exec-17 thread">http-apr-8084-exec-17</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 15:54:51 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>74775</td>
+<td title="http-apr-8084-exec-12 thread">http-apr-8084-exec-12</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1804418</td>
+<td title="http-apr-8084-exec-16 thread">http-apr-8084-exec-16</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2312710</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2334667</td>
+<td title="http-apr-8084-exec-13 thread">http-apr-8084-exec-13</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2401514</td>
+<td title="http-apr-8084-exec-20 thread">http-apr-8084-exec-20</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2505982</td>
+<td title="http-apr-8084-exec-19 thread">http-apr-8084-exec-19</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 16:58:58 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>22</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>595623</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>690734</td>
+<td title="http-apr-8084-exec-23 thread">http-apr-8084-exec-23</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>803422</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1305134</td>
+<td title="http-apr-8084-exec-25 thread">http-apr-8084-exec-25</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1832659</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se ha añadido direccion para el cliente con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1832662</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5325494</td>
+<td title="http-apr-8084-exec-29 thread">http-apr-8084-exec-29</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>5695994</td>
+<td title="http-apr-8084-exec-21 thread">http-apr-8084-exec-21</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>7992592</td>
+<td title="http-apr-8084-exec-22 thread">http-apr-8084-exec-22</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8148144</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8344011</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se ha añadido direccion para el cliente con ID 4 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8344012</td>
+<td title="http-apr-8084-exec-27 thread">http-apr-8084-exec-27</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8689905</td>
+<td title="http-apr-8084-exec-26 thread">http-apr-8084-exec-26</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se ha añadido direccion para el cliente con ID 7 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8689905</td>
+<td title="http-apr-8084-exec-26 thread">http-apr-8084-exec-26</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>8799662</td>
+<td title="http-apr-8084-exec-28 thread">http-apr-8084-exec-28</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>10293277</td>
+<td title="http-apr-8084-exec-28 thread">http-apr-8084-exec-28</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 20:08:17 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>11</td>
+<td title="http-apr-8084-exec-37 thread">http-apr-8084-exec-37</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2733</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>114021</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>194794</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>200983</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>247278</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>291258</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>318753</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>467711</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>472905</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>892094</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se ha añadido direccion para el cliente con ID 3 de forma exitosa</td>
+</tr>
+
+<tr>
+<td>892097</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>911565</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>918890</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>942647</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>968827</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1237248</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1285365</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1337184</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1341071</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1344116</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1348029</td>
+<td title="http-apr-8084-exec-46 thread">http-apr-8084-exec-46</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1356118</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1361180</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1364591</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1368922</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1374188</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1382311</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1393041</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1403222</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1409586</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>1663389</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2250068</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2260818</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2269770</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2270883</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2293087</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2411959</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2412499</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2413317</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2419354</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2425223</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2432196</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2440230</td>
+<td title="http-apr-8084-exec-40 thread">http-apr-8084-exec-40</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2445779</td>
+<td title="http-apr-8084-exec-45 thread">http-apr-8084-exec-45</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2451477</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2461285</td>
+<td title="http-apr-8084-exec-44 thread">http-apr-8084-exec-44</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2461830</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2463089</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2471596</td>
+<td title="http-apr-8084-exec-39 thread">http-apr-8084-exec-39</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2478603</td>
+<td title="http-apr-8084-exec-38 thread">http-apr-8084-exec-38</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2482686</td>
+<td title="http-apr-8084-exec-46 thread">http-apr-8084-exec-46</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2489473</td>
+<td title="http-apr-8084-exec-47 thread">http-apr-8084-exec-47</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>2493852</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3047215</td>
+<td title="http-apr-8084-exec-43 thread">http-apr-8084-exec-43</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3051284</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3053769</td>
+<td title="http-apr-8084-exec-41 thread">http-apr-8084-exec-41</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>3053784</td>
+<td title="http-apr-8084-exec-42 thread">http-apr-8084-exec-42</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 21:02:18 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>4490111</td>
+<td title="http-apr-8084-exec-51 thread">http-apr-8084-exec-51</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 23:20:07 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>17</td>
+<td title="http-apr-8084-exec-70 thread">http-apr-8084-exec-70</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Feb 05 23:27:56 CET 2017<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>16</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>18110</td>
+<td title="http-apr-8084-exec-8 thread">http-apr-8084-exec-8</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>84215</td>
+<td title="http-apr-8084-exec-8 thread">http-apr-8084-exec-8</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>98018</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>105238</td>
+<td title="http-apr-8084-exec-4 thread">http-apr-8084-exec-4</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>109279</td>
+<td title="http-apr-8084-exec-5 thread">http-apr-8084-exec-5</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>109324</td>
+<td title="http-apr-8084-exec-6 thread">http-apr-8084-exec-6</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>111902</td>
+<td title="http-apr-8084-exec-8 thread">http-apr-8084-exec-8</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>122615</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>127534</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>145079</td>
+<td title="http-apr-8084-exec-4 thread">http-apr-8084-exec-4</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>149145</td>
+<td title="http-apr-8084-exec-6 thread">http-apr-8084-exec-6</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>156571</td>
+<td title="http-apr-8084-exec-8 thread">http-apr-8084-exec-8</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>173390</td>
+<td title="http-apr-8084-exec-10 thread">http-apr-8084-exec-10</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>372918</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>480817</td>
+<td title="http-apr-8084-exec-9 thread">http-apr-8084-exec-9</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>561987</td>
+<td title="http-apr-8084-exec-2 thread">http-apr-8084-exec-2</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>615301</td>
+<td title="http-apr-8084-exec-1 thread">http-apr-8084-exec-1</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>
+
+<tr>
+<td>642909</td>
+<td title="http-apr-8084-exec-7 thread">http-apr-8084-exec-7</td>
+<td title="Level">INFO</td>
+<td title="es.albarregas.dao.DireccionesDAO category">es.albarregas.dao.DireccionesDAO</td>
+<td title="Message">Se han consultado direcciones de forma exitosa</td>
+</tr>

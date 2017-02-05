@@ -22,6 +22,7 @@ es\albarregas\dao\IMarcasDAO.class
 es\albarregas\dao\PueblosDAO.class
 es\albarregas\dao\ClientesDAO.class
 es\albarregas\dao\ImagenesDAO.class
+es\albarregas\servletsAjax\PonerOferta.class
 es\albarregas\dao\ILineasPedidosDAO.class
 es\albarregas\controladores\ActualizarProAdm.class
 es\albarregas\servletsAjax\AniadirAlCarrito.class

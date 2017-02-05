@@ -9,7 +9,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Administrador | INFO Albarregas</title>
+                <title>Panel admin | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -26,13 +26,13 @@
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Administrador</li>
+                        <li class="active">Panel de admin</li>
                     </ol>
                 </div>
                 <div id="secciones" class="container row">
                     <!-- Menú de navegación -->
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de admin</h3>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
@@ -87,9 +87,9 @@
                                                     <td class="${marcarFila}">${ped.cliente.nombre} ${ped.cliente.apellidos}</td>
                                                     <td class="${marcarFila}">${ped.cliente.NIF}</td>
                                                     <td class="${marcarFila}"><fmt:formatNumber value="${ped.baseImponible}" 
-                                                              type="currency"/></td>
+                                                                                     type="currency"/></td>
                                                     <td class="${marcarFila}"><fmt:formatNumber value="${ped.iva}" 
-                                                              type="currency"/></td>
+                                                                                     type="currency"/></td>
                                                     <td class="${marcarFila}">
                                                         ${estado}
                                                     </td> 
@@ -100,29 +100,30 @@
 
                                     </table>
                                     <label>*Los pedidos que están pendientes aparecen sombreados de rojo y los enviados de azul</label>
+                                    <!-- Paginación -->
+                                    <div class=" container col-md-12 text-center center-block">
+                                        <ul class="pagination">
+                                            <c:forEach begin="1" end="${requestScope.pag}" varStatus="loop">
+                                                <c:choose>
+                                                    <c:when test="${loop.index == requestScope.actual}">
+                                                        <li class="active"><a href="#">${loop.index}</a></li> 
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                        <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos?pag=${loop.index}">${loop.index}</a></li> 
+                                                        </c:otherwise>
+                                                    </c:choose>
+
+                                            </c:forEach>
+                                        </ul>
+
+                                    </div>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <h2 class="text-center">No existen pedidos disponibles.</h2>
                             </c:otherwise>
                         </c:choose>
-                        <!-- Paginación -->
-                        <div class=" container col-md-12 text-center center-block">
-                            <ul class="pagination">
-                                <c:forEach begin="1" end="${requestScope.pag}" varStatus="loop">
-                                    <c:choose>
-                                        <c:when test="${loop.index == requestScope.actual}">
-                                            <li class="active"><a href="#">${loop.index}</a></li> 
-                                            </c:when>
-                                            <c:otherwise>
-                                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm?pag=${loop.index}">${loop.index}</a></li> 
-                                            </c:otherwise>
-                                        </c:choose>
 
-                                </c:forEach>
-                            </ul>
-
-                        </div>
 
                     </div>
 

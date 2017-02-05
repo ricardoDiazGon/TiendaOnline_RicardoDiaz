@@ -32,6 +32,7 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input id="claveRep" type="password" class="form-control" name="claveRep" value="${requestScope.claveRep}" placeholder="Repite tu contraseña" minlength="4" maxlength="50" required>
                     </div>
+                    <label>* Todos los campos son obligatorios</label>
                     <div class="modal-footer">
                         <div class="input-group col-md-12 text-center">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>

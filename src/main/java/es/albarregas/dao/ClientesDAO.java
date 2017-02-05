@@ -5,13 +5,15 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLType;
+
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class ClientesDAO implements IClientesDAO {
+
+    static final org.apache.log4j.Logger LOG_ERROR = org.apache.log4j.Logger.getRootLogger();
+    static final org.apache.log4j.Logger LOG_INFO = org.apache.log4j.Logger.getLogger(ClientesDAO.class);
 
     @Override
     public int addClientes(Cliente cliente) {
@@ -32,14 +34,13 @@ public class ClientesDAO implements IClientesDAO {
 
             //Cerramos las conexiones
             preparada.close();
-
+            LOG_INFO.info("Se ha añadido el cliente con ID " + cliente.getIdCliente() + " de forma exitosa");
         } catch (SQLException ex) {
-            Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOG_ERROR.fatal("Error SQL al añadir Cliente: " +ex.getErrorCode());
             errorSQL = ex.getErrorCode();
         }
 
         this.closeConnection();
-        System.out.println("Error sql addCliente " + errorSQL);
         return errorSQL;
     }
 
@@ -67,8 +68,9 @@ public class ClientesDAO implements IClientesDAO {
 
             resultado.close();
             sentencia.close();
+            LOG_INFO.info("Se ha consultado clientes de forma exitosa");
         } catch (SQLException ex) {
-            Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOG_ERROR.fatal("Error SQL al consultar clientes: " +ex.getErrorCode());
         }
 
         this.closeConnection();
@@ -127,9 +129,11 @@ public class ClientesDAO implements IClientesDAO {
                 sentencia.executeUpdate(sql.toString());
                 sentencia.close();
                 errorSQL = 0;
+                LOG_INFO.info("Se ha actualizado el cliente con ID " + cliente.getIdCliente() + " de forma exitosa");
             } catch (SQLException ex) {
-                Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+                LOG_ERROR.fatal("Error SQL al actualizar clientes: " +ex.getErrorCode());
                 errorSQL = ex.getErrorCode();
+
             }
         }
         this.closeConnection();

@@ -6,7 +6,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Administrador | INFO Albarregas</title>
+                <title>Panel admin | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/> 
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -22,13 +22,13 @@
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><a href="${pageContext.servletContext.contextPath}/navProductos">Inicio</a></li>
-                        <li class="active">Panel de Administrador</li>
+                        <li class="active">Panel de admin</li>
                     </ol>
                 </div>
                 <div id="secciones" class="container row">
                     <!-- Menú de navegación -->
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de admin</h3>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panel.jsp">Datos de Administrador</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
@@ -51,9 +51,10 @@
                                 <th class="text-center">Denominacion</th>
                                 <th class="text-center">Marca</th>
                                 <th class="text-center">Stock</th>
-                                <th class="text-center">Stock Mínimo</th>
-                                <th class="text-center">Precio Unitario</th>
-                                <th class="text-center">Descatalogar</th>
+                                <th class="text-center">Stock Mín</th>
+                                <th class="text-center">Precio Unit</th>
+                                <th class="text-center">Catálogo</th>
+                                <th class="text-center">Oferta</th>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${requestScope.listaProductos}" var="pro">
@@ -88,7 +89,28 @@
                                                     </td>
                                                 </c:otherwise>    
                                             </c:choose>
-
+                                                    
+                                                    
+                                                <c:choose>
+                                                    <c:when test="${pro.oferta == 's'}">
+                                                    <td class="${marcarFila}">
+                                                        <p id="productoOfe${pro.idProducto}" data-placement="top" data-toggle="tooltip">
+                                                            <button class="btn btn-success btn-sm" title="Quitar de oferta" onclick="noOfertarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">                   
+                                                                <span class="glyphicon glyphicon-ok-sign"></span>
+                                                            </button>
+                                                        </p>
+                                                    </td>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <td class="${marcarFila}">
+                                                        <p id="productoOfe${pro.idProducto}" data-placement="top" data-toggle="tooltip">
+                                                            <button class="btn btn-danger btn-sm"  title="Poner en oferta" onclick="ofertarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">
+                                                                <span class="glyphicon glyphicon-ban-circle"></span>
+                                                            </button>
+                                                        </p>
+                                                    </td>
+                                                </c:otherwise>    
+                                            </c:choose>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

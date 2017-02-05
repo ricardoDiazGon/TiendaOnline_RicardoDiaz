@@ -21,7 +21,7 @@
 <div class="panel-body">
 
     <div class="row">
-        <ul class="breadcrumb2">
+        <ul class="breadcrumb2 visible-lg visible-md col-xs-10 col-xs-offset-1">
             <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosIni('${pageContext.servletContext.contextPath}')">Datos del pedido</a></li>
             <li class="completed"><a href="javascript:void(0);" onclick="irCarritoDatosPer('${pageContext.servletContext.contextPath}')">Datos personales</a></li>
             <li class="active"><a href="javascript:void(0);">Datos de envío</a></li>
@@ -51,7 +51,7 @@
 
                 <div style="margin-bottom: 25px" class="form-group col-md-4">
                     <label for="CodigoPostal" class="control-label">Código Postal</label>
-                    <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" maxlength="5" required value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
+                    <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" pattern="^[0-9]{5}" title="5 números" required value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group col-md-4">
@@ -68,7 +68,7 @@
                     <label for="Telefono" class="control-label">Teléfono</label>
                     <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono" maxlength="9" required value="${requestScope.direc.telefono}"/>
                 </div>
-
+                <label>* Todos los campos son obligatorios</label>
                 <input type="hidden" id="IdProvincia" name="IdProvincia" value="${requestScope.direc.idProvincia}"/>
                 <input type="hidden" id="IdPueblo" name="IdPueblo" value="${requestScope.direc.idPueblo}"/>
                 <input type="hidden" name="formulario" value="carrito"/>
@@ -120,7 +120,7 @@
                     <label for="Telefono2" class="control-label">Teléfono</label>
                     <input id="telefono2" type="text" class="form-control" name="Telefono2" placeholder="Teléfono" readonly />
                 </div>
-                
+
             </div>         
         </c:otherwise>
     </c:choose>

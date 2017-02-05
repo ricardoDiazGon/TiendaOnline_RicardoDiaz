@@ -11,14 +11,24 @@ h1,h2,figure{
     text-align: center;
 }
 
+h2{
+    font-size: 3em;
+}
+
+table h2, table h3{
+    text-shadow: none;
+}
+
 h2, h3{
     margin-bottom: 30px;
+    text-shadow: 2px 2px #dddddd;
+    font-weight: bold;
 }
 
 footer{
+    overflow: hidden;
     background: #14171a;
     color: white;
-    padding: 75px auto;
     text-align: center;
 }
 
@@ -87,7 +97,8 @@ nav#panel-control ul li.ultimo{
 
 nav#panel-control h3{
     padding: 10px 0px;
-    background: #aaaaaa;
+    background: #444444;
+    text-shadow: none;
     color: white;
     text-align: center;
     border-radius: 5px;
@@ -101,7 +112,6 @@ form#datos-user div.panel-footer{
 div.alert{
     text-align: center;
 }
-
 
 /*Productos */
 
@@ -214,9 +224,8 @@ ul.dropdown-menu li{
 
 
 #listaBuscar a{
-    display: block;
-    height: 100%;
-    padding-top: 10px;
+    display: inline-block;
+    padding: 20px;
 }
 
 #listaBuscar a:hover{
@@ -320,6 +329,21 @@ panel{
     border-radius: 20px;
 }
 
+/* Enlaces pie */
 a.enlace-mano{
     cursor: pointer;
+}
+
+/* Datos contacto */
+
+.datosContacto{
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+    margin-bottom: 30px;
+}
+
+.modal-header h2, .modal-header h3{
+    text-shadow: none;
 }

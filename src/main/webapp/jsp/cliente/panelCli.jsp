@@ -24,7 +24,7 @@
         <html lang="es">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Panel Cliente | INFO Albarregas</title>
+                <title>Panel usuario | INFO Albarregas</title>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/estilo.css"/>  
                 <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-3.1.1.min.js"></script>
@@ -75,12 +75,12 @@
                 <!-- Menú de navegación -->
                 <div id="secciones" class="container row">
                     <nav id="panel-control" class="col-md-3">
-                        <h3>Panel de Control</h3>
+                        <h3>Panel de usuario</h3>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp">Datos de Usuario</a></li>
-                            <li class="warning active"><a href="#">Datos de Cliente</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/cliente/panel.jsp">Datos de usuario</a></li>
+                            <li class="warning active"><a href="#">Datos de cliente</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Mis pedidos</a></li>
-                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
+                            <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar sesión</a></li>
                         </ul>
                     </nav>
 
@@ -100,17 +100,17 @@
                                     <!-- Controlamos si nos llega algún error -->                 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="nombre" class="control-label">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="\S{1-25}" value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="25" required ${readonly}>                                        
+                                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" value="${nombre}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="25"  title="No se permiten números ni caracteres raros"required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="apellidos" class="control-label">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" required ${readonly}>                                        
+                                        <input id="apellidos" type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="${apellidos}" pattern="^[a-zA-ZáéíóúÁÉÍÓÚ ]+$" maxlength="40" title="No se permiten números ni caracteres raros" required ${readonly}>                                        
                                     </div>
 
                                     <div style="margin-bottom: 25px" class="form-group col-xs-4">
                                         <label for="NIF" class="control-label">NIF</label>
-                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="NIF/DNI" ${readonly} pattern="^[0-9]{8}[a-zA-Z]{1}$" required value="${nif}">                                        
+                                        <input id="NIF" type="text" class="form-control" name="NIF" placeholder="00000000A" ${readonly} pattern="^[0-9]{8}[a-zA-Z]{1}$"  title="8 números y 1 dígito "required value="${nif}">                                        
                                     </div>
                                     <c:if test="${readonly != null}">
                                         <div style="margin-bottom: 25px" class="form-group col-xs-4">
@@ -125,13 +125,16 @@
                                             <label for="fechaNacimiento" class="control-label">Fecha de Nacimiento</label>
                                             <input id="fecha" type="text" class="form-control" name="fechaNacimiento" required value="<fmt:formatDate type="date" 
                                                             dateStyle="long" timeStyle="long"  timeZone="GMT+1"
-                                                            value="${fechaNacimiento}" />" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}"/>
+                                                            value="${fechaNacimiento}" />" placeholder="dd/mm/aaaa" pattern="\d{2}/\d{2}/\d{4}" title="dd/mm/aaaa"/>
                                         </div> 
                                     </c:if>
+                                    <label class="col-xs-12">* Todos los campos son obligatorios</label>
                                 </div>
 
                                 <c:if test="${readonly == null}">     
+                                    
                                     <div class="panel-footer">
+                                        
                                         <div class="input-group col-xs-12 text-center">
                                             <input type="submit" class="btn btn-success" name="${nameSubmit}" value="${valueSubmit}"/>
                                         </div>
@@ -209,7 +212,7 @@
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="CodigoPostal" class="control-label">Código Postal</label>
-                                            <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" required pattern="^[0-9]{5}$" value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
+                                            <input id="CodigoPostal" type="text" class="form-control" name="CodigoPostal" placeholder="Código Postal" required pattern="^[0-9]{5}$" title="5 números" value="${requestScope.direc.codigoPostal}" onkeyup="getPueblos('${pageContext.servletContext.contextPath}')">                                        
                                         </div>
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
@@ -224,7 +227,7 @@
 
                                         <div style="margin-bottom: 25px" class="form-group col-md-4">
                                             <label for="Telefono" class="control-label">Teléfono</label>
-                                            <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono " required pattern="^[6|7|9]{1}[0-9]{8}$" value="${requestScope.direc.telefono}"/>
+                                            <input id="Telefono" type="text" class="form-control" name="Telefono" placeholder="Teléfono " required pattern="^[6|7|9]{1}[0-9]{8}$" title="9 números, empiezan por 6, 7 ó 9" value="${requestScope.direc.telefono}"/>
                                         </div>
 
                                         <input type="hidden" id="IdProvincia" name="IdProvincia" value="${requestScope.direc.idProvincia}"/>

@@ -42,7 +42,6 @@ public class Direcciones extends HttpServlet {
                 Usuario usuario = (Usuario) sesion.getAttribute("usuario");
                 int idCliente = usuario.getCliente().getIdCliente();
 
-                System.out.println("ID CLIENTE: " + idCliente);
                 //Validamos básica de direcciones por contenido vacío y máximo de caracteres.
                 //La validación más exhaustiva se realiza en cliente
                 if (nombreDir.equals("")) {

@@ -13,6 +13,7 @@ import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
 import es.albarregas.dao.IGeneralDAO;
 import es.albarregas.dao.IIMagenesDAO;
+import es.albarregas.dao.IPedidosDAO;
 import es.albarregas.dao.IProductosDAO;
 import es.albarregas.daofactory.DAOFactory;
 import java.util.ArrayList;
@@ -63,7 +64,20 @@ public class Inicializar implements ServletContextListener {
             contexto.setAttribute("proSlider", listaProductosSlider);
             contexto.setAttribute("general", general);
         }
+        
+        //Llamamos a la función para eliminar de la BD aquellos carritos que lleven más de una semana inactivos
+        comprobarCarritosAntiguos();
 
+    }
+    
+    
+    //Función para eliminar de la BD aquellos carritos que lleven más de una semana inactivos
+    public void comprobarCarritosAntiguos(){
+        DAOFactory df = DAOFactory.getDAOFactory(1);
+        IPedidosDAO iped = df.getPedidosDAO();
+        //La diferencia del datediff es en días, entre la fecha actual y la del carrito
+        //Si es mayor que 7 días, se elimina de la base de datos
+        iped.delPedidos("WHERE Estado = 'n' and datediff(now(), fecha) > 7");
     }
 
     @Override

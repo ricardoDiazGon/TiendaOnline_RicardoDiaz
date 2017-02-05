@@ -4,7 +4,7 @@
 
 <div id="panel-cv" class="row modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-xs row" role="document">
-        <div class="modal-content">
+        <div class="modal-content text-left">
             <div class="modal-header text-center bg-primary">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h2 class="modal-title">Trabaja con nosotros</h2>
