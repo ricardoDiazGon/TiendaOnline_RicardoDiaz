@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <footer class="row" id="pie">
-    <div class="col-xs-3">
+    <div class="col-md-3">
         <ul>
             <li><a href="${pageContext.servletContext.contextPath}/jsp/comun/contacto.jsp">Contacto y localización</a></li>            
             <li><a href="#panel-cv" data-toogle="modal" onclick="abrirCV()">Trabaja con nosotros</a></li>
@@ -13,13 +13,13 @@
             </li>
         </ul>
     </div>
-    <div class="col-xs-3 col-xs-offset-1">
+    <div class="col-md-3 col-md-offset-1">
         <ul>
             <li>Creado por Ricardo Díaz González </li>
             <li>© Info Albarregas 2017</li>
         </ul>
     </div>
-    <div class="col-xs-3 col-xs-offset-1">
+    <div class="col-md-3 col-md-offset-1">
         <ul>
             <li> <b>Estamos en las redes sociales:<br/>                       
                     <a href="https://www.facebook.com/" title="Facebook"><img  src="${pageContext.servletContext.contextPath}/imagenes/facebook-icon.png" style="height: 50px; width:50px;"></a>

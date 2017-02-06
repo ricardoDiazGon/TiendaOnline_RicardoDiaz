@@ -36,8 +36,9 @@
 
         <!-- Secciones -->
         <div id="secciones" class="container center-block row">
-            <h2>OFERTAS DEL MES</h2>
+
             <section id="slider" class="col-sm-offset-2 col-sm-8 visible-lg visible-md ">
+                <h2>OFERTAS DEL MES</h2>
                 <jsp:include page="/jsp/componentes/slider.jsp"/>
             </section>
 
