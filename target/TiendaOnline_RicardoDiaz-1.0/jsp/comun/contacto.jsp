@@ -83,8 +83,8 @@
                             </div>
 
                             <div style="margin-bottom: 10px">
-                                <label for="informacion" class="control-label">Curriculum Vitae (PDF/DOC)</label>
-                                <textarea id="informacion" name="informacion" cols="50" rows="5" placeholder="Escriba su información aquí"></textarea>
+                                <label for="informacion" class="control-label">Buzón de dudas y sugerencias</label>
+                                <textarea id="informacion" class="form-control" name="informacion" rows="5" placeholder="Escriba su información aquí"></textarea>
                             </div>
 
                             <div class="modal-footer">
