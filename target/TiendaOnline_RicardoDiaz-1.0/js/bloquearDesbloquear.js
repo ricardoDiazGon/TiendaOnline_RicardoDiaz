@@ -68,7 +68,7 @@ function cambiarFilaProducto(id, accion, contexto, mensaje) {
                 "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
                 + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
                 + "<strong>" + mensaje + "</strong></div>");
-        $("#alerta-producto").fadeIn(1000);
+        $("#alerta-producto").fadeIn(500);
         $("#alerta-producto").fadeOut(6000);
     }
 

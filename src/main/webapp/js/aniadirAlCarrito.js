@@ -12,16 +12,16 @@ function aniadirProducto(contexto, idProducto, stock, cantidad) {
                 "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
                 + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
                 + "<strong>Por favor, introduzca un número entero en la cantidad</strong></div>");
-        $("#alerta-cantidad").fadeIn(1000);
-        $("#alerta-cantidad").fadeOut(3000);
+        $("#alerta-cantidad").fadeIn(500);
+        $("#alerta-cantidad").fadeOut(5000);
 //Controlamos que la cantidad no sea mayor que el stock existente
     } else if ((stock - cantidad) < 0) {
         $("#alerta-cantidad").html(
                 "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
                 + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
                 + "<strong>La cantidad de producto introducida (" + cantidad + ") es mayor que el stock (" + stock + ") </strong></div>");
-        $("#alerta-cantidad").fadeIn(1000);
-        $("#alerta-cantidad").fadeOut(3000);
+        $("#alerta-cantidad").fadeIn(500);
+        $("#alerta-cantidad").fadeOut(5000);
 //Si no hay problemas detectado llamamos al controlador con ajax
     } else {
         var url = contexto + "/aniadirAlCarrito?pro=" + idProducto + "&can=" + cantidad;

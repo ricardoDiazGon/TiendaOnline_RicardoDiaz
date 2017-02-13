@@ -7,20 +7,19 @@
     </figure>
 
     <div class="col-sm-offset-1 col-sm-8 col-xs-6 row text-right" style="padding-top: 60px;" id="toolbar">
-        <form id="busqueda" class="col-sm-8 col-xs-12 row">
+        <!--<form id="busqueda" class="col-sm-8 col-xs-12 row">
             <div class="input-group col-xs-12">
                 <input type="search" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscarProd('${pageContext.servletContext.contextPath}')">
                 <div class="input-group-btn">
                     <button class="btn btn-default" type="button">
                         <i class="glyphicon glyphicon-search"></i>
                     </button>
-                </div>
-            </div>
-            <div id="panelBuscar" class="panel col-xs-10">
-                <table id="listaBuscar" border="0">
-                </table>
-            </div>
-        </form>
+                </div>-->
+                <jsp:include page="busqueda.jsp"/>
+                
+            <!--</div>-->
+
+        <!--</form>-->
         <c:if test="${sessionScope.usuario.cliente != null}">
             <div class="col-sm-offset-1 col-sm-3 col-xs-12 row">
                 <a href="${pageContext.servletContext.contextPath}/carrito"><span id="carrito" class=" col-xs-offset-5 col-xs-5 glyphicon glyphicon-shopping-cart"></span>

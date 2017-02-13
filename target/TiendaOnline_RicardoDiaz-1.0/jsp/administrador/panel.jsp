@@ -32,6 +32,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm?stock=bajo">Productos Stock Bajo</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
@@ -40,7 +41,7 @@
                         <c:if test="${sessionScope.alertaStock != null}">
                             <div class="alert alert-info text-center center-block alert-dismissable col-md-12" style="margin-bottom: 25px;">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <a href="${pageContext.servletContext.contextPath}/actualizarProAdm"><span class="glyphicon glyphicon-pushpin"></span>  <strong> Hay productos por debajo del Stock mínimo. Pulse aquí para verlos.</strong></a>
+                            <a href="${pageContext.servletContext.contextPath}/actualizarProAdm?stock=bajo"><span class="glyphicon glyphicon-pushpin"></span>  <strong> Hay productos por debajo del Stock mínimo. Pulse aquí para verlos.</strong></a>
                         </div>
                         </c:if>
                         

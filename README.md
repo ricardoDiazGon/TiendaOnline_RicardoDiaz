@@ -1,6 +1,5 @@
 # TiendaOnline_RicardoDiaz
-
-
+- He añadido consulta compleja (flechita del campo búsqueda), y alguna leve mejora...13/02/2017 16:35
 - Tienda Online acabada. Varias mejoras y funcionalidades de ultima hora. Subida del pdf del MANUAL DE USUARIO y la BASE DE DATOS actualizada
 (la clave del usuario es campo blob por la encriptación AES). He subido logs 4J que se me han ejecutado durante un ratito metiendo datos.
 5/2/2018 a las 23:58 . Mejorilla de última hora en la página del producto.  posterior a Tienda Online acabada... war cargado... subido pdf manual con correcciones... 06-02-2017 0:26 ... ligeras modificaciones en pagina de producto 2.0

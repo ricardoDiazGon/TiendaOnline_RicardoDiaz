@@ -1,7 +1,7 @@
 /*
     En este controlador vamos a cargar los productos que el administrador puede actualizar.
     Hace paginación.
-*/
+ */
 package es.albarregas.controladores;
 
 import es.albarregas.beans.Producto;
@@ -37,9 +37,18 @@ public class ActualizarProAdm extends HttpServlet {
         String url = "";
         DAOFactory df = DAOFactory.getDAOFactory(1);
         IProductosDAO iprd = df.getProductosDAO();
-        ArrayList<Producto> listaProductosTotal = iprd.getProductos("");
+        String limit = "";
+        String where = "";
+        if (request.getParameter("stock") != null) {
+            url = "jsp/administrador/panelProStockBajo.jsp";
+            where = "WHERE P.Stock < P.StockMinimo";
+        } else {
+            url = "jsp/administrador/panelActPro.jsp";
+        }
+
+        ArrayList<Producto> listaProductosTotal = iprd.getProductos(where);
         int total = listaProductosTotal.size();
-        ArrayList<Producto> listaProductos = iprd.getProductos("LIMIT " +min +", 15");
+        ArrayList<Producto> listaProductos = iprd.getProductos(where +" LIMIT " + min + ", 15");
         //Cargamos todos los usuarios con sus respectivos datos de clientes
 
         request.setAttribute("listaProductos", listaProductos);
@@ -47,7 +56,7 @@ public class ActualizarProAdm extends HttpServlet {
         int pag = (int) Math.ceil(Double.valueOf(total) / Double.valueOf(15));
         request.setAttribute("actual", pagina);
         request.setAttribute("pag", pag);
-        url = "jsp/administrador/panelActPro.jsp";
+
         request.getRequestDispatcher(url).forward(request, response);
     }
 

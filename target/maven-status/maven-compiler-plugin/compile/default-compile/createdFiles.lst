@@ -69,4 +69,5 @@ es\albarregas\beans\Direccion.class
 es\albarregas\dao\LineasPedidosDAO.class
 es\albarregas\beans\Marca.class
 es\albarregas\dao\ICaractYProdsDAO.class
+es\albarregas\controladores\BusquedaAvanzada.class
 es\albarregas\dao\PedidosDAO.class

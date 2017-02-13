@@ -34,6 +34,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li  class="warning active"><a href="#">Actualizar Productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm?stock=bajo">Productos Stock Bajo</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
                     </nav>

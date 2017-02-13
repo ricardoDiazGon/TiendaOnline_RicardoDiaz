@@ -8,11 +8,13 @@ package es.albarregas.eventos;
 import es.albarregas.beans.Caracteristica;
 import es.albarregas.beans.Categoria;
 import es.albarregas.beans.General;
+import es.albarregas.beans.Marca;
 import es.albarregas.beans.Producto;
 import es.albarregas.dao.ICaracteristicasDAO;
 import es.albarregas.dao.ICategoriasDAO;
 import es.albarregas.dao.IGeneralDAO;
 import es.albarregas.dao.IIMagenesDAO;
+import es.albarregas.dao.IMarcasDAO;
 import es.albarregas.dao.IPedidosDAO;
 import es.albarregas.dao.IProductosDAO;
 import es.albarregas.daofactory.DAOFactory;
@@ -35,9 +37,11 @@ public class Inicializar implements ServletContextListener {
         IIMagenesDAO iid = df.getImagenesDAO();
         ICaracteristicasDAO icard = df.getCaracteristicasDAO();
         IGeneralDAO igd = df.getGeneralDAO();
+        IMarcasDAO imd = df.getMarcasDAO();
 
         ArrayList<Producto> listaProductos = ipd.getProductos("WHERE FueraCatalogo = 'n'");
-        ArrayList<Categoria> listaCategorias = icd.getCategorias("");
+        ArrayList<Categoria> listaCategorias = icd.getCategorias("ORDER BY Nombre ASC");
+        ArrayList<Marca> listaMarcas = imd.getMarcas("ORDER BY Denominacion ASC");
 
         //Introducimos las imagenes y las caracteristicas en los productos
         for (Producto producto : listaProductos) {
@@ -61,6 +65,7 @@ public class Inicializar implements ServletContextListener {
         synchronized (contexto) {
             contexto.setAttribute("productos", listaProductos);
             contexto.setAttribute("categorias", listaCategorias);
+            contexto.setAttribute("marcas", listaMarcas);
             contexto.setAttribute("proSlider", listaProductosSlider);
             contexto.setAttribute("general", general);
         }
@@ -87,6 +92,7 @@ public class Inicializar implements ServletContextListener {
         synchronized (contexto) {
             contexto.removeAttribute("productos");
             contexto.removeAttribute("categorias");
+            contexto.removeAttribute("marcas");
             contexto.removeAttribute("proSlider");
             contexto.removeAttribute("general");
         }
