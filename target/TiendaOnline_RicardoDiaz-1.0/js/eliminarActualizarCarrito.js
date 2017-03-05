@@ -27,9 +27,17 @@ function realizarEliminacionCarrito(contexto, idPedido, numLinea) {
 
 }
 
-function actualizarCantidad(contexto, idPedido, numLinea, cantidad) {
+function actualizarCantidad(contexto, idPedido, numLinea, cantidad, stock) {
     //Solo hacemos la accion si no introducimos caracters
-    if (!isNaN(numLinea) && !isNaN(cantidad) && cantidad > 0) {
+    if ((stock - cantidad) < 0) { //NUEVO
+        $("#alerta-cantidad").html(
+                "<div class=\"alert alert-warning text-center alert-dismissable aviso-stock-usuario\">"
+                + "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"
+                + "<strong>La cantidad de producto introducida (" + cantidad + ") es mayor que el stock (" + stock + ") </strong></div>");
+        $("#alerta-cantidad").fadeIn(500);
+        $("#alerta-cantidad").fadeOut(5000);
+//Si no hay problemas detectado llamamos al controlador con ajax
+    }else if (!isNaN(numLinea) && !isNaN(cantidad) && cantidad > 0) {
         var url = contexto + "/modificarCantidadCarrito?npe=" + idPedido + "&nli=" + numLinea + "&can=" + cantidad;
         var peticion = false;
         peticion = new XMLHttpRequest();

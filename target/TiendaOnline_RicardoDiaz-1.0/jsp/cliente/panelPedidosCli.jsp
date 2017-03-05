@@ -59,7 +59,7 @@
 
                                     <table id="tablaProductos" class="table table-condensed table-responsive table-striped text-center">
                                         <thead>
-                                        <th class="text-center">Id Pedido</th>
+                                        <th class="text-center">Id</th>
                                         <th class="text-center">Fecha y hora</th>
                                         <th class="text-center">Direccion</th>
                                         <th class="text-center">Base Imponible</th>
@@ -91,9 +91,9 @@
                                                                                    timeZone="GMT+1"
                                                                                    value="${ped.fecha}" /></td>
                                                     <td class="${marcarFila}">${ped.direccion.direccion} ${ped.direccion.nombrePueblo} ${ped.direccion.codigoPostal} - ${ped.direccion.nombreProvincia}</td>
-                                                    <td class="${marcarFila}"><fmt:formatNumber value="${ped.baseImponible}" 
+                                                    <td class="${marcarFila} text-right"><fmt:formatNumber value="${ped.baseImponible}" 
                                                                                      type="currency"/></td>
-                                                    <td class="${marcarFila}"><fmt:formatNumber value="${ped.iva}" 
+                                                    <td class="${marcarFila} text-right"><fmt:formatNumber value="${ped.iva}" 
                                                                                      type="currency"/></td>
                                                     <td class="${marcarFila}">
                                                         <b>${estado}</b>

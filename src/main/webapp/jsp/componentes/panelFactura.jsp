@@ -53,19 +53,19 @@
 
                         <c:forEach items="${sessionScope.factura.pedido.lineasPedidos}" var="linea">
                             <tr>
-                                <td>${linea.producto.denominacion}</td>
-                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario}"/></td>
-                                <td>${linea.cantidad}</td>
-                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario * linea.cantidad}"/></td>
+                                <td class="text-left">${linea.producto.denominacion}</td>
+                                <td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario}"/></td>
+                                <td class="text-right">${linea.cantidad}</td>
+                                <td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${linea.precioUnitario * linea.cantidad}"/></td>
                             </tr>
                         </c:forEach>
                     </table>
                     <table class="col-xs-offset-8 col-xs-4">
-                        <tr><th>Base imponible: </th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible}"/></td></tr>
-                        <tr><th>IVA (${general.iva} %): </th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.iva}"/></td></tr>
-                        <tr><th>Gastos de envío: </th><td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${general.gastosEnvio}"/></td></tr>
+                        <tr><th>Base imponible: </th><td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible}"/></td></tr>
+                        <tr><th>IVA (${general.iva} %): </th><td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.iva}"/></td></tr>
+                        <tr><th>Gastos de envío: </th><td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${general.gastosEnvio}"/></td></tr>
                         <tr>
-                            <th>TOTAL FACTURA: </th><td> <fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible + sessionScope.factura.pedido.iva +
+                            <th>TOTAL FACTURA: </th><td class="text-right"> <fmt:formatNumber maxFractionDigits="2" type="currency" value="${sessionScope.factura.pedido.baseImponible + sessionScope.factura.pedido.iva +
                                                                                                                                             general.gastosEnvio}"/></td>
 
                         </tr>

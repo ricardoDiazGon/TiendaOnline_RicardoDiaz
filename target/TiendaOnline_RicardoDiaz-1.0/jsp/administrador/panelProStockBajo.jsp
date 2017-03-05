@@ -34,6 +34,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mostrarPedidos">Ver pedidos</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar Productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panelActPrecios.jsp">Actualizar precios</a></li>
                             <li class="warning active"><a href="#">Productos Stock Bajo</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
@@ -67,9 +68,9 @@
                                             <td class="${marcarFila}">${pro.idProducto}</td>
                                             <td class="${marcarFila}">${pro.denominacion}</td>
                                             <td class="${marcarFila}">${pro.denoMarca}</td>
-                                            <td class="${marcarFila}"><input type="number" name="stock" id="stock" min="0" max="9999" value="${pro.stock}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'stock')"></td>
-                                            <td class="${marcarFila}"><input type="number" name="stockMinimo" min="0" max="9999" id="stockMinimo" size="4"  maxlength="4" value="${pro.stockMinimo}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'stockMinimo')"></td>
-                                            <td class="${marcarFila}"><input type="number" name="precio" min="1" max="10000" id="precio"  value="${pro.precioUnitario}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'precio')"></td>
+                                            <td class="${marcarFila}"><input type="number" name="stock" class="text-right" id="stock" min="0" max="9999" value="${pro.stock}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'stock')"></td>
+                                            <td class="${marcarFila}"><input type="number" name="stockMinimo" class="text-right" min="0" max="9999" id="stockMinimo" size="4"  maxlength="4" value="${pro.stockMinimo}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'stockMinimo')"></td>
+                                            <td class="${marcarFila}"><input type="number" name="precio" class="text-right" min="1" max="10000" id="precio"  value="${pro.precioUnitario}" onchange="actualizarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}', this.value, 'precio')"></td>
                                                 <c:choose>
                                                     <c:when test="${pro.fueraCatalogo == 'n'}">
                                                     <td class="${marcarFila}">
@@ -90,10 +91,10 @@
                                                     </td>
                                                 </c:otherwise>    
                                             </c:choose>
-                                                    
-                                                    
-                                                <c:choose>
-                                                    <c:when test="${pro.oferta == 's'}">
+
+
+                                            <c:choose>
+                                                <c:when test="${pro.oferta == 's'}">
                                                     <td class="${marcarFila}">
                                                         <p id="productoOfe${pro.idProducto}" data-placement="top" data-toggle="tooltip">
                                                             <button class="btn btn-success btn-sm" title="Quitar de oferta" onclick="noOfertarProducto('${pageContext.servletContext.contextPath}', '${pro.idProducto}')">                   

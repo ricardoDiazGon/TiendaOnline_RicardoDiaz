@@ -19,6 +19,7 @@ es\albarregas\dao\ConnectionFactory.class
 es\albarregas\servletsAjax\DireccionAjax.class
 es\albarregas\dao\ICaracteristicasDAO.class
 es\albarregas\dao\IMarcasDAO.class
+es\albarregas\controladores\ActualizarPrecios.class
 es\albarregas\dao\PueblosDAO.class
 es\albarregas\dao\ClientesDAO.class
 es\albarregas\dao\ImagenesDAO.class

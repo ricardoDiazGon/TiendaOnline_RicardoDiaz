@@ -44,6 +44,10 @@ footer ul li{
     width: 90%;  
 }
 
+div#secciones{
+    margin-bottom: 5%;
+}
+
 /* estilos para el slider. */
 
 
@@ -191,8 +195,8 @@ ul.dropdown-menu li{
 }
 /* Panel de busqueda */
 #busqueda div.panel{
-    position: absolute;
-    z-index: 9;
+    position: relative;
+    z-index: 9999;
     text-align: left;
 }
 

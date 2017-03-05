@@ -4,6 +4,7 @@
 
 <c:choose>
     <c:when test="${sessionScope.carrito != null}">
+        <div id="alerta-cantidad"> </div>
         <div class="panel-heading bg-primary">
             <h4>TU CARRITO | DATOS DEL PEDIDO</h4>
         </div>
@@ -32,11 +33,11 @@
                             <tr id="filaCarrito${lineaPed.numeroLinea}">
                                 <td><img height="75" width="75" src="${pageContext.servletContext.contextPath}/imagenes/imagenesProductos/${pro.imagenes[0].imagen}" alt="${pro.imagenes[0].imagen}" /></td>
                                 <td><c:out value="${pro.denominacion}"/></td>
-                                <td><fmt:formatNumber type="currency" maxFractionDigits="2" value="${pro.precioUnitario}" /></td>
-                                <td><fmt:formatNumber pattern="##" type="percent" value="${general.iva}"/></td>
-                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioIva}"/></td>
-                                <td><input type="number" class="form-control" min="1" max="100" value="${lineaPed.cantidad}" onchange="actualizarCantidad('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}', this.value)"/></td>
-                                <td><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioTotalLinea}"/></td>
+                                <td class="text-right"><fmt:formatNumber type="currency" maxFractionDigits="2" value="${pro.precioUnitario}" /></td>
+                                <td class="text-right"><fmt:formatNumber pattern="##" type="percent" value="${general.iva}"/></td>
+                                <td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioIva}"/></td>
+                                <td class="text-right"><input type="number" class="form-control text-right" min="1" max="100" value="${lineaPed.cantidad}" onchange="actualizarCantidad('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}', this.value, '${pro.stock}')"/></td>
+                                <td class="text-right"><fmt:formatNumber maxFractionDigits="2" type="currency" value="${precioTotalLinea}"/></td>
                                 <td><button onclick="eliminarLineaCarrito('${pageContext.servletContext.contextPath}', '${lineaPed.idPedido}', '${lineaPed.numeroLinea}')"><span class="glyphicon glyphicon-trash"></span></button></td>
                             </tr>
                         </c:if>

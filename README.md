@@ -1,11 +1,8 @@
 # TiendaOnline_RicardoDiaz
-- He añadido consulta compleja (flechita del campo búsqueda), y alguna leve mejora...13/02/2017 16:35
-- Tienda Online acabada. Varias mejoras y funcionalidades de ultima hora. Subida del pdf del MANUAL DE USUARIO y la BASE DE DATOS actualizada
-(la clave del usuario es campo blob por la encriptación AES). He subido logs 4J que se me han ejecutado durante un ratito metiendo datos.
-5/2/2018 a las 23:58 . Mejorilla de última hora en la página del producto.  posterior a Tienda Online acabada... war cargado... subido pdf manual con correcciones... 06-02-2017 0:26 ... ligeras modificaciones en pagina de producto 2.0
-
-- Añadido: listado de pedidos donde se ven los detalles (factura) y hay funcionalidades de recibir envío, página de productos más vendidos, página
-de contacto, aviso de cookies, redes sociales, comentarios en el código, y mejoras en diferentes páginas... 5/2/2017 1:20
-- Pagina de modificar datos de producto mejorada con más funcionalidad, aviso de stock mínimo... empezando listar pedidos 3/2/2017 20:40
-- Carrito con factura terminado v2.0, descatalogar productos terminado v1.0, mejoras paginacion en panel de admin. 2/2/2017 23:40
-- Finalización del carrito, interfaz de pago completa por validar solo v.1.2 ... 30/01/2017 20:50
+- Añadidas las actualizaciones de la versión 2.0 (6 de Marzo). Se pueden encontrar detalladas en el Manual de usuario, que ha sido actualizado con un último apartado con las nuevas actualizaciones, y en el mismo manual algunas secciones también han sido actualizadas. 6 de marzo de 2017 00:35
+- RESUMEN DE ACTUALIZACIONES:
+  1. Búsqueda avanzada.
+  2. Aumentar o disminuir el precio de los productos por lotes.
+  3. Productos con menos stock del mínimo en página aparte.
+  4. Productos en carrito no se puede descatalogar.
+  5. Aviso de cantidad superior al stock en el carrito.

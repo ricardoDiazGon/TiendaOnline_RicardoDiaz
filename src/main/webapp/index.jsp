@@ -16,8 +16,10 @@
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/efectosProductos.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/busquedaProductos.js"></script>
         <script type="text/javascript" src="${pageContext.servletContext.contextPath}/js/aniadirAlCarrito.js"></script>
+        
     </head>
     <body class="container-fluid" onload="carousel()">
+        <noscript>Esta página necesita tener habilitado javascript para su correcto funcionamiento y navegación</noscript>
         <c:set var="opt" value="ind" />
         <c:set value="${pageContext.servletContext.contextPath}" var="contexto"/>
         <div id="contenedor-arriba">

@@ -38,6 +38,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarUsuAdm">Actualizar clientes</a></li>
                             <li class="warning active"><a href="#">Ver pedidos</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm">Actualizar Productos</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/jsp/administrador/panelActPrecios.jsp">Actualizar precios</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/actualizarProAdm?stock=bajo">Productos Stock Bajo</a></li>
                             <li class="ultimo"><a href="${pageContext.servletContext.contextPath}/login?cerrar=ok">Cerrar Sesión</a></li>
                         </ul>
@@ -54,7 +55,7 @@
 
                                     <table id="tablaProductos" class="table table-condensed table-responsive table-striped text-center">
                                         <thead>
-                                        <th  class="text-center">Id Pedido</th>
+                                        <th  class="text-center">Id</th>
                                         <th  class="text-center">Fecha y hora</th>
                                         <th class="text-center">Nombre y Apellidos del cliente</th>
                                         <th  class="text-center">DNI Cliente</th>
@@ -87,10 +88,10 @@
                                                                                    value="${ped.fecha}" /></td>
                                                     <td class="${marcarFila}">${ped.cliente.nombre} ${ped.cliente.apellidos}</td>
                                                     <td class="${marcarFila}">${ped.cliente.NIF}</td>
-                                                    <td class="${marcarFila}"><fmt:formatNumber value="${ped.baseImponible}" 
-                                                                                     type="currency"/></td>
-                                                    <td class="${marcarFila}"><fmt:formatNumber value="${ped.iva}" 
-                                                                                     type="currency"/></td>
+                                                    <td class="${marcarFila} text-right"><fmt:formatNumber value="${ped.baseImponible}" 
+                                                                                                type="currency"/></td>
+                                                    <td class="${marcarFila} text-right"><fmt:formatNumber value="${ped.iva}" 
+                                                                                                type="currency"/></td>
                                                     <td class="${marcarFila}">
                                                         ${estado}
                                                     </td> 

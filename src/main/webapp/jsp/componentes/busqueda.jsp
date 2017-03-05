@@ -1,18 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="row">
-    <div id="busqueda" class="col-sm-8 col-xs-12 ">
+    <div id="busqueda" class="col-sm-6 col-xs-12 ">
         <div class="input-group" id="adv-search">
             <input type="search" id="buscar" class="form-control" placeholder="Buscar"  onkeyup="buscarProd('${pageContext.servletContext.contextPath}')" />
 
             <div class="input-group-btn">
                 <div class="btn-group" role="group">
                     <div class="dropdown dropdown-lg">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Búsqueda avanzada"><span class="caret"></span></button>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
                             <form role="form" class="form-horizontal row" role="form" method="post" action="busquedaAvanzada">
-
+                                <h3 class="text-center">Búsqueda avanzada</h3>
                                 <div style="margin-bottom: 10px" class="input-group col-sm-12">
                                     <label for="descripcion" class="control-label">Descripción</label>
                                     <input id="descripcion"  name="descripcion"  type="text" class="form-control" placeholder="Descripcion">                                        
@@ -65,9 +64,8 @@
         </div>
 
         <!-- Tabla de resultados en búsqueda dinámica -->
-        <div id="panelBuscar" class="panel col-xs-10">
+        <div id="panelBuscar" class="panel col-xs-12">
             <table id="listaBuscar" border="0">
             </table>
         </div>
     </div>
-</div>
