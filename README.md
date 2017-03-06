@@ -6,3 +6,4 @@
   3. Productos con menos stock del mínimo en página aparte.
   4. Productos en carrito no se puede descatalogar.
   5. Aviso de cantidad superior al stock en el carrito.
+  6. Precios y cantidades ajustadas a la derecha.
